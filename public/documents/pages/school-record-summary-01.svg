@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#f6f4ed"/>
+  <rect x="72" y="72" width="1056" height="1456" rx="36" fill="#ffffff" stroke="#d7ded9" stroke-width="3"/>
+  <rect x="72" y="72" width="1056" height="22" rx="11" fill="#176b61"/>
+  <text x="132" y="180" fill="#176b61" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">VERIFIED SUMMARY</text>
+  <text x="132" y="270" fill="#16352f" font-family="Georgia, serif" font-size="62" font-weight="700">Upper-secondary</text>
+  <text x="132" y="340" fill="#16352f" font-family="Georgia, serif" font-size="62" font-weight="700">academic record</text>
+  <text x="132" y="402" fill="#62736e" font-family="Arial, sans-serif" font-size="28">Nguyễn Siêu School · Grades 10–12 · 2023–2026</text>
+  <line x1="132" y1="466" x2="1068" y2="466" stroke="#d7ded9" stroke-width="3"/>
+  <text x="132" y="550" fill="#16352f" font-family="Arial, sans-serif" font-size="28" font-weight="700">ANNUAL GPA</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="132" y="600" width="276" height="230" rx="24" fill="#e8f3ef"/>
+    <text x="168" y="662" fill="#62736e" font-size="24">Grade 10</text><text x="168" y="760" fill="#176b61" font-size="72" font-weight="700">9.0</text><text x="305" y="760" fill="#62736e" font-size="24">/ 10</text>
+    <rect x="462" y="600" width="276" height="230" rx="24" fill="#e8f3ef"/>
+    <text x="498" y="662" fill="#62736e" font-size="24">Grade 11</text><text x="498" y="760" fill="#176b61" font-size="72" font-weight="700">9.2</text><text x="635" y="760" fill="#62736e" font-size="24">/ 10</text>
+    <rect x="792" y="600" width="276" height="230" rx="24" fill="#e8f3ef"/>
+    <text x="828" y="662" fill="#62736e" font-size="24">Grade 12</text><text x="828" y="760" fill="#176b61" font-size="72" font-weight="700">9.4</text><text x="965" y="760" fill="#62736e" font-size="24">/ 10</text>
+  </g>
+  <rect x="132" y="900" width="936" height="260" rx="28" fill="#16352f"/>
+  <text x="180" y="978" fill="#a9d8ca" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="3">RECOGNITION</text>
+  <text x="180" y="1060" fill="#ffffff" font-family="Georgia, serif" font-size="42" font-weight="700">Excellent-student recognition</text>
+  <text x="180" y="1120" fill="#dcece7" font-family="Arial, sans-serif" font-size="28">Recorded across Grades 10, 11, and 12.</text>
+  <text x="132" y="1290" fill="#62736e" font-family="Arial, sans-serif" font-size="25">Private source retained</text>
+  <text x="132" y="1340" fill="#62736e" font-family="Arial, sans-serif" font-size="22">The original eight-page record contains a portrait and personal record details.</text>
+  <text x="132" y="1450" fill="#176b61" font-family="Arial, sans-serif" font-size="22" font-weight="700">SUMMARY 1 OF 2</text>
+</svg>

@@ -1,191 +1,56 @@
-# Component Methods
+# Component Methods — Medical Student Portfolio
 
-## Application Shell
+High-level method/prop signatures only. Detailed business rules and validation logic are deferred to Functional Design (CONSTRUCTION).
 
-### `App`
+## MedicalShell
 
-```ts
-function App(): JSX.Element
-```
-
-- **Purpose**: Render the portfolio page with navigation and ordered sections.
-- **Inputs**: Portfolio data/config imported from `src/data/portfolio`.
-- **Output**: React page tree.
-
-```ts
-function useActiveSection(sectionIds: SectionId[], offset?: number): SectionId
-```
-
-- **Purpose**: Track which section is currently active while scrolling.
-- **Inputs**:
-  - `sectionIds`: Ordered section identifiers.
-  - `offset`: Optional scroll offset for fixed navbar.
-- **Output**: Active section ID.
+- `MedicalShell(): JSX.Element` — no props; composes sections and navigation; renders the skip link as the first focusable element.
 
 ## Navigation
 
-### `Navbar`
+- `Navigation(props: { destinations: NavDestination[]; activeSectionId: string }): JSX.Element`
+- `NavDestination = { id: string; label: string; hash: string }`
 
-```ts
-type NavbarProps = {
-  activeSection?: SectionId
-}
+## MobileNav
 
-function Navbar(props: NavbarProps): JSX.Element
-```
+- `MobileNav(props: { destinations: NavDestination[]; activeSectionId: string }): JSX.Element`
+- Internal: `onToggle(): void`, `onSelectDestination(hash: string): void`, `onClose(): void`
 
-- **Purpose**: Render desktop/mobile navigation from shared config.
-- **Inputs**: `activeSection`.
-- **Output**: Header, desktop links, mobile drawer.
+## Hero
 
-```ts
-function scrollToSection(sectionId: SectionId): void
-```
+- `Hero(props: { identity: IdentityContent }): JSX.Element`
+- `IdentityContent = { name: string; statusStatement: string; valueStatement: string; primaryCtas: { label: string; targetHash: string }[] }`
 
-- **Purpose**: Smooth-scroll to a section by ID.
-- **Inputs**: Section ID.
-- **Output**: Browser scroll side effect.
+## MedicalJourney
 
-## Shared Utilities
+- `MedicalJourney(props: { journey: JourneyContent }): JSX.Element`
+- `JourneyContent = { milestones: JourneyMilestone[] }`
+- `JourneyMilestone = { id: string; label: string; description: string; period?: string }`
 
-```ts
-function buildMailtoUrl(input: ContactFormInput, recipientEmail: string): string
-```
+## Academics
 
-- **Purpose**: Build encoded mailto URL from contact form fields.
-- **Inputs**:
-  - Contact form data.
-  - Recipient email.
-- **Output**: Mailto URL string.
+- `Academics(props: { academics: AcademicsContent }): JSX.Element`
+- `AcademicsContent = { igcse: ScoreGroup; ielts: ScoreGroup; grade12: ScoreGroup; recognitions: string[]; admissionScore: LabeledScore }`
+- `ScoreGroup = { label: string; scaleDescription: string; entries: LabeledScore[] }`
+- `LabeledScore = { subjectOrLabel: string; value: string; scaleNote?: string }`
 
-```ts
-function getYouTubeEmbedUrl(videoId: string): string
-```
+## CommunityCare
 
-- **Purpose**: Build iframe embed URL for YouTube videos.
-- **Inputs**: YouTube video ID.
-- **Output**: YouTube embed URL.
+- `CommunityCare(props: { stories: CommunityStory[] }): JSX.Element`
+- `CommunityStory = { id: string; title: string; date: string; summary: string; attribution: "collective" | "individual"; relatedImageIds?: string[] }`
 
-```ts
-function getYouTubeWatchUrl(videoId: string): string
-```
+## Gallery
 
-- **Purpose**: Build external YouTube watch URL.
-- **Inputs**: YouTube video ID.
-- **Output**: YouTube watch URL.
+- `Gallery(props: { images: GalleryImage[] }): JSX.Element`
+- `GalleryImage = { id: string; src: string; alt: string; caption: string; initiativeId: string; dateOrPeriod?: string }`
+- Internal: `onOpenImage(id: string): void`
 
-```ts
-function getAnimationDelayClass(index: number): string
-```
+## Contact
 
-- **Purpose**: Return existing reveal animation delay class.
-- **Inputs**: Item index.
-- **Output**: CSS class string.
+- `Contact(props: { contact: ContactContent }): JSX.Element`
+- `ContactContent = { statement: string; futureLinkPlaceholder?: { label: string; href: string } }`
 
-## Section Components
+## Lightbox (shared primitive)
 
-Each section keeps a simple function component signature:
-
-```ts
-function Hero(): JSX.Element
-function About(): JSX.Element
-function Education(): JSX.Element
-function Experience(): JSX.Element
-function Awards(): JSX.Element
-function Projects(): JSX.Element
-function Gallery(): JSX.Element
-function Videos(): JSX.Element
-function Skills(): JSX.Element
-function Contact(): JSX.Element
-```
-
-- **Purpose**: Render one portfolio section.
-- **Inputs**: Imported typed data modules.
-- **Output**: Section-specific React UI.
-
-## Shared UI Components
-
-```ts
-type SectionShellProps = {
-  id: SectionId
-  eyebrow?: string
-  title: string
-  intro?: string
-  nextSectionId?: SectionId
-  children: React.ReactNode
-}
-
-function SectionShell(props: SectionShellProps): JSX.Element
-```
-
-- **Purpose**: Standardize section container and heading layout.
-- **Inputs**: Section metadata, optional next-section target, children.
-- **Output**: Styled section wrapper.
-
-```ts
-type ContentCardProps = {
-  children: React.ReactNode
-  className?: string
-}
-
-function ContentCard(props: ContentCardProps): JSX.Element
-```
-
-- **Purpose**: Standardize repeated card chrome.
-- **Inputs**: Children and optional class name.
-- **Output**: Styled card wrapper.
-
-```ts
-type ExternalActionProps = {
-  href: string
-  label: string
-  ariaLabel?: string
-  variant?: 'button' | 'icon' | 'link'
-}
-
-function ExternalAction(props: ExternalActionProps): JSX.Element
-```
-
-- **Purpose**: Render external links/actions consistently and accessibly.
-- **Inputs**: URL, visual label, accessible label, variant.
-- **Output**: Link or button-like external action.
-
-## Data Modules
-
-```ts
-export const profile: Profile
-export const navigationItems: NavigationItem[]
-export const about: AboutSection
-export const education: EducationEntry[]
-export const experience: ExperienceEntry[]
-export const awards: AwardEntry[]
-export const projects: ProjectEntry[]
-export const gallery: GalleryItem[]
-export const videos: VideoEntry[]
-export const skills: SkillCategory[]
-export const certificates: CertificateEntry[]
-export const portfolio: Portfolio
-```
-
-- **Purpose**: Provide typed example content for students to customize.
-- **Inputs**: Static imports and literals.
-- **Output**: Typed portfolio data.
-
-## Test Interfaces
-
-```ts
-describe('portfolio data', () => void)
-describe('navigation config', () => void)
-describe('App smoke render', () => void)
-```
-
-- **Purpose**: Validate data/config integrity and app render.
-- **Inputs**: Portfolio data and React app.
-- **Output**: Passing Vitest assertions.
-
-## Extension Rule Compliance
-
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+- `Lightbox(props: { item: GalleryImage | null; onClose: () => void }): JSX.Element | null`
+- Internal: `trapFocus(): void`, `restoreFocus(): void`, `onKeyDown(event: KeyboardEvent): void`

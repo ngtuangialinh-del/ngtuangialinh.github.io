@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FC_SEED: '20260919'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,8 +44,20 @@ jobs:
             echo "VITE_BASE_PATH=/${repository}/" >> "$GITHUB_ENV"
           fi
 
-      - name: Build
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Verify root-path build
+        run: VITE_BASE_PATH=/ npm run build
+
+      - name: Build for GitHub Pages
         run: npm run build
+
+      - name: Unit, accessibility, privacy, and property tests
+        run: npm test -- --reporter=verbose
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

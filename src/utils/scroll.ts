@@ -1,25 +1,6 @@
 import { useEffect, useState } from "react";
 
-import type { NavigationItem, SectionId } from "../types/portfolio";
-
-export type EnabledNavigationItem = NavigationItem & { enabled: true };
-
-const DEFAULT_SECTION_ID: SectionId = "home";
-
-export const getEnabledNavigationItems = (
-  items: readonly NavigationItem[],
-  isSectionVisible: (sectionId: SectionId) => boolean = () => true,
-): EnabledNavigationItem[] =>
-  items.filter(
-    (item): item is EnabledNavigationItem =>
-      item.enabled && isSectionVisible(item.id),
-  );
-
-export const getEnabledSectionIds = (
-  items: readonly NavigationItem[],
-  isSectionVisible?: (sectionId: SectionId) => boolean,
-): SectionId[] =>
-  getEnabledNavigationItems(items, isSectionVisible).map((item) => item.id);
+import type { SectionId } from "../types/medical";
 
 export const scrollToSection = (sectionId: SectionId): void => {
   const section = document.getElementById(sectionId);
@@ -29,10 +10,11 @@ export const scrollToSection = (sectionId: SectionId): void => {
 
 export const useActiveSection = (
   sectionIds: readonly SectionId[],
+  fallbackSectionId: SectionId,
   offset = 150,
 ): SectionId => {
   const [activeSection, setActiveSection] = useState<SectionId>(
-    sectionIds[0] ?? DEFAULT_SECTION_ID,
+    sectionIds[0] ?? fallbackSectionId,
   );
 
   useEffect(() => {

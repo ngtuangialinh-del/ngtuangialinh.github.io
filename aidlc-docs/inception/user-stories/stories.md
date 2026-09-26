@@ -1,398 +1,362 @@
-# User Stories
+# Visual Storytelling and Evidence Library User Stories
 
-## Story Approach
+Approach: journey-based epics containing small feature stories, with dedicated cross-cutting quality stories. Every story uses Given/When/Then acceptance criteria and traces to the approved requirements in `visual-evidence-requirements.md`.
 
-- **Breakdown**: Hybrid user journey-based stories with feature-based support stories.
-- **Personas**: Student Template User, Portfolio Visitor, Template Maintainer.
-- **Acceptance Criteria Style**: Mixed. User workflow stories use Given/When/Then. Technical support stories use concise checklist criteria.
-- **Priority Order**: Student journey order: discover, customize, run locally, test, deploy, troubleshoot.
+Personas: P1 Academic Reviewer, P2 General Visitor, P3 Student Portfolio Owner, and P4 Repository Contributor and Privacy Reviewer. See `personas.md`.
 
-## Story Summary
+## Epic 1: Browse a Richer Visual Journey
 
-| ID | Title | Primary Persona | Priority |
-|---|---|---|---|
-| US-01 | Understand the template at first glance | Student Template User | High |
-| US-02 | Identify editable content files | Student Template User | High |
-| US-03 | Edit profile and social identity safely | Student Template User | High |
-| US-04 | Edit resume-style section content safely | Student Template User | High |
-| US-05 | Replace visual and certificate assets | Student Template User | High |
-| US-06 | Keep section navigation consistent | Template Maintainer | High |
-| US-07 | Navigate the portfolio on desktop and mobile | Portfolio Visitor | High |
-| US-08 | View projects and external proof links | Portfolio Visitor | Medium |
-| US-09 | Contact the portfolio owner | Portfolio Visitor | Medium |
-| US-10 | Run the project locally | Student Template User | High |
-| US-11 | Verify the portfolio before publishing | Student Template User | High |
-| US-12 | Deploy to GitHub Pages with minimal manual setup | Student Template User | High |
-| US-13 | Troubleshoot common deployment failures | Student Template User | High |
-| US-14 | Preserve accessibility and responsive usability | Portfolio Visitor | Medium |
-| US-15 | Maintain simple reusable code structure | Template Maintainer | High |
-| US-16 | Validate template data and app rendering with tests | Template Maintainer | High |
+### VS-1: Recognize a distinct visual rhythm in every section
 
-## US-01: Understand The Template At First Glance
+**As** P1 or P2, **I want** each section to use a purposeful composition suited to its content **so that** the portfolio does not feel like a stack of identical cards.
 
-**As a** Student Template User,  
-**I want** a beginner-friendly README that explains what this project is and how to start,  
-**so that** I can use the portfolio template without needing prior Vite or GitHub Pages experience.
+**Requirements**: FR-1
 
-### Acceptance Criteria
+**Acceptance criteria**:
 
-Given I open the repository README,  
-When I read the first sections,  
-Then I can understand the purpose of the template, required tools, and the first setup command.
+- Given the eight portfolio sections, when a visitor moves through the page, then the layouts use varied but coherent hierarchy, media placement, grouping, and whitespace.
+- Given a composition is viewed at approximately 390, 768, 1024, or 1440 pixels wide, when content reflows, then reading order and controls remain understandable without horizontal page scrolling.
 
-Given I am new to the project,  
-When I look for customization instructions,  
-Then the README points me to the files and guide sections I should edit first.
+### VS-2: Keep editorial imagery separate from evidence
 
-### INVEST Notes
+**As** P2, **I want** editorial visuals to remain outside documentary and evidence collections **so that** they support the layout without being presented as proof of a real event or achievement.
 
-- **Independent**: Can be completed as documentation work.
-- **Valuable**: Reduces beginner confusion.
-- **Testable**: README includes required setup, customization, and deployment sections.
+**Requirements**: FR-2, FR-9, NFR-2
 
-## US-02: Identify Editable Content Files
+**Acceptance criteria**:
 
-**As a** Student Template User,  
-**I want** portfolio content stored in clearly named data files,  
-**so that** I can update my information without editing layout-heavy JSX.
+- Given an editorial visual is presented, when a visitor views its section, then no visible AI-origin or generation-method caption is shown.
+- Given the Evidence Library or documentary gallery is displayed, when its media is reviewed, then no generated image is presented as a source document or real activity photograph.
 
-### Acceptance Criteria
+### VS-3: See cohesive section-level image anchors
 
-Given I want to change profile, education, experience, awards, projects, videos, skills, certificates, or contact details,  
-When I inspect the source tree,  
-Then I can find clearly named data/config files for those content areas.
+**As** P1 or P2, **I want** a small set of cohesive scientific/editorial images at meaningful points **so that** imagery supports orientation without overwhelming the evidence and written story.
 
-Given I edit a content field incorrectly,  
-When TypeScript checks run,  
-Then type errors help me identify the mistake.
+**Requirements**: FR-2
 
-### INVEST Notes
+**Acceptance criteria**:
 
-- **Independent**: Content data can be extracted without changing visual theme.
-- **Valuable**: Makes the template student-friendly.
-- **Testable**: Data files exist and components consume them.
+- Given the full portfolio, when its generated media is inventoried, then approximately five section-level visual anchors use a consistent editorial/scientific language.
+- Given any generated anchor, when reviewed, then it contains no identifiable person, embedded text, logo, watermark, unsupported claim, or fabricated documentary scene.
 
-## US-03: Edit Profile And Social Identity Safely
+### VS-4: Retain familiar navigation and preferences
 
-**As a** Student Template User,  
-**I want** profile identity, social links, email, location, and hero highlights in typed data,  
-**so that** I can personalize the first impression of my portfolio safely.
+**As** any returning visitor, **I want** existing navigation, hashes, themes, journal behavior, and reduced-motion preferences to keep working **so that** the richer presentation does not break familiar interactions.
 
-### Acceptance Criteria
+**Requirements**: FR-10
 
-Given I edit profile data,  
-When the app renders,  
-Then the hero, navbar, and contact sections display my updated information.
+**Acceptance criteria**:
 
-Given I update GitHub, LinkedIn, email, or other links,  
-When I open the portfolio,  
-Then the relevant links point to my updated destinations.
+- Given an existing section hash or navigation control, when it is activated, then the expected destination and active-state behavior remain available.
+- Given a visitor changes theme or requests reduced motion, when the interface updates, then the preference is respected without losing content or functionality.
 
-### INVEST Notes
+### VS-5: See the approved student portrait
 
-- **Independent**: Can be validated through rendered text and links.
-- **Valuable**: Hero/contact identity is the most visible student customization.
-- **Testable**: Tests or manual checks can assert required profile fields.
+**As** P1 or P2, **I want** a clear professional profile portrait in the introduction **so that** I can connect the portfolio's identity with the student it represents.
 
-## US-04: Edit Resume-Style Section Content Safely
+**Requirements**: FR-11, NFR-2, NFR-3
 
-**As a** Student Template User,  
-**I want** education, experience, awards, projects, skills, videos, and gallery content in typed arrays,  
-**so that** I can replace example content with my own achievements.
+**Acceptance criteria**:
 
-### Acceptance Criteria
+- Given the Introduction section, when it renders, then the explicitly supplied real portrait is shown with accurate alternative text and responsive cropping that keeps the face visible.
+- Given the public asset and build output, when inspected, then the identifier-like source filename and unnecessary embedded metadata are not published, and the optimized asset meets the media budget where practical.
 
-Given I update an education or experience entry,  
-When the site renders,  
-Then the corresponding section shows the updated card content.
+## Epic 2: Discover and Trust Portfolio Evidence
 
-Given I add a project with technologies and external links,  
-When the project section renders,  
-Then the project appears with readable tags and working actions.
+### EV-1: Find every relevant evidence group
 
-### INVEST Notes
+**As** P1, **I want** relevant academic, admission, service, and CV evidence represented in one library **so that** I can evaluate the portfolio without guessing what supports each claim.
 
-- **Independent**: Each section can consume exported data.
-- **Valuable**: Covers the core student resume content.
-- **Testable**: Data shape and section rendering can be verified.
+**Requirements**: FR-3, FR-5
 
-## US-05: Replace Visual And Certificate Assets
+**Acceptance criteria**:
 
-**As a** Student Template User,  
-**I want** clear instructions and data references for images, logos, gallery photos, and certificates,  
-**so that** I can replace example assets without breaking production builds.
+- Given the Evidence Library, when its items are reviewed, then it covers the CV, hematology acknowledgement, school record, admission material, IGCSE evidence, IELTS evidence, and community-project documentation wherever safe evidence or a verified summary is available.
+- Given a substantive CV-folder source is not publicly previewed, when its disposition is checked, then a recorded reason identifies it as a duplicate, private original, verified-summary source, or deferred item.
 
-### Acceptance Criteria
+### EV-2: Understand each item's publication state and provenance
 
-Given I replace an image or certificate asset,  
-When I run the build,  
-Then Vite resolves the asset successfully.
+**As** P1, **I want** evidence cards to explain what I am seeing **so that** I can distinguish sanitized evidence from summaries and private originals.
 
-Given I add a certificate PDF,  
-When the skills/certificates section renders,  
-Then the certificate metadata and preview/open action are available.
+**Requirements**: FR-5, FR-9
 
-### INVEST Notes
+**Acceptance criteria**:
 
-- **Independent**: Asset references can be documented and typed.
-- **Valuable**: Students often personalize visuals first.
-- **Testable**: Build and data validation confirm asset references.
+- Given an evidence card, when it renders, then it identifies the source type, publication state, page count where applicable, and whether a sanitized PDF or download is available.
+- Given an item is summary-only, when a visitor reads it, then the interface does not imply that a public source page is available.
 
-## US-06: Keep Section Navigation Consistent
+### EV-3: Preview meaningful document pages before opening them
 
-**As a** Template Maintainer,  
-**I want** section IDs, labels, and order defined once,  
-**so that** navigation, active section tracking, and rendered sections stay synchronized.
+**As** P1, **I want** representative page imagery and page counts on evidence cards **so that** I can decide which document to review in depth.
 
-### Acceptance Criteria
+**Requirements**: FR-5
 
-- Navigation config contains unique section IDs.
-- App section tracking uses the same section config as the navbar.
-- Desktop and mobile navigation render from the same config.
-- Adding or removing a section requires changing one shared source of truth.
+**Acceptance criteria**:
 
-### INVEST Notes
+- Given a multi-page public document, when its card renders, then it shows a representative sanitized preview and the total page count.
+- Given a document has no safe public page image, when its card renders, then it presents a verified summary state instead of a broken or misleading preview.
 
-- **Independent**: Shared navigation config can be implemented separately.
-- **Valuable**: Prevents template drift.
-- **Testable**: Tests can assert uniqueness and expected IDs.
+### EV-4: Trust authoritative results when sources differ
 
-## US-07: Navigate The Portfolio On Desktop And Mobile
+**As** P1, **I want** official results to take precedence over derived CV text **so that** academic information is not silently misrepresented.
 
-**As a** Portfolio Visitor,  
-**I want** clear desktop and mobile navigation,  
-**so that** I can move to the portfolio section I care about.
+**Requirements**: FR-5, NFR-2
 
-### Acceptance Criteria
+**Acceptance criteria**:
 
-Given I am using a desktop viewport,  
-When I click a navigation link,  
-Then the page scrolls smoothly to the matching section.
+- Given the CV and an official result contain different values, when the public content is prepared, then the official source is treated as authoritative.
+- Given a material discrepancy affects a displayed claim, when the evidence item is reviewed, then the resolution is documented rather than hidden.
 
-Given I am using a mobile viewport,  
-When I open the menu and select a section,  
-Then the drawer closes and the page scrolls to that section.
+### EV-5: Download the approved CV
 
-### INVEST Notes
+**As** P1, **I want** a clear control for the sanitized CV **so that** I can retain the approved document for later review.
 
-- **Independent**: Navigation behavior can be validated apart from content changes.
-- **Valuable**: Visitors need quick scanning.
-- **Testable**: Manual or component tests can verify section config and controls.
+**Requirements**: FR-6, FR-10
 
-## US-08: View Projects And External Proof Links
+**Acceptance criteria**:
 
-**As a** Portfolio Visitor,  
-**I want** project cards with clear external actions,  
-**so that** I can inspect the student's work and supporting evidence.
+- Given the approved CV evidence item or relevant call to action, when the download control is activated, then the sanitized CV opens or downloads with a meaningful filename.
+- Given a document is not approved for download, when its card renders, then no download control is offered.
 
-### Acceptance Criteria
+## Epic 3: Review Documents Page by Page
 
-Given I view the projects section,  
-When I inspect a project card,  
-Then I can see title, description, technologies, and external action buttons.
+### DR-1: Open the selected document in a focused review popup
 
-Given I use assistive technology,  
-When I focus an external project action,  
-Then the action has a meaningful accessible name.
+**As** P1, **I want** a document card to open an accessible review dialog **so that** I can inspect the evidence without losing my place on the portfolio.
 
-### INVEST Notes
+**Requirements**: FR-6, NFR-1
 
-- **Independent**: Project data and buttons can be checked directly.
-- **Valuable**: Projects are central portfolio evidence.
-- **Testable**: Link labels and URLs can be validated.
+**Acceptance criteria**:
 
-## US-09: Contact The Portfolio Owner
+- Given a reviewable evidence card, when its preview action is activated, then a titled modal opens with the first selected page and page thumbnails.
+- Given the modal closes, when focus returns, then it returns to the control that opened it.
 
-**As a** Portfolio Visitor,  
-**I want** a simple contact form and social links,  
-**so that** I can reach the student without a backend service.
+### DR-2: Move between every public page
 
-### Acceptance Criteria
+**As** P1, **I want** previous, next, and direct page-selection controls **so that** I can review a multi-page document efficiently.
 
-Given I enter name, email, subject, and message,  
-When I submit the contact form,  
-Then my email client opens with a prefilled mailto message.
+**Requirements**: FR-6
 
-Given I click a social/contact link,  
-When the link opens,  
-Then it points to the portfolio owner's configured profile or email address.
+**Acceptance criteria**:
 
-### INVEST Notes
+- Given a multi-page document is open, when previous, next, or a thumbnail is activated, then the selected full-page image and current-page position update together.
+- Given the first or last page is selected, when navigation controls render, then unavailable movement is clearly disabled or omitted.
 
-- **Independent**: Contact remains static-site friendly.
-- **Valuable**: Supports recruiter/collaborator outreach.
-- **Testable**: Mailto composition and link data can be checked.
+### DR-3: Operate the document popup entirely by keyboard
 
-## US-10: Run The Project Locally
+**As** P1 using a keyboard or assistive technology, **I want** predictable focus and dismissal behavior **so that** the popup never traps me or sends me to an unknown location.
 
-**As a** Student Template User,  
-**I want** setup instructions for local development,  
-**so that** I can preview my changes before publishing.
+**Requirements**: FR-6, NFR-1
 
-### Acceptance Criteria
+**Acceptance criteria**:
 
-Given I have Git, Node.js 20 or newer, npm, and the repository,  
-When I follow the setup guide,  
-Then I can install dependencies and start the Vite dev server.
+- Given the modal is open, when Tab or Shift+Tab is used, then focus remains within the modal and every interactive control is reachable with visible focus.
+- Given the modal is open, when Escape is pressed, then it closes and focus returns to its trigger.
 
-Given the dev server is running,  
-When I edit content data,  
-Then I can preview my changes locally.
+### DR-4: Use a page-image fallback and optional PDF controls
 
-### INVEST Notes
+**As** P1, **I want** readable page images even when inline PDF support is unavailable **so that** evidence review does not depend on a browser plug-in.
 
-- **Independent**: Local setup guide can be validated with commands.
-- **Valuable**: Students need fast feedback before deploy.
-- **Testable**: `npm install` and `npm run dev` instructions are present.
+**Requirements**: FR-6
 
-## US-11: Verify The Portfolio Before Publishing
+**Acceptance criteria**:
 
-**As a** Student Template User,  
-**I want** clear build, lint, and test commands,  
-**so that** I can catch mistakes before deploying to GitHub Pages.
+- Given inline PDF rendering is unavailable or blocked, when the popup opens, then sanitized page images and navigation remain usable.
+- Given an approved sanitized PDF exists, when the popup renders, then an optional full-PDF view or download is available without replacing the page-image fallback.
 
-### Acceptance Criteria
+### DR-5: Review documents comfortably on mobile and slow connections
 
-Given I finish customizing content,  
-When I run the documented verification commands,  
-Then lint, tests, and production build can be run locally.
+**As** P2 on a phone, **I want** page controls and readable previews without loading every full-resolution page initially **so that** document review remains practical.
 
-Given a required data field is missing or invalid,  
-When tests or type checks run,  
-Then the issue is caught before deployment.
+**Requirements**: FR-6, NFR-3
 
-### INVEST Notes
+**Acceptance criteria**:
 
-- **Independent**: Verification scripts are distinct from deployment.
-- **Valuable**: Prevents broken student portfolios.
-- **Testable**: Scripts exist and run.
+- Given a narrow viewport, when the popup opens, then the selected page, thumbnails, and close/navigation controls remain reachable without horizontal page overflow.
+- Given a multi-page document is available, when the main page first renders, then non-selected full-resolution pages are not all eagerly loaded.
 
-## US-12: Deploy To GitHub Pages With Minimal Manual Setup
+## Epic 4: Explore Documentary Gallery Media
 
-**As a** Student Template User,  
-**I want** GitHub Pages deployment to use repository metadata where possible,  
-**so that** I do not have to manually understand Vite base paths before publishing.
+### GA-1: Browse enough distinct and relevant photographs
 
-### Acceptance Criteria
+**As** P2, **I want** a gallery that retains the approved photographs and adds only useful, low-risk context **so that** the portfolio feels visual without becoming repetitive or invasive.
 
-Given I push to the main branch,  
-When GitHub Actions runs,  
-Then it builds and deploys the site to GitHub Pages.
+**Requirements**: FR-7
 
-Given my repository is not named `username.github.io`,  
-When deployment builds,  
-Then the Vite base path is configured for the repository page path where possible.
+**Acceptance criteria**:
 
-Given my repository is named `username.github.io`,  
-When deployment builds,  
-Then the site can deploy at the root path.
+- Given the Gallery, when its public items are inventoried, then all nine approved images remain unless a documented quality or privacy issue requires removal.
+- Given an additional source photograph is considered, when publication review occurs, then it is added only if it is distinct, relevant, low-risk, and not a bedside close-up, weak screenshot, or duplicate.
 
-### INVEST Notes
+### GA-2: Understand the context of every gallery image
 
-- **Independent**: Deployment config can be updated and documented.
-- **Valuable**: GitHub Pages base paths are a common student blocker.
-- **Testable**: Workflow and docs can be inspected; build can run locally with base path settings.
+**As** P2, **I want** captions, dates or periods, and useful alternative text **so that** each image contributes to a real story rather than acting as decoration.
 
-## US-13: Troubleshoot Common Deployment Failures
+**Requirements**: FR-7
 
-**As a** Student Template User,  
-**I want** troubleshooting guidance for 404s, missing assets, wrong base paths, failed builds, and Node version issues,  
-**so that** I can recover when deployment does not work the first time.
+**Acceptance criteria**:
 
-### Acceptance Criteria
+- Given a documentary gallery item, when it renders, then it has a concise caption, mapped initiative or story, contextual date or period when known, and useful alternative text.
+- Given an image is decorative rather than documentary, when rendered, then it is not placed in the evidence or documentary gallery zones.
 
-Given my deployed page returns 404,  
-When I read the deployment guide,  
-Then I can check Pages source, workflow status, repository name, and base path.
+### GA-3: Navigate the gallery lightbox without closing each image
 
-Given assets are missing after deployment,  
-When I read troubleshooting guidance,  
-Then I can identify base path or asset reference issues.
+**As** P2, **I want** previous and next controls with position feedback **so that** I can review the gallery as a sequence.
 
-### INVEST Notes
+**Requirements**: FR-7, NFR-1
 
-- **Independent**: Troubleshooting docs can be added without code changes.
-- **Valuable**: Reduces support friction.
-- **Testable**: Guide includes named failure modes and remedies.
+**Acceptance criteria**:
 
-## US-14: Preserve Accessibility And Responsive Usability
+- Given a gallery item is open, when previous or next is activated by pointer or keyboard, then the adjacent image, caption, and position indicator update.
+- Given the lightbox closes by Escape or its close control, when dismissal completes, then focus returns to the triggering gallery item.
 
-**As a** Portfolio Visitor,  
-**I want** the portfolio to remain readable and navigable on common devices and with accessible labels,  
-**so that** I can review the student's work comfortably.
+### GA-4: Exclude unsafe images and videos
 
-### Acceptance Criteria
+**As** P3 or P4, **I want** consent-sensitive media and both videos kept private **so that** visual expansion does not weaken dignity, privacy, captioning, or performance boundaries.
 
-- External icon-only links have accessible labels.
-- Interactive project, gallery, certificate, menu, and contact controls have meaningful labels.
-- Existing responsive layout behavior is preserved.
-- The refactor does not remove image alt text.
+**Requirements**: FR-7, FR-8, NFR-2
 
-### INVEST Notes
+**Acceptance criteria**:
 
-- **Independent**: Accessibility improvements can be validated by inspection and smoke tests.
-- **Valuable**: Improves visitor trust and usability.
-- **Testable**: Labels and alt text can be checked.
+- Given source images show patients, minors, identifiers, or intimate bedside contexts, when reviewed, then they are excluded unless the approved low-risk criteria are clearly satisfied.
+- Given the public source tree and production build, when inspected, then neither source MP4 is imported, linked, or copied.
 
-## US-15: Maintain Simple Reusable Code Structure
+## Epic 5: Govern Sources and Public Derivatives
 
-**As a** Template Maintainer,  
-**I want** reusable helpers and components for repeated section patterns,  
-**so that** future template updates stay small and understandable.
+### PB-1: Record a disposition for every substantive source
 
-### Acceptance Criteria
+**As** P4, **I want** a source-to-public disposition matrix **so that** no CV-folder file is silently omitted or published without review.
 
-- Repeated scroll helper logic is replaced by a shared utility or hook.
-- Reusable components are introduced only where they reduce meaningful duplication.
-- Components remain easy for students to trace from data to UI.
-- Application code remains outside `aidlc-docs/`.
+**Requirements**: FR-3, NFR-2
 
-### INVEST Notes
+**Acceptance criteria**:
 
-- **Independent**: Helper and component refactors can be implemented incrementally.
-- **Valuable**: Improves long-term maintainability.
-- **Testable**: Repeated helper code is reduced and imports use shared utilities.
+- Given the 30 substantive CV-folder files, when the matrix is complete, then each has exactly one disposition and a concise rationale.
+- Given a public derivative or summary exists, when its matrix row is reviewed, then it links the derivative to its private source without exposing a raw public URL.
 
-## US-16: Validate Template Data And App Rendering With Tests
+### PB-2: Publish only safely sanitized document derivatives
 
-**As a** Template Maintainer,  
-**I want** lightweight automated tests for rendering, navigation config, and key template data,  
-**so that** future changes do not silently break the template.
+**As** P3, **I want** document previews and PDFs stripped of unnecessary sensitive data **so that** evidence can be reviewed without exposing identity, contact, financial, or third-party details.
 
-### Acceptance Criteria
+**Requirements**: FR-4, NFR-2
 
-- A test command is available in `package.json`.
-- Tests verify the app renders without crashing.
-- Tests verify navigation IDs are unique and include required sections.
-- Tests verify required profile/template data fields are present.
-- Tests do not require external network calls or browser automation.
+**Acceptance criteria**:
 
-### INVEST Notes
+- Given a document derivative is public, when reviewed, then prohibited identifiers, portraits, addresses, phone numbers, financial data, QR codes, action links, and unnecessary third-party data are absent or irreversibly obscured.
+- Given safe redaction would make a document misleading or unusable, when publication treatment is selected, then a verified summary is used instead.
 
-- **Independent**: Test setup can be added after or alongside refactor.
-- **Valuable**: Provides guardrails for students and maintainers.
-- **Testable**: Test command passes locally and in build/test instructions.
+### PB-3: Preserve generated-asset provenance
 
-## Requirements Coverage
+**As** P4, **I want** final image paths, generation prompts, and disclosure intent recorded **so that** the editorial assets are maintainable and auditable.
 
-| Requirement Area | Covered By |
-|---|---|
-| Preserve sections and example content | US-03, US-04, US-05, US-07 |
-| Extract editable content | US-02, US-03, US-04, US-05 |
-| Shared types | US-02, US-03, US-04, US-16 |
-| Centralized navigation | US-06, US-07, US-16 |
-| Shared scroll behavior | US-07, US-15 |
-| Reusable UI structure | US-15 |
-| Accessibility labels | US-08, US-09, US-14 |
-| GitHub Pages base path | US-12, US-13 |
-| Beginner setup guide | US-01, US-10, US-13 |
-| Student README cleanup | US-01 |
-| Lightweight tests | US-11, US-16 |
-| Static hosting model | US-09, US-12 |
+**Requirements**: FR-2, NFR-4
 
-## Extension Rule Compliance
+**Acceptance criteria**:
 
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+- Given a generated image is committed to the project, when implementation documentation is reviewed, then its final path, prompt, purpose, and disclosure treatment are recorded.
+- Given a generated image is exported, when its optimized asset is reviewed, then it contains no unintended text, logo, watermark, or recognizable person.
+
+### PB-4: Keep content zones semantically separate
+
+**As** P3, **I want** illustrations, documentary photographs, document pages, and summaries presented in their correct zones **so that** visitors understand the evidentiary weight of each item.
+
+**Requirements**: FR-9
+
+**Acceptance criteria**:
+
+- Given Community Care or Gallery media, when displayed, then approved photographs are described as real contextual imagery rather than credentials.
+- Given an editorial illustration, evidence page, or verified summary, when displayed, then its type is clear from semantics and visible context rather than color alone.
+
+### PB-5: Maintain evidence and media through typed reusable structures
+
+**As** P4, **I want** shared typed models and modal components **so that** future additions do not duplicate behavior or bypass publication metadata.
+
+**Requirements**: FR-5, NFR-4
+
+**Acceptance criteria**:
+
+- Given evidence and gallery data, when a new item is added, then required provenance, status, pages, redaction, captions, and download properties are enforced by typed structures where applicable.
+- Given document and gallery overlays are maintained, when their behavior is inspected, then shared accessibility and navigation logic is reused rather than independently reimplemented in sections.
+
+## Epic 6: Cross-Cutting Quality
+
+### QL-1: Use the complete experience accessibly
+
+**As** P1 or P2 with access needs, **I want** semantic structure, contrast, alternative text, named controls, focus management, and reduced motion **so that** every major journey remains available.
+
+**Requirements**: NFR-1
+
+**Acceptance criteria**:
+
+- Given either theme and a supported viewport, when automated and manual checks are performed, then headings, landmarks, contrast, alternative text, visible focus, accessible names, and selected states meet the approved accessibility expectations.
+- Given a popup opens and closes, when keyboard-only operation is used, then focus containment, Escape dismissal, background isolation, and restoration work consistently.
+
+### QL-2: Prevent private or misleading content from shipping
+
+**As** P3 or P4, **I want** publication-boundary tests **so that** raw source paths, prohibited identifiers, editorial/documentary mixing, and misleading evidence states cannot enter the public build unnoticed.
+
+**Requirements**: NFR-2, NFR-5
+
+**Acceptance criteria**:
+
+- Given source, fixtures, public assets, and build output, when privacy checks run, then prohibited personal-data patterns and raw CV-source public URLs are not found.
+- Given editorial and documentary items render, when separation tests run, then editorial media stays out of evidence/gallery collections and no visible AI-origin label is emitted.
+
+### QL-3: Keep imagery and document review performant
+
+**As** P2 on a constrained connection, **I want** optimized and lazy-loaded media **so that** the portfolio remains responsive despite richer visuals.
+
+**Requirements**: NFR-3
+
+**Acceptance criteria**:
+
+- Given a production build, when bundles and public media are measured, then JavaScript remains within the approximate 300 KB gzip budget and raster assets meet the approximate 300 KB target unless an exception is documented.
+- Given below-the-fold imagery and unselected document pages, when the initial page loads, then they are lazy-loaded or deferred rather than all fetched at full resolution.
+
+### QL-4: Verify retained and new journeys before release
+
+**As** P4, **I want** focused component, integration, accessibility, privacy, lint, type, and production-build checks **so that** the enhancement can be released without regressing the established portfolio.
+
+**Requirements**: FR-10, NFR-5
+
+**Acceptance criteria**:
+
+- Given the completed implementation, when the full verification suite runs, then existing tests and new document-popup, lightbox, media-separation, evidence-state, privacy, and accessibility tests pass.
+- Given root and project-base production builds, when both are generated and inspected, then navigation, themes, CV download, client-only recipient-free email drafting, responsive behavior, and reduced-motion behavior remain functional.
+
+## Requirement Traceability
+
+| Requirement | Stories                            |
+| ----------- | ---------------------------------- |
+| FR-1        | VS-1                               |
+| FR-2        | VS-2, VS-3, PB-3                   |
+| FR-3        | EV-1, PB-1                         |
+| FR-4        | PB-2                               |
+| FR-5        | EV-1, EV-2, EV-3, EV-4, PB-5       |
+| FR-6        | EV-5, DR-1, DR-2, DR-3, DR-4, DR-5 |
+| FR-7        | GA-1, GA-2, GA-3, GA-4             |
+| FR-8        | GA-4                               |
+| FR-9        | VS-2, EV-2, PB-4                   |
+| FR-10       | VS-4, EV-5, QL-4                   |
+| FR-11       | VS-5                               |
+| NFR-1       | DR-1, DR-3, GA-3, QL-1             |
+| NFR-2       | VS-2, EV-4, GA-4, PB-1, PB-2, QL-2 |
+| NFR-3       | DR-5, QL-3                         |
+| NFR-4       | PB-3, PB-5                         |
+| NFR-5       | QL-2, QL-4                         |
+
+## INVEST Review
+
+| Check       | Result                                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| Independent | Stories describe separable visitor or contributor outcomes; cross-cutting stories hold shared quality gates.        |
+| Negotiable  | Acceptance criteria specify outcomes and constraints without prescribing component internals or scheduling.         |
+| Valuable    | Every story serves a named persona and maps to an approved requirement.                                             |
+| Estimable   | Each story has a bounded interaction, content-governance outcome, or verification result.                           |
+| Small       | Stories are split by section behavior, evidence behavior, popup behavior, gallery behavior, or one quality concern. |
+| Testable    | Every story includes observable Given/When/Then acceptance criteria.                                                |
+
+## Extension Status
+
+- Security Baseline: disabled by owner decision; scoped privacy requirements remain part of these stories.
+- Property-Based Testing: disabled by owner decision; verification uses focused example-based tests.

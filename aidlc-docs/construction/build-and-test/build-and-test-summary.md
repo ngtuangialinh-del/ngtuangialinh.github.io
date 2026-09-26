@@ -1,65 +1,74 @@
 # Build and Test Summary
 
-## Outcome
-
-The template-first beginner README and mode-specific Business Direct Contact color update pass all automated quality gates. No dependency, route, asset, data model, or deployment workflow changed.
-
 ## Build Status
 
 - **Build tool**: TypeScript 5.9 and Vite 7 through `npm run build`
-- **Status**: Success
-- **Build time**: Approximately 6.00 seconds on the verification machine
-- **Artifacts**: Static entry point, JavaScript, CSS, images, resume, and certificates under `dist/`
-- **Preview**: HTTP 200 for `/` on the local production preview
+- **Root build**: Success
+- **Project-base build**: Success with `VITE_BASE_PATH=/portfolio-test/`
+- **Artifacts**: 18 static files under `dist/`, approximately 3.2MB
+- **Known warning**: Vite reports the raw JavaScript chunk above 500KB; gzip size remains within the approved 300KB budget
 
-## Verified Results
+## Test Execution Summary
 
-| Check                           | Result                                         |
-| ------------------------------- | ---------------------------------------------- |
-| Focused README/contact tests    | 18 tests across 2 files passed                 |
-| Complete Vitest suite           | 88 tests across 9 files passed                 |
-| Unit-oriented test group        | 49 tests across 6 files passed                 |
-| Rendered integration group      | 39 tests across 3 files passed                 |
-| ESLint                          | Passed                                         |
-| TypeScript and Vite build       | Passed                                         |
-| Local production preview        | HTTP 200                                       |
-| Main JavaScript                 | 975.76 kB minified; 296.49 kB gzip             |
-| Main CSS                        | 34.61 kB minified; 7.43 kB gzip                |
-| Complete `dist/`                | Approximately 9.4 MB including images and PDFs |
-| Prettier and `git diff --check` | Passed                                         |
-| Non-audit stale-reference scan  | Passed with no matches                         |
+| Category                  | Result                                                                                      | Status |
+| ------------------------- | ------------------------------------------------------------------------------------------- | ------ |
+| Type checking             | `npm run typecheck`                                                                         | Pass   |
+| Lint                      | `npm run lint`                                                                              | Pass   |
+| Automated tests           | 16 files, 46 tests, 0 failures                                                              | Pass   |
+| Focused integration group | 11 files, 28 tests, 0 failures                                                              | Pass   |
+| Property-based tests      | Navigation hash codec and score-display properties                                          | Pass   |
+| Accessibility             | Axe component checks plus keyboard/focus behavior                                           | Pass   |
+| Privacy/security          | Restricted content, PDF allowlist/active markers, media metadata and budgets                | Pass   |
+| Integration               | Eight-section shell, content/data, gallery, document preview/download, theme and base paths | Pass   |
+| Contact presentation      | Three typed placeholder cards, disclosure, no live links, and axe validation                | Pass   |
+| Responsive implementation | One-column base layout, three-column medium layout, and overflow-safe values                | Pass   |
+| Prior visual baseline     | 390px and 1440px light/dark portfolio, popup, and card inspection                           | Pass   |
+| Contract tests            | No API or service contract                                                                  | N/A    |
+| Load/stress tests         | No runtime server                                                                           | N/A    |
+| Penetration tests         | No authentication or network service boundary                                               | N/A    |
 
-The existing Vite warning for a JavaScript chunk above 500 kB remains non-blocking.
+Coverage reporting is not configured; no coverage percentage is inferred.
 
-## Test Category Status
+The focused integration run initially exposed a timing-sensitive assertion in the animated mobile drawer cleanup. The test now uses an explicit three-second bound for portal removal and trigger-focus restoration; both the focused group and complete suite pass after the correction.
 
-| Category             | Status | Rationale                                                           |
-| -------------------- | ------ | ------------------------------------------------------------------- |
-| Unit                 | Pass   | 49 deterministic tests passed                                       |
-| Integration          | Pass   | 39 rendered component and application tests passed                  |
-| Static performance   | Pass   | Build output recorded and local preview returned HTTP 200           |
-| End-to-end browser   | N/A    | No dedicated browser automation is configured                       |
-| Contract             | N/A    | The static application has no service or API contract               |
-| Load and stress      | N/A    | The application has no runtime server                               |
-| Security penetration | N/A    | No new authentication, authorization, or network boundary was added |
+## Verified Performance Baseline
 
-## Scope Validation
+| Measure                         | Result                         |
+| ------------------------------- | ------------------------------ |
+| Main JavaScript                 | 684.09KB raw / 196.33KB gzip   |
+| Main CSS                        | 13.92KB raw / 4.08KB gzip      |
+| Largest public image            | 252,489 bytes                  |
+| CV PDF                          | 86.70KB                        |
+| Public-safe acknowledgement PDF | 332.21KB                       |
+| Complete `dist/`                | Approximately 3.2MB / 18 files |
 
-- `README.md` now follows an ordered account-to-live-site journey with template creation, collaborator access, Pages, local editing, safe push, and deployment verification.
-- The light Business contact card uses the same primary pair as the Send message button; dark mode uses a deep surface, near-white text, and accessible blue control highlights.
-- Engineering presentation, content, assets, routes, and GitHub Pages workflow remain unchanged.
+## Validated User Workflows
 
-## Reproduce
+- Navigate among all eight sections with desktop and mobile controls.
+- Open gallery media in an accessible lightbox.
+- See first-page PDF previews directly in Evidence cards.
+- Open either public PDF in a focus-managed popup and download it independently.
+- Read verified summaries for sensitive records without exposing their raw files.
+- Read clearly labeled example email, LinkedIn, and location values without triggering an unverified outbound action.
+- Use the site without horizontal overflow at an exact 390px viewport.
+- Load public assets correctly at `/` and below `/portfolio-test/`.
 
-```bash
-npm ci
-npm test
-npm run lint
-npm run build
-```
+## Generated Instructions
+
+- `build-instructions.md`
+- `unit-test-instructions.md`
+- `integration-test-instructions.md`
+- `performance-test-instructions.md`
+- `security-test-instructions.md`
+- `build-and-test-summary.md`
 
 ## Overall Status
 
 - **Build**: Success
 - **All applicable tests**: Pass
+- **Blocking findings**: None
 - **Ready for Operations review**: Yes
+
+## Placeholder Contact Change Note
+
+This Build and Test run was completed on 2026-09-20 after the contact enhancement. Type checking, lint, all 46 automated tests, root build, and `/portfolio-test/` project-base build pass. Automated coverage confirms the contact content, disclosure, no-link boundary, and accessibility. Contact-specific desktop/mobile screenshot capture was attempted but the local headless Chrome environment returned blank frames, so the updated manual viewport checklist remains the authoritative final visual-review procedure.

@@ -1,83 +1,23 @@
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react'
-import type { ReactNode } from 'react'
-import { HiArrowDown } from 'react-icons/hi'
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import type { ReactNode } from "react";
 
-import type { SectionId } from '../../types/portfolio'
-import { scrollToSection } from '../../utils/scroll'
+import type { ContentSectionId } from "../../types/medical";
 
-type SectionShellProps = {
-  id: SectionId
-  eyebrow: string
-  title: string
-  intro: string
-  nextSectionId?: SectionId
-  children: ReactNode
-}
+type SectionShellProps = { id: ContentSectionId; eyebrow: string; title: string; intro: string; nextSectionId?: ContentSectionId; backgroundClassName?: string; maxW?: string; onDark?: boolean; children: ReactNode };
 
-function SectionShell({ id, eyebrow, title, intro, nextSectionId, children }: SectionShellProps) {
+function SectionShell({ id, eyebrow, title, intro, backgroundClassName = "", maxW = "1120px", children }: SectionShellProps) {
   return (
-    <Box
-      id={id}
-      minH="100vh"
-      w="100%"
-      position="relative"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      py={{ base: 16, md: 24 }}
-      className="engineering-grid"
-      data-testid={`${id}-section`}
-    >
-      <Container maxW="1200px" px={{ base: 4, md: 8 }}>
-        <VStack align="stretch" gap={4} mb={12} className="reveal-up">
-          <Text className="code-font" color="var(--text-300)" letterSpacing="widest" fontSize="xs">
-            {eyebrow}
-          </Text>
-          <Heading
-            as="h2"
-            tabIndex={-1}
-            data-chapter-heading
-            fontSize={{ base: '3xl', md: '5xl' }}
-            color="var(--text-100)"
-          >
-            {title}
-          </Heading>
-          <Text maxW="760px" color="var(--text-300)" lineHeight="1.8">
-            {intro}
-          </Text>
+    <Box id={id} as="section" tabIndex={-1} aria-labelledby={`${id}-heading`} w="100%" py={{ base: 20, md: 28 }} className={`section-surface ${backgroundClassName}`.trim()} data-testid={`${id}-section`}>
+      <Container maxW={maxW} px={{ base: 4, md: 8 }}>
+        <VStack align="stretch" gap={3} mb={{ base: 10, md: 14 }} maxW="780px" className="reveal-up">
+          <Text as="span" className="field-code" color="var(--brand-200)">{eyebrow}</Text>
+          <Heading id={`${id}-heading`} as="h2" className="editorial-font" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.08" letterSpacing="-.025em" color="var(--text-strong)">{title}</Heading>
+          <Text color="var(--text-muted)" fontSize={{ base: "md", md: "lg" }} lineHeight="1.75">{intro}</Text>
         </VStack>
-
         {children}
       </Container>
-
-      {nextSectionId ? (
-        <Box
-          role="button"
-          tabIndex={0}
-          position="absolute"
-          bottom={6}
-          left="50%"
-          transform="translateX(-50%)"
-          color="var(--text-300)"
-          _hover={{ color: 'var(--text-100)' }}
-          cursor="pointer"
-          onClick={() => scrollToSection(nextSectionId)}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault()
-              scrollToSection(nextSectionId)
-            }
-          }}
-          className="pulse-line"
-          display={{ base: 'none', md: 'block' }}
-          aria-label={`Scroll to ${nextSectionId} section`}
-          data-testid={`${id}-next-section`}
-        >
-          <HiArrowDown size={28} />
-        </Box>
-      ) : null}
     </Box>
-  )
+  );
 }
 
-export default SectionShell
+export default SectionShell;

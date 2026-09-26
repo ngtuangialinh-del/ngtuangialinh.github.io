@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Raw CV evidence source collection — never commit (MSP-FR-11)
+src/assets/CV/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

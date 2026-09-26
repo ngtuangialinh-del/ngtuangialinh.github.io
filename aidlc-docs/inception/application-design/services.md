@@ -1,99 +1,46 @@
-# Services
+# Services — Medical Student Portfolio
 
-This static frontend does not need backend services. For Application Design, "services" are lightweight frontend orchestration modules and support utilities.
+## Content Data Modules (per Application Design Plan Q4)
 
-## Portfolio Data Service
+Split by domain, mirroring the existing `src/data/` convention, for easy independent editing by the student owner (P3):
 
-- **Module**: `src/data/portfolio.ts`
-- **Purpose**: Aggregate focused data modules into one portfolio data object.
+- `src/data/identity.ts` — name, status wording, value statement, hero CTAs.
+- `src/data/academics.ts` — IGCSE/IELTS/Grade 12/admission-score data plus journey milestones consumed by both Academics and Medical Journey.
+- `src/data/communityCare.ts` — the three initiative stories.
+- `src/data/gallery.ts` — curated image metadata (references curated public asset files, never raw CV paths).
+- `src/data/contact.ts` — the future-looking statement and optional future contact placeholder.
+- `src/data/navigation.ts` (adapted from existing) — the six ordered `NavDestination` entries.
+
+These modules are pure data with no orchestration logic; components import them directly (no repository/DAO layer needed for a static site).
+
+## Navigation / Hash-Routing Service (reused, per Application Design Plan Q5)
+
+- **Basis**: Adapt the existing `usePortfolioLayout` hook and related hash utilities rather than redesigning routing.
 - **Responsibilities**:
-  - Export a complete typed portfolio object.
-  - Keep section data discoverable for students.
-  - Provide the single source of truth for app/section content.
-- **Interactions**:
-  - Consumed by `App`, `Navbar`, section components, and tests.
+  - Track the current hash and derive `activeSectionId` for `Navigation`/`MobileNav`.
+  - Resolve direct-link hashes to the six approved sections on load (B6).
+  - Fall back predictably to Introduction for unknown/malformed hashes (MSP-FR-17).
+  - Provide a navigation intent handler used by both desktop and mobile nav to update the hash and scroll/focus the target section.
+- **Scope note**: Functional Design specifies the exact fallback and focus-management logic and validates the PBT candidates (hash round-trip, navigation-to-section invariant, unknown-route fallback invariant) under MSP-NFR-09.
 
-## Navigation Service
+## Color Mode Service (reused, unmodified)
 
-- **Module**: `src/data/navigation.ts` and `src/utils/scroll.ts`
-- **Purpose**: Centralize section IDs, labels, order, and scroll behavior.
+- Existing `color-mode.tsx`/`provider.tsx` mechanism continues to own light/dark toggling, persistence, and no-flash-on-load behavior (G1–G3). No new service required; Application Design confirms no redesign is needed.
+
+## Gallery Lightbox Interaction (owned by the `Lightbox` shared primitive)
+
+- Not a data/orchestration service — a self-contained UI interaction owned by the `Lightbox` component itself (see `components.md`). Documented here only to clarify it does not require a separate service layer.
+
+## Content Validation Utility (per Application Design Plan Q6)
+
+- **Purpose**: Give MSP-FR-11/MSP-NFR-02's privacy safeguards (K1–K3) and MSP-NFR-10's "focused privacy regression tests" a concrete implementation home.
+- **Form**: A lightweight test-time utility (not a runtime service) that scans the public content data modules (`src/data/*.ts`) and the production `dist/` output for restricted-value patterns (e.g., known sensitive filename fragments, the two excluded video filenames, raw CV path references).
 - **Responsibilities**:
-  - Define navigation items and section order.
-  - Smooth-scroll to section IDs.
-  - Support active-section tracking.
-- **Interactions**:
-  - Consumed by `App`, `Navbar`, `SectionShell`, and navigation tests.
+  - Assert no reference to `src/assets/CV/` raw filenames appears in `src/data/*.ts` or built output.
+  - Assert the two excluded MP4 filenames are absent from source and `dist/`.
+  - Assert gallery image `src` values point only into the curated public asset directory.
+- **Consumer**: Invoked from the Vitest suite (MSP-NFR-08/MSP-NFR-10), not from application runtime code.
 
-## Contact Service
+## Orchestration Summary
 
-- **Module**: `src/utils/contact.ts`
-- **Purpose**: Convert contact form input into an encoded mailto URL.
-- **Responsibilities**:
-  - Encode subject and body.
-  - Use configured owner email.
-  - Keep contact behavior static-hosting friendly.
-- **Interactions**:
-  - Consumed by `Contact`.
-
-## Media Service
-
-- **Module**: `src/utils/media.ts`
-- **Purpose**: Build media URLs and support asset metadata.
-- **Responsibilities**:
-  - Build YouTube embed/watch URLs.
-  - Keep certificate and gallery data Vite-compatible through imports.
-- **Interactions**:
-  - Consumed by `Videos`, `Skills`, and data tests.
-
-## Deployment Configuration Service
-
-- **Modules**: `vite.config.ts`, `.github/workflows/deploy.yml`
-- **Purpose**: Configure the Vite base path for local development and GitHub Pages deployment.
-- **Responsibilities**:
-  - Use `/` as local fallback.
-  - Pass repository-derived `VITE_BASE_PATH` during GitHub Actions deployment.
-  - Keep deployment instructions aligned with actual workflow behavior.
-- **Interactions**:
-  - Used by Vite build and GitHub Actions.
-
-## Test Service
-
-- **Modules**: `vitest.config.ts` or Vite test config, `src/test/*` or `src/**/*.test.tsx`
-- **Purpose**: Provide lightweight template verification.
-- **Responsibilities**:
-  - Smoke render the app.
-  - Validate navigation section IDs.
-  - Validate required profile/template data.
-  - Avoid external network calls and browser automation.
-- **Interactions**:
-  - Uses React Testing Library, Vitest, and static data modules.
-
-## Documentation Service
-
-- **Modules**: `README.md`, `DEPLOYMENT.md`
-- **Purpose**: Guide students through setup, customization, local verification, deployment, and troubleshooting.
-- **Responsibilities**:
-  - Explain prerequisites and commands.
-  - Explain the data files students edit.
-  - Explain asset replacement.
-  - Explain GitHub Pages settings and workflow behavior.
-  - Explain common deployment failures.
-- **Interactions**:
-  - Aligns with data modules, build scripts, and GitHub Actions workflow.
-
-## Orchestration Pattern
-
-1. Data modules define template content.
-2. The app shell renders section components from shared section/navigation config.
-3. Section components render data through Chakra UI and shared UI helpers.
-4. Utilities handle repeated browser behavior and URL generation.
-5. Tests validate data/config/app smoke behavior.
-6. Documentation teaches students how to use the same structure.
-7. GitHub Actions injects deployment base path and publishes `dist/`.
-
-## Extension Rule Compliance
-
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+There is no server-side orchestration layer (static site, MSP-NFR-06/MSP-NFR-07). "Services" in this application are: (1) typed content data modules, (2) the reused navigation/hash-routing hook, (3) the reused color-mode provider, and (4) a test-time content-validation utility. `MedicalShell` is the sole consumer that wires content modules and the navigation service into the composed section components.

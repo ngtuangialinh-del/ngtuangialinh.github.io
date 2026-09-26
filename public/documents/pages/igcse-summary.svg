@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#f2f5fb"/><rect x="72" y="72" width="1056" height="1456" rx="36" fill="#fff" stroke="#d4dceb" stroke-width="3"/><rect x="72" y="72" width="1056" height="22" rx="11" fill="#315a9d"/>
+  <text x="132" y="180" fill="#315a9d" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">VERIFIED QUALIFICATION SUMMARY</text>
+  <text x="132" y="286" fill="#1b2f52" font-family="Georgia, serif" font-size="64" font-weight="700">Cambridge IGCSE</text><text x="132" y="354" fill="#62708a" font-family="Arial, sans-serif" font-size="28">June 2024 · Grade and percentage uniform mark</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="132" y="446" width="936" height="130" rx="22" fill="#e8eef8"/><text x="176" y="522" fill="#1b2f52" font-size="30">Mathematics</text><text x="850" y="522" fill="#315a9d" font-size="44" font-weight="700">A*</text><text x="1015" y="522" text-anchor="end" fill="#315a9d" font-size="34">92%</text>
+    <rect x="132" y="596" width="936" height="130" rx="22" fill="#f4f6fa"/><text x="176" y="672" fill="#1b2f52" font-size="30">English as a Second Language</text><text x="850" y="672" fill="#315a9d" font-size="44" font-weight="700">A</text><text x="1015" y="672" text-anchor="end" fill="#315a9d" font-size="34">88%</text>
+    <rect x="132" y="746" width="936" height="130" rx="22" fill="#e8eef8"/><text x="176" y="822" fill="#1b2f52" font-size="30">Physics</text><text x="850" y="822" fill="#315a9d" font-size="44" font-weight="700">A</text><text x="1015" y="822" text-anchor="end" fill="#315a9d" font-size="34">88%</text>
+    <rect x="132" y="896" width="936" height="130" rx="22" fill="#f4f6fa"/><text x="176" y="972" fill="#1b2f52" font-size="30">Biology</text><text x="850" y="972" fill="#315a9d" font-size="44" font-weight="700">A</text><text x="1015" y="972" text-anchor="end" fill="#315a9d" font-size="34">83%</text>
+    <rect x="132" y="1046" width="936" height="130" rx="22" fill="#e8eef8"/><text x="176" y="1122" fill="#1b2f52" font-size="30">Chemistry</text><text x="850" y="1122" fill="#315a9d" font-size="44" font-weight="700">A</text><text x="1015" y="1122" text-anchor="end" fill="#315a9d" font-size="34">83%</text>
+  </g>
+  <text x="132" y="1308" fill="#62708a" font-family="Arial, sans-serif" font-size="23">Private source retained because the original contains birth and candidate identifiers.</text>
+  <text x="132" y="1450" fill="#315a9d" font-family="Arial, sans-serif" font-size="22" font-weight="700">ONE-PAGE VERIFIED SUMMARY</text>
+</svg>

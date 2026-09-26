@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#f7f1f1"/><rect x="72" y="72" width="1056" height="1456" rx="36" fill="#fff" stroke="#ead6d6" stroke-width="3"/><rect x="72" y="72" width="1056" height="22" rx="11" fill="#a33c45"/>
+  <text x="132" y="180" fill="#a33c45" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3">OFFICIAL RESULT SUMMARY</text>
+  <text x="132" y="286" fill="#4b2025" font-family="Georgia, serif" font-size="68" font-weight="700">IELTS Academic</text><text x="132" y="352" fill="#7d6265" font-family="Arial, sans-serif" font-size="28">Official report takes precedence over derived CV text</text>
+  <rect x="132" y="430" width="936" height="300" rx="30" fill="#4b2025"/>
+  <text x="188" y="520" fill="#efc8cc" font-family="Arial, sans-serif" font-size="26" font-weight="700">OVERALL BAND</text><text x="188" y="670" fill="#fff" font-family="Georgia, serif" font-size="138" font-weight="700">7.0</text><text x="860" y="650" fill="#efc8cc" font-family="Arial, sans-serif" font-size="36" font-weight="700">CEFR C1</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="132" y="790" width="438" height="150" rx="24" fill="#f5e8e9"/><text x="172" y="850" fill="#7d6265" font-size="24">Listening</text><text x="172" y="912" fill="#a33c45" font-size="52" font-weight="700">8.0</text>
+    <rect x="630" y="790" width="438" height="150" rx="24" fill="#f5e8e9"/><text x="670" y="850" fill="#7d6265" font-size="24">Reading</text><text x="670" y="912" fill="#a33c45" font-size="52" font-weight="700">7.5</text>
+    <rect x="132" y="970" width="438" height="150" rx="24" fill="#f5e8e9"/><text x="172" y="1030" fill="#7d6265" font-size="24">Writing</text><text x="172" y="1092" fill="#a33c45" font-size="52" font-weight="700">6.5</text>
+    <rect x="630" y="970" width="438" height="150" rx="24" fill="#f5e8e9"/><text x="670" y="1030" fill="#7d6265" font-size="24">Speaking · One Skill Retake</text><text x="670" y="1092" fill="#a33c45" font-size="52" font-weight="700">6.0</text>
+  </g>
+  <text x="132" y="1260" fill="#7d6265" font-family="Arial, sans-serif" font-size="23">Private source retained because the original contains a portrait and candidate identifiers.</text>
+  <text x="132" y="1450" fill="#a33c45" font-family="Arial, sans-serif" font-size="22" font-weight="700">ONE-PAGE VERIFIED SUMMARY</text>
+</svg>

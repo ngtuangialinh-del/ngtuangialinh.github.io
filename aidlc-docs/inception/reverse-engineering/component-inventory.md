@@ -1,62 +1,68 @@
 # Component Inventory
 
+## 2026-09-26 Current Inventory (Authoritative)
+
+### Application Package
+
+- One React/Vite static portfolio rooted at `src/`.
+- One medical presentation shell with eight visitor-facing sections.
+- Desktop fixed navigation, mobile drawer navigation, section progress, color mode, skip link, and footer.
+
+### Shared Components and Utilities
+
+- `SectionShell`, existing legacy shared cards/actions, Chakra provider/color mode, tooltip, toaster, gallery lightbox, and PDF dialog.
+- Section-navigation hook, scrolling utilities, media/base-path resolver, contact helper, and animation helper.
+
+### Content and Assets
+
+- Nine typed data modules and one medical type contract.
+- Nine public documentary gallery images.
+- Two public document thumbnails and two approved public PDFs.
+- Thirty substantive raw CV-source files: 19 JPEGs, two PNGs, five PDFs, two DOCX files, and two MP4 files.
+
+### Test Package
+
+- Sixteen Vitest files: eight section/shell files, two property-based files, metadata, privacy, theme contract, App, and media utility coverage.
+- Testing Library, jsdom, axe assertions, and fast-check.
+
+### Infrastructure
+
+- No infrastructure-as-code, container, backend, or database package.
+- One GitHub Actions workflow for lint, typecheck, root/project-base builds, tests, and GitHub Pages deployment.
+
+> Counts and package descriptions below are historical and superseded where they refer to multiple presentations, ten sections, or nine tests.
+
 ## Application Packages
 
-- `my-portfolio` - React/Vite application that renders a configurable student portfolio and local journal.
+- **Portfolio application** - One React/Vite application rooted at `src/`.
+- **Engineering presentation** - Baseline shell plus ten shared sections.
+- **Business presentation** - Dedicated editorial shell, ten sections, journal page, and scoped CSS.
 
 ## Infrastructure Packages
 
-- `.github/workflows/deploy.yml` - GitHub Actions workflow that builds and deploys the static site to GitHub Pages.
+- No CDK, Terraform, CloudFormation, container, backend, or database package.
+- One GitHub Actions workflow builds and deploys the static application to GitHub Pages.
 
 ## Shared Packages
 
-- `src/data` - Student-editable typed portfolio and template configuration.
-- `src/types` - Shared data and section contracts.
-- `src/hooks` - Layout and navigation state.
-- `src/utils` - Scroll, route, media, animation, and template-selection helpers.
-- `src/components/shared` - Reusable section, card, action, logo, and portfolio-style primitives.
-- `src/components/ui` - Chakra provider and UI helpers.
-- `src/assets` - Images, logos, resume, and certificate documents.
-- `src/content/journal` - Local Markdown journal bodies.
+- **Typed data modules** - Student-editable content configuration.
+- **Shared UI** - Cards, actions, logo marks, section shells, style selector, color mode, tooltip, and toaster helpers.
+- **Hooks and utilities** - Layout, scrolling, journal routes, contact links, media helpers, animation, and template persistence.
+- **CV evidence collection** - 30 source files not yet connected to runtime data.
 
 ## Test Packages
 
-- `src/App.test.tsx` - Application smoke and route behavior.
-- `src/test/data/*.test.ts` - Navigation and content validation.
-- `src/hooks/*.test.ts` - Layout helper behavior.
-- `src/templates/*.test.ts` - Template registry completeness and fallback.
-- `src/utils/*.test.ts` - Journal and template-selection utility behavior.
+- **Nine test files** - App behavior, content rules, navigation, layout, registry, persistence, presentation ownership, journal rendering, and theme accessibility.
+- **Test framework** - Vitest with jsdom and Testing Library.
 
 ## Total Count
 
-- **Total Packages**: 1 application package plus deployment configuration.
-- **Source Files**: Current files are tracked directly in `src/`; counts change as students add content and assets.
-- **React Components**: Engineering, Neutral, and Business shells plus shared and template-specific sections.
-- **TypeScript Modules**: Typed data, hooks, utilities, templates, and tests.
-- **Stylesheets**: 2 CSS files.
-- **Bundled Assets and Content**: 24 files, including one Markdown journal post.
-- **Automated Tests**: The active suite covers App, accessibility, layout, registry, data, and template-selection behavior; exact results are recorded in the active code-generation summary.
-
-## User-Facing Components
-
-- `App` / `PortfolioApp` - Runtime template, route, layout, and visible-section orchestration.
-- `Navbar` - Engineering desktop/mobile navigation and display controls.
-- `EngineeringShell`, `NeutralShell`, and `BusinessShell` - Distinct responsive page structures and headers.
-- `PortfolioStyleSelector` - Shared three-choice style menu present in every shell header.
-- `Hero`, `NeutralHero`, and `BusinessHero` - Template-specific introductions and actions.
-- `About` - Biography and metrics.
-- `Education` - Education records.
-- `Experience` - Work and leadership records.
-- `Awards` - Awards and recognitions.
-- `Projects`, `NeutralProjects`, and `BusinessProjects` - Template-specific project presentations.
-- `Gallery` - Shared visual portfolio and preview.
-- `Journal` - Combined in-site and external writing index.
-- `JournalPostPage` - Local writing detail and not-found states.
-- `Skills` - Skill groups and certificates.
-- `Contact` - Mailto contact form and social actions.
-
-## Template Differentiation Boundary
-
-- **Currently Template-Specific**: Shell/header/navigation structure, Hero, About, Projects, chapter labels, and scoped CSS variables where needed.
-- **Currently Shared**: App-level section ordering, runtime style selector, layout state, Education, Experience, Awards, Gallery, Journal, Skills, Contact, local post detail, and all student data.
-- **Architectural Constraint**: Templates can replace their shell and section components, but App retains the shared section sequence, routing model, runtime template state, and layout ownership.
+- **Workspace files discovered**: 347 excluding `node_modules` and `dist`.
+- **Source files**: 141.
+- **TypeScript and TSX source files**: 79.
+- **Test files**: 9.
+- **Application packages**: 1.
+- **Infrastructure packages**: 0.
+- **Presentation strategies**: 2.
+- **Canonical sections**: 10.
+- **CV evidence files**: 30.

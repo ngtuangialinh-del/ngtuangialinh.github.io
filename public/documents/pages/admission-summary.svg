@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#eef5f4"/><rect x="72" y="72" width="1056" height="1456" rx="36" fill="#fff" stroke="#cfdfdc" stroke-width="3"/><circle cx="952" cy="252" r="104" fill="#d8eee8"/><path d="M904 250h96M952 202v96" stroke="#176b61" stroke-width="18" stroke-linecap="round"/>
+  <text x="132" y="180" fill="#176b61" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">VERIFIED MILESTONE</text>
+  <text x="132" y="314" fill="#16352f" font-family="Georgia, serif" font-size="64" font-weight="700">Medicine program</text><text x="132" y="388" fill="#16352f" font-family="Georgia, serif" font-size="64" font-weight="700">admission</text>
+  <text x="132" y="466" fill="#62736e" font-family="Arial, sans-serif" font-size="30">University of Medicine and Pharmacy</text><text x="132" y="512" fill="#62736e" font-family="Arial, sans-serif" font-size="30">Thai Nguyen University · 2026</text>
+  <rect x="132" y="620" width="936" height="390" rx="32" fill="#16352f"/>
+  <text x="188" y="718" fill="#a9d8ca" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">DOCUMENTED ADMISSION SCORE</text>
+  <text x="188" y="890" fill="#ffffff" font-family="Georgia, serif" font-size="144" font-weight="700">27.20</text>
+  <text x="188" y="954" fill="#dcece7" font-family="Arial, sans-serif" font-size="27">Admission through upper-secondary academic results</text>
+  <text x="132" y="1136" fill="#16352f" font-family="Georgia, serif" font-size="38" font-weight="700">Private source retained</text>
+  <text x="132" y="1200" fill="#62736e" font-family="Arial, sans-serif" font-size="24">The original notice includes identity, enrolment, financial,</text><text x="132" y="1238" fill="#62736e" font-family="Arial, sans-serif" font-size="24">QR, and action details that are unnecessary for verification.</text>
+  <text x="132" y="1450" fill="#176b61" font-family="Arial, sans-serif" font-size="22" font-weight="700">ONE-PAGE VERIFIED SUMMARY</text>
+</svg>

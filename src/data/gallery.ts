@@ -1,60 +1,91 @@
-import photo1 from '../assets/photo_1.jpg'
-import photo2 from '../assets/photo_2.jpg'
-import photo3 from '../assets/photo_3.jpg'
-import photo4 from '../assets/photo_4.jpg'
-import photo5 from '../assets/photo_5.jpg'
-import photo6 from '../assets/photo_6.jpg'
-import photo7 from '../assets/photo_7.jpg'
-import type { GalleryItem } from '../types/portfolio'
+import type { GalleryImage } from "../types/medical";
 
-export const gallery = [
+/**
+ * Approved public curation. Raw documents, bedside patient images,
+ * unnecessary close-ups, videos, and near-duplicates remain excluded.
+ */
+export const galleryImages = [
   {
-    id: 'zhonghua-secondary-school',
-    src: photo1,
-    alt: 'Gallery Image 1',
-    title: 'Zhonghua Secondary School',
-    description: "My first experience studying with local students in Singapore, where I eventually completed the GCE O-levels with 7 A's.",
+    id: "hematology-1",
+    src: "/gallery/pediatric-hematology-gift-giving-1.jpg",
+    alt: "Group of student volunteers standing at the entrance of the National Institute of Hematology and Blood Transfusion",
+    caption:
+      "The volunteer group at the National Institute of Hematology and Blood Transfusion before the gift-giving activity.",
+    initiativeId: "pediatric-hematology",
+    dateOrPeriod: "30 July 2026",
   },
   {
-    id: 'saint-andrews-junior-college',
-    src: photo2,
-    alt: 'Gallery Image 2',
-    title: "Saint Andrew's Junior College",
-    description: "My next 2 years as a student there, where I also became a Student Councillor and completed the GCE A-levels with 6 A's.",
+    id: "cung-em-1",
+    src: "/gallery/cung-em-vung-buoc-project-1.jpg",
+    alt: "Children and a teacher standing together outside a brightly painted preschool building, holding donated supplies",
+    caption:
+      "Children at A Lù Preschool with donated supplies delivered through the class project.",
+    initiativeId: "cung-em-vung-buoc",
+    dateOrPeriod: "2022 – 2025",
   },
   {
-    id: 'national-university-of-singapore',
-    src: photo3,
-    alt: 'Gallery Image 3',
-    title: 'National University of Singapore',
-    description: "I was fortunate enough to receive 3 full-scholarship offers from NUS, NTU and SUTD. After careful ponderation, I chose to pursue a Bachelor's in Computer Science with Honours at NUS.",
+    id: "cung-em-3",
+    src: "/gallery/cung-em-vung-buoc-project-3.jpg",
+    alt: "Students seated around classroom tables preparing materials for the school support project",
+    caption: "Classroom preparation for the multi-year school support project.",
+    initiativeId: "cung-em-vung-buoc",
+    dateOrPeriod: "2022 – 2025",
   },
   {
-    id: 'university-of-texas-at-austin',
-    src: photo4,
-    alt: 'Gallery Image 4',
-    title: 'The University of Texas at Austin',
-    description: "After completing undergraduate studies at NUS, my passion for Computer Science grew strong enough to warrant another academic pursuit at the University of Texas, Austin for a Master's Degree in Computer Science.",
+    id: "cung-em-4",
+    src: "/gallery/cung-em-vung-buoc-project-4.jpg",
+    alt: "Students working together to sort donated clothing and supplies",
+    caption: "Classmates sorting clothing and supplies before distribution.",
+    initiativeId: "cung-em-vung-buoc",
+    dateOrPeriod: "2022 – 2025",
   },
   {
-    id: 'sea-limited',
-    src: photo5,
-    alt: 'Gallery Image 5',
-    title: 'Sea Limited',
-    description: 'During my final year in NUS, I also landed an internship as a Big Data Analyst at Sea Limited - the parent company behind Shopee and Garena. After its completion, I received a return offer as a Data Engineer in the Core Data Platform team.',
+    id: "cung-em-2",
+    src: "/gallery/cung-em-vung-buoc-project-2.jpg",
+    alt: "Children seated together at a long table sharing a meal",
+    caption: "A shared afternoon meal supported by the project.",
+    initiativeId: "cung-em-vung-buoc",
+    dateOrPeriod: "2022 – 2025",
   },
   {
-    id: 'rakuten-asia',
-    src: photo6,
-    alt: 'Gallery Image 6',
-    title: 'Rakuten Asia Pte Ltd',
-    description: 'Hoping to gain a diverse range of skillsets and experiences, I ventured out and landed a role as a Software Engineer in Rakuten Asia, under the Global Ad Tech Supervisory Department.',
+    id: "cung-em-5",
+    src: "/gallery/cung-em-project-donated-clothing.jpg",
+    alt: "Two labeled bags of donated clothing and supplies arranged in a preschool classroom",
+    caption:
+      "Prepared clothing and supplies at the preschool, selected as a no-face contextual record.",
+    initiativeId: "cung-em-vung-buoc",
+    dateOrPeriod: "2022 – 2025",
   },
   {
-    id: 'torilab',
-    src: photo7,
-    alt: 'Gallery Image 7',
-    title: 'Torilab',
-    description: 'Seeking an opportunity to return back home to Vietnam, I joined Torilab - an early-stage AI startup headquartered in Japan - as a Data Engineer under the Business Intelligence (BI) team.',
-  }
-] satisfies GalleryItem[]
+    id: "tet-1",
+    src: "/gallery/lunar-new-year-support-2025-1.jpg",
+    alt: "Student volunteers and program guests standing together on stage at the Lunar New Year gift-giving event",
+    caption: "Student volunteers at the 2025 Lunar New Year gift-giving event.",
+    initiativeId: "lunar-new-year-2025",
+    dateOrPeriod: "5 January 2025",
+  },
+  {
+    id: "tet-2",
+    src: "/gallery/lunar-new-year-support-2025-2.jpg",
+    alt: "Student volunteers gathered on stage in front of stacked gift boxes at the Lunar New Year event",
+    caption: "Gifts prepared for distribution at the event.",
+    initiativeId: "lunar-new-year-2025",
+    dateOrPeriod: "5 January 2025",
+  },
+  {
+    id: "tet-3",
+    src: "/gallery/lunar-new-year-support-2025-3.jpg",
+    alt: "Student volunteers standing beside stacked bags of prepared gifts outside the event venue",
+    caption: "The volunteer group with prepared Lunar New Year gifts.",
+    initiativeId: "lunar-new-year-2025",
+    dateOrPeriod: "5 January 2025",
+  },
+  {
+    id: "tet-4",
+    src: "/gallery/lunar-new-year-support-2025-4.jpg",
+    alt: "Student volunteers distributing packaged gifts in the courtyard of the community venue",
+    caption: "Gift distribution underway at the community venue.",
+    initiativeId: "lunar-new-year-2025",
+    dateOrPeriod: "5 January 2025",
+  },
+] satisfies GalleryImage[];

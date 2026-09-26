@@ -1,89 +1,48 @@
-# Component Dependency
-
-## Dependency Diagram
-
-```mermaid
-flowchart TD
-    Types["src/types/portfolio.ts"]
-    Profile["src/data/profile.ts"]
-    Navigation["src/data/navigation.ts"]
-    SectionsData["Focused Section Data Files"]
-    Portfolio["src/data/portfolio.ts"]
-    Scroll["src/utils/scroll.ts"]
-    ContactUtil["src/utils/contact.ts"]
-    MediaUtil["src/utils/media.ts"]
-    SharedUI["Shared UI Components"]
-    App["src/App.tsx"]
-    Navbar["src/components/Navbar.tsx"]
-    Sections["src/components Section Components"]
-    Tests["Vitest Tests"]
-    Docs["README and DEPLOYMENT"]
-    Vite["vite.config.ts"]
-    Workflow["GitHub Actions Deploy Workflow"]
-
-    Types --> Profile
-    Types --> Navigation
-    Types --> SectionsData
-    Profile --> Portfolio
-    Navigation --> Portfolio
-    SectionsData --> Portfolio
-    Portfolio --> App
-    Portfolio --> Navbar
-    Portfolio --> Sections
-    Scroll --> App
-    Scroll --> Navbar
-    Scroll --> Sections
-    ContactUtil --> Sections
-    MediaUtil --> Sections
-    SharedUI --> Sections
-    Portfolio --> Tests
-    App --> Tests
-    Portfolio --> Docs
-    Vite --> Workflow
-    Workflow --> Docs
-```
-
-## Text Alternative
-
-Shared types support all focused data modules. Focused data modules feed a portfolio aggregator. The app, navbar, and sections consume aggregated data and shared utilities. Tests validate the data and app render. Documentation references the data structure and deployment workflow. Vite config is consumed by the GitHub Actions workflow.
+# Component Dependency — Medical Student Portfolio
 
 ## Dependency Matrix
 
-| Source | Depends On | Relationship | Change Type |
-|---|---|---|---|
-| `src/data/*` | `src/types/portfolio.ts` | Data modules conform to shared types | Major |
-| `src/data/portfolio.ts` | Focused data files | Aggregates student-editable content | Major |
-| `src/App.tsx` | `portfolio`, `useActiveSection` | Renders configured sections and active navigation | Major |
-| `Navbar.tsx` | `navigationItems`, `scrollToSection` | Renders shared navigation source of truth | Major |
-| Section components | Focused data, shared UI, utilities | Render template content | Major |
-| `Contact.tsx` | `profile`, `buildMailtoUrl` | Builds contact behavior from configured email | Minor |
-| `Videos.tsx` | `videos`, media URL utilities | Renders embeds and watch links | Minor |
-| `Skills.tsx` | `skills`, `certificates` | Renders skill/certificate data | Major |
-| Tests | App and data modules | Validate rendering and data/config integrity | Major |
-| `vite.config.ts` | `VITE_BASE_PATH` | Reads deployment base path from env | Configuration |
-| GitHub Actions | Repository metadata and Vite build | Passes deployment base path and deploys `dist/` | Configuration |
-| Documentation | Data/config/workflow structure | Teaches setup and customization | Major |
+| Component | Depends on | Depended on by |
+| --- | --- | --- |
+| `MedicalShell` | Navigation, MobileNav, Hero, MedicalJourney, Academics, CommunityCare, Gallery, Contact, navigation/hash service, color-mode provider | App root only |
+| `Navigation` | `data/navigation.ts`, navigation/hash service | `MedicalShell` |
+| `MobileNav` | `data/navigation.ts`, navigation/hash service | `MedicalShell` |
+| `Hero` | `data/identity.ts` | `MedicalShell` |
+| `MedicalJourney` | `data/academics.ts` (admission fact + milestones) | `MedicalShell` |
+| `Academics` | `data/academics.ts` | `MedicalShell` |
+| `CommunityCare` | `data/communityCare.ts` | `MedicalShell` |
+| `Gallery` | `data/gallery.ts`, `Lightbox` | `MedicalShell` |
+| `Contact` | `data/contact.ts` | `MedicalShell` |
+| `Lightbox` | none (pure UI primitive) | `Gallery` |
+| navigation/hash service (`usePortfolioLayout`, adapted) | browser hash/history APIs | `MedicalShell`, `Navigation`, `MobileNav` |
+| color-mode provider (reused) | browser storage APIs | `MedicalShell` (wraps app), any component using color tokens |
+| Content-validation utility | `src/data/*.ts`, `dist/` build output | Vitest suite only (test-time, not runtime) |
 
 ## Communication Patterns
 
-- **Static imports**: Components import data, utilities, and shared UI modules.
-- **Props**: App passes active section state into `Navbar`; shared UI components receive typed props.
-- **Browser APIs**: Shared scroll utility uses DOM section IDs; contact utility returns a mailto URL consumed by `Contact`.
-- **Build-time environment**: GitHub Actions passes `VITE_BASE_PATH` to Vite.
-- **Test assertions**: Tests import app/data modules and assert behavior without network calls.
+- **Top-down props**: `MedicalShell` reads all content data modules and passes typed props down to each section component. Sections do not import data modules directly from within deeply nested children — only the top-level section component per epic (Hero, Academics, etc.) reads its domain module.
+- **Navigation intent flow**: `Navigation`/`MobileNav` → navigation/hash service (updates hash + active section) → `MedicalShell` re-renders active-state props → `Navigation`/`MobileNav` reflect `aria-current`.
+- **Gallery/Lightbox**: `Gallery` owns which image (if any) is active and passes it to `Lightbox`; `Lightbox` has no upward data dependency, only an `onClose` callback.
+- **No cross-section coupling**: `Academics`, `CommunityCare`, `Gallery`, and `Contact` do not depend on each other; each depends only on its own content module, satisfying the Independent criterion of the approved INVEST story set.
 
-## Coupling Guidelines
+## Data Flow Diagram (textual)
 
-- Components should depend on typed data modules, not raw duplicated inline arrays.
-- Section IDs should come from one navigation config.
-- Utilities should not import section components.
-- Data modules should not import UI components.
-- Documentation should reflect actual scripts and file locations.
-- Deployment workflow should not require students to edit application code for ordinary repository Pages deployment.
+```
+data/identity.ts        -> Hero
+data/academics.ts       -> Academics, MedicalJourney
+data/communityCare.ts   -> CommunityCare
+data/gallery.ts         -> Gallery -> Lightbox
+data/contact.ts         -> Contact
+data/navigation.ts       -> Navigation, MobileNav
+                                   ^
+                                   |
+                     navigation/hash service (active section, fallback)
+                                   |
+                              MedicalShell (composes all sections + nav)
+```
 
-## Extension Rule Compliance
+## Removed Dependencies
 
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+- `PortfolioStyleSelector` → template registry/persistence: removed entirely; no successor component reads or writes the old template-selection storage key.
+- `BusinessShell`/`EngineeringShell` → their respective section trees: removed entirely, replaced by the single `MedicalShell` → six-section dependency graph above.
+- Journal routes/content → `BusinessJournal`/`BusinessJournalPostPage`: removed entirely; no route in the new architecture resolves to journal content.

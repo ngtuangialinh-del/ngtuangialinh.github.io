@@ -1,246 +1,159 @@
-# Execution Plan
+# Visual Storytelling and Evidence Library Execution Plan
+
+## Workflow Planning Checklist
+
+- [x] Load refreshed reverse-engineering artifacts.
+- [x] Load approved requirements, clarification answers, personas, and stories.
+- [x] Assess transformation scope, affected components, risks, and package coordination.
+- [x] Determine which conditional phases add value.
+- [x] Validate the Mermaid workflow syntax and provide a text alternative.
+- [x] Define the implementation sequence and quality gates.
+- [x] Obtain explicit approval of this execution plan.
 
 ## Detailed Analysis Summary
 
 ### Transformation Scope
 
-- **Transformation Type**: Brownfield application structure refactor with documentation, test, and deployment configuration enhancements.
-- **Primary Changes**:
-  - Extract student-editable portfolio content into typed data/config modules.
-  - Centralize section/navigation configuration.
-  - Add shared scroll utilities and selected reusable UI helpers.
-  - Improve accessible labels for interactive links and controls.
-  - Improve GitHub Pages base path handling through workflow/build configuration.
-  - Rewrite student-facing README and deployment/customization guide.
-  - Add lightweight tests for rendering, navigation config, and template data.
-- **Related Components**:
-  - `src/App.tsx`
-  - `src/components/*`
-  - `src/assets/*`
-  - New `src/data/*`, `src/types/*`, and `src/utils/*`
-  - `vite.config.ts`
-  - `.github/workflows/deploy.yml`
-  - `package.json`
-  - README and deployment documentation
+- **Transformation type**: Major presentation and content enhancement inside one existing React/Vite package; no deployment-model or infrastructure transformation.
+- **Primary changes**: Section composition, an approved owner-supplied profile portrait, approximately five generated editorial image anchors, expanded typed evidence and gallery data, sanitized page assets, page-based document review, sequential gallery lightbox behavior, source disposition documentation, and focused tests.
+- **Related components**: Eight medical sections, `EvidenceDocument` and gallery types/data, `DocumentPreviewDialog`, `Lightbox`, media utilities, public assets, medical CSS, privacy tests, accessibility tests, and build documentation.
 
 ### Change Impact Assessment
 
-- **User-facing changes**: Yes. The deployed portfolio should preserve the current visual experience while improving accessibility labels and deployment reliability.
-- **Structural changes**: Yes. Editable content moves from components into typed data modules, shared section config becomes the navigation source of truth, and repeated helpers are centralized.
-- **Data model changes**: Yes. New TypeScript data models are needed for portfolio content and navigation config.
-- **API changes**: No external API changes. Internal component/data contracts will change.
-- **NFR impact**: Yes. Maintainability, beginner readability, testability, accessibility, and deployment reliability are core requirements.
+- **User-facing changes**: Yes. All sections gain stronger visual storytelling, and document/gallery review workflows expand.
+- **Structural changes**: Minor. Existing component boundaries remain; shared dialogs and types are extended.
+- **Data-model changes**: Yes. Evidence needs ordered pages, provenance, publication state, redaction notes, page count, and download policy. Gallery/generated media need explicit source type and disclosure metadata.
+- **External API changes**: No. The site remains a static application with no backend.
+- **NFR impact**: Yes. Accessibility, privacy, asset performance, responsive behavior, and content integrity require verification.
+- **Infrastructure changes**: No. GitHub Actions and GitHub Pages remain unchanged except normal validation of the existing build.
 
 ### Component Relationships
 
-```mermaid
-flowchart TD
-    Data["Typed Portfolio Data"]
-    Types["Shared Types"]
-    Utils["Shared Utilities"]
-    App["App Shell"]
-    Sections["Section Components"]
-    Navbar["Navbar"]
-    Docs["Student Documentation"]
-    Tests["Lightweight Tests"]
-    Deploy["GitHub Pages Workflow"]
-    Vite["Vite Config"]
+- **Primary component**: Medical portfolio React/Vite application.
+- **Shared components**: `DocumentPreviewDialog`, `Lightbox`, `SectionShell`, media path helpers, theme controls, and navigation hook.
+- **Content components**: Typed evidence, gallery, academics, community-care, identity, contact, research, and section-copy modules.
+- **Asset boundary**: Raw CV sources pass through review and sanitization before any derivative reaches `public/` or imported application assets.
+- **Supporting components**: Vitest/Testing Library/axe tests, privacy scanning, lint, typecheck, Vite builds, and AI-DLC documentation.
 
-    Types --> Data
-    Data --> App
-    Data --> Sections
-    Data --> Navbar
-    Utils --> App
-    Utils --> Sections
-    App --> Navbar
-    App --> Sections
-    Data --> Tests
-    App --> Tests
-    Vite --> Deploy
-    Docs --> Deploy
-```
-
-### Text Alternative
-
-Shared types define portfolio data. Data feeds the app, navbar, and section components. Shared utilities support app and section behavior. Tests validate data and rendering. Vite configuration feeds the GitHub Pages deployment workflow, and documentation explains the student setup path.
+| Area                         | Change type                       | Priority  | Reason                                                      |
+| ---------------------------- | --------------------------------- | --------- | ----------------------------------------------------------- |
+| Evidence types and data      | Major compatible extension        | Critical  | Enables provenance, states, pages, and downloads            |
+| Document review dialog       | Major behavior enhancement        | Critical  | Adds page gallery, navigation, fallback, and focus behavior |
+| Gallery lightbox             | Moderate behavior enhancement     | Important | Adds sequential navigation and position feedback            |
+| Medical sections and CSS     | Moderate presentation enhancement | Important | Delivers varied layouts and visual anchors                  |
+| Public media assets          | Curated expansion                 | Critical  | Adds generated art and safe evidence derivatives            |
+| Tests and publication checks | Moderate expansion                | Critical  | Protects privacy, accessibility, and retained behavior      |
+| Deployment workflow          | No planned change                 | Optional  | Existing static hosting remains sufficient                  |
 
 ### Risk Assessment
 
-- **Risk Level**: Medium.
-- **Rollback Complexity**: Moderate. Changes touch many components, but the app is static and can be rolled back through Git.
-- **Testing Complexity**: Moderate. Build, lint, and lightweight tests should catch most template regressions.
-- **Primary Risks**:
-  - Accidentally changing the current visual output while refactoring data.
-  - Introducing incorrect asset imports while moving data.
-  - Misconfiguring GitHub Pages base path behavior.
-  - Adding test dependencies that conflict with the current React/Vite stack.
+- **Risk level**: Medium-high because public evidence preparation can expose personal or third-party information if handled incorrectly.
+- **Rollback complexity**: Moderate. Application changes are version-controlled, while public derivatives must also be removed if rejected.
+- **Testing complexity**: Complex but bounded to one frontend package, shared dialogs, typed data, assets, and static build output.
+- **Primary mitigations**: Source disposition matrix, conservative summary fallback, strict separation of illustration and evidence, optimized assets, focused accessibility/privacy tests, and build-output inspection.
 
-## Module Update Strategy
+## Phase Decisions
 
-- **Update Approach**: Hybrid sequential.
-- **Critical Path**:
-  1. Define shared types and data/config modules.
-  2. Refactor components to consume data/config and shared utilities.
-  3. Update deployment base path handling.
-  4. Update documentation.
-  5. Add tests and verification scripts.
-  6. Run build, lint, and tests.
-- **Coordination Points**:
-  - Navigation IDs must stay aligned between data, app shell, navbar, tests, and documentation.
-  - Asset imports must remain Vite-compatible.
-  - GitHub Pages workflow must pass the correct base path to Vite.
-- **Testing Checkpoints**:
-  - TypeScript build after data extraction.
-  - Lint after component refactor.
-  - Test run after adding test setup.
-  - Production build after deployment config changes.
+### Inception
+
+- [x] Workspace Detection - completed.
+- [x] Reverse Engineering - completed and refreshed for the current medical implementation.
+- [x] Requirements Analysis - completed and approved.
+- [x] User Stories - completed and approved.
+- [ ] Workflow Planning - complete except for owner approval.
+- [x] Application Design - SKIP. The work extends the existing medical sections, typed data modules, and shared dialogs; no new service layer or architectural component boundary is required.
+- [x] Units Planning - SKIP. The repository is one package and the requested work can be delivered as one coordinated implementation unit.
+- [x] Units Generation - SKIP. A separate unit decomposition would duplicate the implementation sequence below without improving ownership or dependency clarity.
+
+### Construction
+
+- [x] Functional Design - SKIP. The approved requirements and stories already specify publication states, navigation behavior, modal behavior, and content-zone rules in testable detail.
+- [x] NFR Requirements - SKIP. Accessibility, privacy, performance, maintainability, and verification targets are explicitly approved in the requirements.
+- [x] NFR Design - SKIP. Existing axe, privacy, lazy-media, typed-data, and build-validation patterns can be extended directly.
+- [x] Infrastructure Design - SKIP. No hosting, networking, backend, storage, secret, or deployment-model change exists.
+- [ ] Code Generation - EXECUTE. Create and approve a detailed checkbox plan, then generate assets, code, tests, and implementation records.
+- [ ] Build and Test - EXECUTE. Validate typecheck, lint, focused/full tests, accessibility, privacy, media budgets, and root/project-base builds.
+
+### Operations
+
+- [ ] Operations - PLACEHOLDER. The installed workflow does not define deployment execution or monitoring work.
 
 ## Workflow Visualization
 
 ```mermaid
 flowchart TD
-    Start(["User Request"])
+    Start(["Visual evidence enhancement"])
+    WD["Workspace Detection - completed"]
+    RE["Reverse Engineering - completed"]
+    RA["Requirements Analysis - completed"]
+    US["User Stories - completed"]
+    WP["Workflow Planning - approval"]
+    AD["Application Design - skip"]
+    UG["Units and Functional Design - skip"]
+    NFR["NFR and Infrastructure Design - skip"]
+    CG["Code Generation - execute"]
+    BT["Build and Test - execute"]
+    End(["Operations placeholder"])
 
-    subgraph INCEPTION["INCEPTION PHASE"]
-        WD["Workspace Detection<br/><b>COMPLETED</b>"]
-        RE["Reverse Engineering<br/><b>COMPLETED</b>"]
-        RA["Requirements Analysis<br/><b>COMPLETED</b>"]
-        US["User Stories<br/><b>COMPLETED</b>"]
-        WP["Workflow Planning<br/><b>COMPLETED</b>"]
-        AD["Application Design<br/><b>EXECUTE</b>"]
-        UG["Units Generation<br/><b>EXECUTE</b>"]
-    end
+    Start --> WD --> RE --> RA --> US --> WP
+    WP --> AD --> UG --> NFR --> CG --> BT --> End
 
-    subgraph CONSTRUCTION["CONSTRUCTION PHASE"]
-        FD["Functional Design<br/><b>EXECUTE</b>"]
-        NFRA["NFR Requirements<br/><b>EXECUTE</b>"]
-        NFRD["NFR Design<br/><b>EXECUTE</b>"]
-        ID["Infrastructure Design<br/><b>EXECUTE</b>"]
-        CG["Code Generation<br/>(Planning + Generation)<br/><b>EXECUTE</b>"]
-        BT["Build and Test<br/><b>EXECUTE</b>"]
-    end
-
-    subgraph OPERATIONS["OPERATIONS PHASE"]
-        OPS["Operations<br/><b>PLACEHOLDER</b>"]
-    end
-
-    Start --> WD
-    WD --> RE
-    RE --> RA
-    RA --> US
-    US --> WP
-    WP --> AD
-    AD --> UG
-    UG --> FD
-    FD --> NFRA
-    NFRA --> NFRD
-    NFRD --> ID
-    ID --> CG
-    CG --> BT
-    BT --> End(["Complete"])
-
+    style Start fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,color:#000
     style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RE fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RA fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style US fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
-    style WP fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
-    style AD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style UG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style FD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style NFRA fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style NFRD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style ID fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style CG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style BT fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style OPS fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
-    style Start fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,color:#000
+    style WP fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray:5 5,color:#000
+    style AD fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray:5 5,color:#000
+    style UG fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray:5 5,color:#000
+    style NFR fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray:5 5,color:#000
+    style CG fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style BT fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style End fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,color:#000
-    style INCEPTION fill:#BBDEFB,stroke:#1565C0,stroke-width:3px,color:#000
-    style CONSTRUCTION fill:#C8E6C9,stroke:#2E7D32,stroke-width:3px,color:#000
-    style OPERATIONS fill:#FFF59D,stroke:#F57F17,stroke-width:3px,color:#000
 
     linkStyle default stroke:#333,stroke-width:2px
 ```
 
 ### Text Alternative
 
-Completed stages: Workspace Detection, Reverse Engineering, Requirements Analysis, User Stories, Workflow Planning. Next stages to execute: Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Infrastructure Design, Code Generation, Build and Test. Operations remains a placeholder.
+1. Workspace Detection, Reverse Engineering, Requirements Analysis, and User Stories are complete.
+2. Workflow Planning is awaiting approval.
+3. Application Design, Units Planning/Generation, Functional Design, NFR Requirements/Design, and Infrastructure Design are skipped because the single-package implementation extends established boundaries and approved patterns.
+4. Code Generation executes next with planning and generation parts.
+5. Build and Test executes after implementation.
+6. Operations remains a placeholder.
 
-## Phases to Execute
+## Single-Unit Implementation Sequence
 
-### INCEPTION PHASE
+1. Audit all CV sources and create the final disposition/public-derivative matrix.
+2. Prepare safe sanitized evidence page images and PDFs, using verified summaries where page publication is unsafe.
+3. Prepare the approved profile portrait under a neutral filename with metadata removed and responsive optimization.
+4. Generate approximately five cohesive editorial/scientific image anchors, inspect them, optimize them, add disclosure metadata, and record prompts/provenance.
+5. Extend typed media and evidence contracts, then update identity, evidence, gallery, and section data.
+6. Enhance document review with thumbnail selection, full-page images, keyboard navigation, focus behavior, optional PDF actions, and mobile layout.
+7. Enhance the gallery lightbox with previous/next navigation, position feedback, keyboard behavior, and focus restoration.
+8. Refresh all section/card compositions and integrate relevant imagery without changing the established navigation or theme identity.
+9. Add or update component, integration, accessibility, privacy, disclosure, and performance checks.
+10. Run the complete build/test matrix and reconcile documentation with measured results.
 
-- [x] Workspace Detection - COMPLETED
-- [x] Reverse Engineering - COMPLETED
-- [x] Requirements Analysis - COMPLETED
-- [x] User Stories - COMPLETED
-- [x] Workflow Planning - COMPLETED
-- [ ] Application Design - EXECUTE
-  - **Rationale**: New data modules, shared types, reusable helpers, component responsibilities, and deployment configuration boundaries need a lightweight design before implementation.
-- [ ] Units Generation - EXECUTE
-  - **Rationale**: Work should be decomposed into coordinated units for data extraction, component refactor, documentation, deployment config, and tests.
+## Package Coordination
 
-### CONSTRUCTION PHASE
+- **Update approach**: Sequential inside one package because public asset paths and typed models must exist before section integration and testing.
+- **Critical path**: Source review and derivative preparation, followed by typed models/data, shared dialogs, section integration, and verification.
+- **Parallel-safe work**: Generated editorial anchors and sanitized derivative preparation are independent until they enter typed data.
+- **Coordination points**: Media base paths, evidence identifiers, page ordering, download policy, modal accessibility behavior, and publication-state labels.
+- **Rollback**: Revert code/data changes and remove only newly added reviewed derivatives; raw source files remain untouched.
 
-- [ ] Functional Design - EXECUTE
-  - **Rationale**: New typed data models and shared utilities need functional design at unit level.
-- [ ] NFR Requirements - EXECUTE
-  - **Rationale**: Maintainability, beginner readability, accessibility, testability, and deployment reliability are explicit NFRs.
-- [ ] NFR Design - EXECUTE
-  - **Rationale**: NFRs must be incorporated into code organization, tests, documentation, and deployment behavior.
-- [ ] Infrastructure Design - EXECUTE
-  - **Rationale**: GitHub Pages and GitHub Actions deployment path handling should be designed before editing workflow/build configuration.
-- [ ] Code Generation - EXECUTE
-  - **Rationale**: Implementation planning and code generation are needed for the approved refactor.
-- [ ] Build and Test - EXECUTE
-  - **Rationale**: Build, lint, test, and deployment verification instructions are required.
+## Success Criteria and Quality Gates
 
-### OPERATIONS PHASE
+- Approximately five disclosed editorial image anchors improve hierarchy without appearing as evidence.
+- Every substantive CV source has one recorded disposition, and every relevant source group has a safe public representation.
+- Multi-page evidence can be reviewed using page images, keyboard navigation, and optional approved PDF controls.
+- Gallery navigation is sequential, accessible, and limited to approved low-risk photographs.
+- Existing navigation, themes, hashes, CV download, contact placeholders, responsive behavior, and reduced motion remain intact.
+- Typecheck, lint, focused and full tests, privacy scans, formatting, asset budgets, and both production builds pass.
 
-- [ ] Operations - PLACEHOLDER
-  - **Rationale**: Future deployment and monitoring workflows are outside the current AI-DLC process.
+## Extension Compliance
 
-## Skipped Stages
-
-- No current INCEPTION or CONSTRUCTION stage is recommended for skip because the approved scope is comprehensive and touches application structure, data models, NFRs, deployment configuration, documentation, and tests.
-
-## Package Change Sequence
-
-1. `src/types/*` - Add shared portfolio data types first.
-2. `src/data/*` - Move editable example content into typed data/config modules.
-3. `src/utils/*` - Add shared scroll/navigation utilities.
-4. `src/components/*` and `src/App.tsx` - Refactor UI to consume data/config and utilities.
-5. `vite.config.ts` and `.github/workflows/deploy.yml` - Improve GitHub Pages base path handling.
-6. `package.json` and test files - Add lightweight test setup and scripts.
-7. `README.md` and `DEPLOYMENT.md` - Rewrite student-facing setup and deployment guidance.
-8. `aidlc-docs/construction/build-and-test/*` - Generate build/test instruction artifacts.
-
-## Estimated Timeline
-
-- **Total Remaining Stages**: 8 before Operations placeholder.
-- **Estimated Duration**: Medium. The work is not algorithmically complex, but it affects many files and needs careful verification.
-
-## Success Criteria
-
-- **Primary Goal**: The portfolio becomes a maintainable student baseline template with clear content customization, GitHub Pages deployment guidance, and lightweight tests.
-- **Key Deliverables**:
-  - Typed portfolio data/config modules.
-  - Refactored components consuming shared data and utilities.
-  - Improved accessible labels.
-  - GitHub Pages base path workflow improvements.
-  - Beginner-friendly README and detailed deployment/customization guide.
-  - Lightweight test setup and passing test command.
-  - AI-DLC build and test instructions.
-- **Quality Gates**:
-  - `npm run lint` passes.
-  - `npm run test` passes after test setup is added.
-  - `npm run build` passes.
-  - Student documentation explains local setup, customization, deployment, and troubleshooting.
-  - Current visual/content experience is preserved as example data.
-
-## Extension Rule Compliance
-
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+- **Security Baseline**: Disabled; skipped. Approved privacy requirements remain ordinary project quality gates.
+- **Property-Based Testing**: Disabled; skipped. Focused example-based verification will be used.

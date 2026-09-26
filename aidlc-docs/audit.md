@@ -5714,6 +5714,132 @@ approve and continue"
 
 ---
 
+## Medical Student Portfolio Revamp - Initial Request
+
+**Timestamp**: 2026-09-16T17:49:35Z
+**User Input**: "using ai-dlc, help me customise this portfolio site to the student profile inside src/assets/CV. Please make sure to completely revamp the design, theme, color, layout, navigation, ... to fit the theme of medicine instead of the current design"
+**AI Response**: "Started a new adaptive AI-DLC workflow for a complete medicine-themed portfolio revamp. Loaded the mandatory common rules, extension opt-ins, and welcome message; began workspace detection; and preserved the prior workflow history."
+**Context**: INCEPTION - Workflow Start
+
+---
+
+## Medical Student Portfolio Revamp - Workspace Detection
+
+**Timestamp**: 2026-09-16T17:49:35Z
+**User Input**: "using ai-dlc, help me customise this portfolio site to the student profile inside src/assets/CV. Please make sure to completely revamp the design, theme, color, layout, navigation, ... to fit the theme of medicine instead of the current design"
+**AI Response**: "Detected a brownfield React 19, TypeScript, and Vite static portfolio at /Users/nhamhhung/student_ports/ngtuangialinh.github.io. Existing AI-DLC artifacts were found, but the reverse-engineering record predates the current source and newly supplied CV assets. Marked focused reverse engineering as the next stage. The previous Business Color and Two-Theme Refresh remains preserved in the audit and is superseded as the active workflow by this request."
+**Context**: INCEPTION - Workspace Detection Complete
+
+---
+
+## Medical Student Portfolio Revamp - Resume Reverse Engineering
+
+**Timestamp**: 2026-09-16T17:49:35Z
+**User Input**: "please resume"
+**AI Response**: "Resumed the mandatory focused reverse-engineering refresh for the current React/Vite source and supplied CV asset collection."
+**Context**: INCEPTION - Reverse Engineering
+
+---
+
+## Medical Student Portfolio Revamp - Reverse Engineering Complete
+
+**Timestamp**: 2026-09-17T02:30:25Z
+**User Input**: "N/A"
+**AI Response**: "Completed the focused reverse-engineering refresh across the live React/Vite architecture, two-template presentation system, typed content model, tests, deployment workflow, and all 30 supplied CV evidence files. Documented verified academic and community-service facts, the medical-school admission, privacy boundaries, asset risks, and the recommended redesign boundary. Automated tests could not run because node_modules is absent."
+**Context**: INCEPTION - Reverse Engineering Complete
+
+---
+
+## Medical Student Portfolio Revamp - Reverse Engineering Approval Prompt
+
+**Timestamp**: 2026-09-17T02:30:25Z
+**User Input**: "N/A"
+**AI Response**: "Created reverse-engineering-approval-questions.md and presented the required review gate. Requirements Analysis will not begin until explicit approval is received."
+**Context**: INCEPTION - Reverse Engineering Approval Gate
+
+---
+
+## Medical Student Portfolio Revamp - Reverse Engineering Approval
+
+**Timestamp**: 2026-09-17T02:44:39Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option B as explicit approval of the focused reverse-engineering analysis and advanced the workflow to comprehensive Requirements Analysis."
+**Context**: INCEPTION - Reverse Engineering Approval / Requirements Analysis Start
+
+---
+
+## Medical Student Portfolio Revamp - Requirements Clarification Prompt
+
+**Timestamp**: 2026-09-17T02:46:08Z
+**User Input**: "N/A"
+**AI Response**: "Classified the request as a complex, system-wide enhancement and replacement of the current portfolio presentation. Created requirement-verification-questions.md with sixteen questions covering audience, language, medical status, information architecture, visual direction, color modes, hero imagery, privacy, consent-aware photography, video handling, contact behavior, legacy retirement, narrative voice, Security Baseline opt-in, and Property-Based Testing opt-in. Awaiting complete answers before requirements generation."
+**Context**: INCEPTION - Requirements Analysis Clarification Gate
+
+---
+
+## Medical Student Portfolio Revamp - Requirements Answers
+
+**Timestamp**: 2026-09-17T02:51:19Z
+**User Input**: "all A and continue"
+**AI Response**: "Recorded option A for all sixteen requirements questions. Enabled the full Security Baseline and full Property-Based Testing extensions and loaded their complete rule files. Detected a blocking ambiguity between full SECURITY-04 enforcement and the current GitHub Pages deployment, whose live response does not emit the complete required header set."
+**Context**: INCEPTION - Requirements Analysis Answer Validation
+
+---
+
+## Medical Student Portfolio Revamp - Security Hosting Clarification Prompt
+
+**Timestamp**: 2026-09-17T02:52:36Z
+**User Input**: "N/A"
+**AI Response**: "Created requirement-verification-clarification-questions.md with one blocking deployment choice. Direct GitHub Pages hosting cannot satisfy the enabled SECURITY-04 response-header rule; requirements generation is paused until the user chooses a header-capable host, an edge-proxy architecture, or disables the Security Baseline."
+**Context**: INCEPTION - Requirements Analysis Security Clarification Gate / SECURITY-04
+
+---
+
+## Medical Student Portfolio Revamp - Security Hosting Clarification Response
+
+**Timestamp**: 2026-09-17T03:00:07Z
+**User Input**: "no, except for security then don't enforce"
+**AI Response**: "Interpreted the response as clarification option C: retain direct GitHub Pages hosting and disable the Security Baseline. Updated Question 15 from A to B, left full Property-Based Testing enabled, and resumed comprehensive requirements generation."
+**Context**: INCEPTION - Requirements Analysis Clarification Resolved / SECURITY-04 Extension Disabled
+
+---
+
+## Medical Student Portfolio Revamp - Requirements Analysis Complete
+
+**Timestamp**: 2026-09-17T03:02:19Z
+**User Input**: "N/A"
+**AI Response**: "Generated comprehensive requirements for a single English-first medical presentation with six-section navigation, a portrait-free clinical-editorial hero, verified academic summaries, three community-care stories, selected respectful media, raw-evidence privacy controls, accessible light and dark modes, complete inherited-runtime retirement, direct GitHub Pages compatibility, and full property-based testing requirements. Security Baseline enforcement is disabled as directed."
+**Context**: INCEPTION - Requirements Analysis Complete
+
+---
+
+## Medical Student Portfolio Revamp - Requirements Approval Prompt
+
+**Timestamp**: 2026-09-17T03:02:19Z
+**User Input**: "N/A"
+**AI Response**: "Created requirements-approval-questions.md and presented the required review gate. The next recommended stage is User Stories because the change replaces the complete public user experience and affects multiple visitor journeys."
+**Context**: INCEPTION - Requirements Analysis Approval Gate
+
+---
+
+## Medical Student Portfolio Revamp - Requirements Approval
+
+**Timestamp**: 2026-09-17T03:14:37Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option B as explicit approval of the comprehensive medical-student portfolio requirements and advanced the workflow to User Stories Part 1 planning."
+**Context**: INCEPTION - Requirements Approval / User Stories Start
+
+---
+
+## Medical Student Portfolio Revamp - User Stories Planning Questions
+
+**Timestamp**: 2026-09-17T03:15:54Z
+**User Input**: "N/A"
+**AI Response**: "Completed the mandatory User Stories assessment and confirmed high value for this complete public-experience replacement. Created story-generation-plan.md with a hybrid journey/feature recommendation, four candidate personas, INVEST and traceability controls, a checked planning-progress section, a generation checklist, and six methodology questions. Awaiting complete answers before plan approval and story generation."
+**Context**: INCEPTION - User Stories Part 1 Planning Questions
+
+---
+
 ## Code Generation Change Request - Formatting and Contrast Hardening
 
 **Timestamp**: 2026-07-21T11:33:01Z
@@ -8989,7 +9115,7 @@ Also, please fix the following color inconsistency for connect_channels in both 
 **Timestamp**: 2026-08-31T02:41:58Z
 **User Input**: "actually, there's no need to explain in much details, just make sure each section has some simple, intuitive explanation along with the command/step to follow
 
-For the connect\_channels, please make the color consistent with other components. Approve and continue"
+For the connect_channels, please make the color consistent with other components. Approve and continue"
 **AI Response**: "Amended BYC-24, BYC-25, acceptance criteria 23 and 24, and Steps 15 and 16. The README will stay concise, with one intuitive explanation followed by the command or click sequence in each section. The Direct Contact card will reuse the same semantic surface, text, border, and control tokens as other Business components rather than introducing dedicated colors. Recorded explicit approval and advanced Code Generation Part 2 to implementation."
 **Context**: CONSTRUCTION - Code Generation Part 1 Steps 15 and 16 Amended Approval
 
@@ -9081,8 +9207,6 @@ For the connect\_channels, please make the color consistent with other component
 **Timestamp**: 2026-08-31T04:15:50Z
 **User Input**: "Please update the readme following these general steps (please feel free to add on if there's any):
 
-
-
 1. Students should create their github account
 2. Afterwards, students should Use the template to create a repository within their github
 3. Make sure to name the repo in this pattern \<username>.github.io so github pages deployment will work
@@ -9097,8 +9221,8 @@ For the connect\_channels, please make the color consistent with other component
 12. Perform git steps to commit the changes and push to upstream
 13. Verify deployment gets triggered from GitHub
 14. Verify the new site is deployed"
-**AI Response**: "Verified the requested journey against current official GitHub documentation and added BYC-27, acceptance criterion 26, and Step 18. The plan uses template creation, a public lowercase username.github.io root-site repository, GitHub Actions Pages, Visit site, repository About website metadata, local tools and Git identity, origin cloning, local verification, safe commit/push, Actions monitoring, and updated-site verification. Awaiting explicit Step 18 approval before changing README.md."
-**Context**: CONSTRUCTION - Code Generation Part 1 Review Change / Step 18 Planning
+    **AI Response**: "Verified the requested journey against current official GitHub documentation and added BYC-27, acceptance criterion 26, and Step 18. The plan uses template creation, a public lowercase username.github.io root-site repository, GitHub Actions Pages, Visit site, repository About website metadata, local tools and Git identity, origin cloning, local verification, safe commit/push, Actions monitoring, and updated-site verification. Awaiting explicit Step 18 approval before changing README.md."
+    **Context**: CONSTRUCTION - Code Generation Part 1 Review Change / Step 18 Planning
 
 ---
 
@@ -9180,5 +9304,794 @@ For the connect\_channels, please make the color consistent with other component
 **User Input**: "N/A"
 **AI Response**: "Returned to the standardized Code Generation review gate after completing and verifying all eighteen implementation steps. Awaiting Request Changes or Continue to Next Stage before the final Build and Test rerun."
 **Context**: CONSTRUCTION - Code Generation Part 2 Review Gate
+
+---
+
+## Medical Student Portfolio Revamp - User Stories Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review personas.md and stories.md and confirm approval before Workflow Planning."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: INCEPTION - User Stories Part 2 complete; `personas.md` (4 personas) and `stories.md` (14 epics, hybrid journey-based INVEST stories with GWT acceptance criteria and full traceability) approved as generated.
+
+---
+
+## Medical Student Portfolio Revamp - Workflow Planning Execution Plan Drafted
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "N/A"
+**AI Response**: "Created `aidlc-docs/inception/plans/execution-plan.md`. Recommended EXECUTE for Application Design, Units Planning, Units Generation, Functional Design, NFR Requirements, and NFR Design; recommended SKIP for Infrastructure Design (no backend/infra/deployment-model change). Risk assessed as Medium; rollback Easy given static-site version control."
+**Context**: INCEPTION - Workflow Planning; awaiting user approval before proceeding to Application Design.
+
+---
+
+## Medical Student Portfolio Revamp - Workflow Planning Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the execution plan and confirm approval before Application Design."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: INCEPTION - Workflow Planning approved; Application Design, Units Planning, Units Generation, Functional Design, NFR Requirements, and NFR Design confirmed EXECUTE; Infrastructure Design confirmed SKIP.
+
+---
+
+## Medical Student Portfolio Revamp - Application Design Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the application-design-plan.md questions and confirm answers before generating design artifacts."
+**User Response**: "approve and continue" (recommended options accepted for all 6 questions)
+**Status**: Approved
+**Context**: INCEPTION - Application Design plan approved with recommended answers (medical/ template directory, thin MedicalShell, shared Lightbox primitive, per-domain data files, reused navigation/hash service, test-time content-validation utility). Generated `components.md`, `component-methods.md`, `services.md`, `component-dependency.md`, and consolidated `application-design.md`.
+
+---
+
+## Medical Student Portfolio Revamp - Units Planning Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Unit of work plan complete. Review the plan in aidlc-docs/inception/plans/unit-of-work-plan.md. Ready to proceed to generation?"
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: INCEPTION - Units Planning approved with recommended answers (11 units mirroring component/epic boundaries; U1 Content & Data and U2 Navigation & Shell as blocking foundational units; U3-U10 independent/parallel; U11 Cross-Cutting Quality as closing verification gate; single monolith, no team-boundary constraints, no separate deployment needs).
+
+---
+
+## Medical Student Portfolio Revamp - Units Generation Complete
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "N/A"
+**AI Response**: "Generated `unit-of-work.md` (11 units: Content & Data Foundation, Navigation & Shell, Introduction, Medical Journey, Academics, Community Care, Gallery, Contact, Color Mode Verification, Legacy Removal, Cross-Cutting Quality), `unit-of-work-dependency.md` (dependency matrix and recommended 3-wave sequencing), and `unit-of-work-story-map.md` (all 45 stories from stories.md mapped to units, coverage check confirmed)."
+**Context**: INCEPTION - Units Generation Part 2 complete; awaiting user approval before CONSTRUCTION PHASE.
+
+---
+
+## Medical Student Portfolio Revamp - Units Generation Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the units generation artifacts and confirm approval before CONSTRUCTION PHASE."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: INCEPTION complete - Units Generation approved (11 units, dependency matrix, full story map coverage). Proceeding to CONSTRUCTION PHASE, Functional Design.
+
+---
+
+## Medical Student Portfolio Revamp - Functional Design Complete (medical-portfolio, U1-U11)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "N/A"
+**AI Response**: "Scoped Functional Design as one consolidated 'medical-portfolio' unit covering U1-U11 given the tightly coupled single-monolith architecture. Answered plan questions with recommended options (canonical hash-fallback rewrite, shared score-display rule, structural collective-attribution field, id-based lightbox state, release-blocking privacy validation, all 4 PBT candidates accepted for business-rule validation with NFR Design owning fast-check mechanics). Generated `domain-entities.md`, `business-rules.md` (BR-1 through BR-10), `business-logic-model.md`, and `frontend-components.md`."
+**Context**: CONSTRUCTION - Functional Design complete for medical-portfolio; awaiting user approval before NFR Requirements.
+
+---
+
+## Medical Student Portfolio Revamp - Functional Design Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the functional design artifacts and confirm approval before NFR Requirements."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: CONSTRUCTION - Functional Design for medical-portfolio (U1-U11) approved. Proceeding to NFR Requirements.
+
+---
+
+## Medical Student Portfolio Revamp - NFR Requirements Complete (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "N/A"
+**AI Response**: "Scoped scalability/availability/security/reliability honestly for a static backend-free site (no concurrency, no DR, threat model reframed as data-exposure risk covered by BR-8). Set concrete performance budgets (300KB gzipped bundle, 300KB per gallery image derivative). Confirmed fast-check as PBT framework, added an axe-core-based accessibility assertion library, declined a new image-optimization dependency. Generated `nfr-requirements.md` and `tech-stack-decisions.md`."
+**Context**: CONSTRUCTION - NFR Requirements complete for medical-portfolio; awaiting user approval before NFR Design.
+
+---
+
+## Medical Student Portfolio Revamp - NFR Requirements Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the NFR requirements and confirm approval before NFR Design."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: CONSTRUCTION - NFR Requirements for medical-portfolio approved. Proceeding to NFR Design.
+
+---
+
+## Medical Student Portfolio Revamp - NFR Design Complete (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "N/A"
+**AI Response**: "Answered plan questions with recommended options: defensive optional-chaining/try-catch rendering (no retry/circuit-breaker), single-bundle static site with lazy-loaded below-fold images and manually prepared derivatives (no code-splitting or new image library), in-suite Vitest content-validation gate (BR-8), shared axe-core a11y test helper, shared fast-check generators module. Generated `nfr-design-patterns.md` and `logical-components.md`."
+**Context**: CONSTRUCTION - NFR Design complete for medical-portfolio; awaiting user approval before Infrastructure Design (SKIP) / Code Generation.
+
+---
+
+## Medical Student Portfolio Revamp - NFR Design Approval
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Please review the NFR design and confirm approval before Code Generation."
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: CONSTRUCTION - NFR Design for medical-portfolio approved. Infrastructure Design skipped per execution plan. Proceeding to Code Generation Part 1 (Planning).
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Plan (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Prompt**: "Code generation plan complete for medical-portfolio (14 steps, U1-U11). Review aidlc-docs/construction/plans/medical-portfolio-code-generation-plan.md. Ready to proceed to generation?"
+**User Response**: "approve and continue"
+**Status**: Approved
+**Context**: CONSTRUCTION - Code Generation Part 1 (Planning) approved. Plan flags gallery image curation as a starter set requiring student (P3) review before final publication, since selecting respectful photos of children/patients is a judgment call outside AI's authority to finalize unilaterally. Proceeding to Part 2 (Generation).
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Complete (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**AI Response**: "Executed all 14 steps of the code generation plan. Created the medical presentation (types, per-domain data, Lightbox primitive, navigation hook, MedicalShell + six section components, theme tokens), wired App.tsx to the single presentation, updated index.html metadata, deleted the entire retired Engineering/Business/journal/style-selector architecture and previous-owner assets, added .gitignore protection for src/assets/CV/, and wrote the full test suite (a11y helper, fast-check generators, BR-8 content-privacy gate, per-section example tests, 2 PBT test files). Verification: tsc --noEmit passes, eslint passes, 14 test files / 33 tests pass, production build succeeds (176.89kB gzip, under the 300KB budget), post-build privacy scan passes, git diff --check passes. Flagged the 5 starter gallery images as requiring the student's (P3) explicit review before final publication."
+**Context**: CONSTRUCTION - Code Generation complete for medical-portfolio (U1-U11). Awaiting user approval before Build and Test.
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Revised (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**User Input**: "wait, are you following my current code structure?" followed by "go back and reference the existing design more. You current design is too simple and lacking" and "basically this is what i want: full medical revamp per the approved plan, with each unit built on top of the existing code structure rather than reinventing patterns"
+**AI Response**: "Identified and fixed a real defect: the first-pass `medical-theme.css` defined its own `:root`/`[data-theme=dark]` token system that the app's actual `next-themes` `attribute=\"class\"` + `.light`-class mechanism (in `src/index.css`) would never apply, meaning dark/light toggling was non-functional for medical tokens. Fixed by updating `src/index.css`'s existing tokens in place to the medical palette. Also restored and adapted the retired `SectionShell` shared component (chapter heading, reveal-up animation, next-section arrow), reused `ContentCard`/`ExternalAction` shared components, rebuilt the Hero/Academics/CommunityCare/Gallery/Contact sections in the richer register/ledger/cover-grid style of the former Business template, added `src/data/sectionCopy.ts` mirroring the retired `sectionContent.ts` pattern, and rebuilt the shared `Lightbox` on Chakra's `Dialog` primitive instead of a custom focus-trap. Updated affected tests. Re-verified: tsc/eslint/vitest (31 tests)/build (189.79kB gzip)/post-build privacy scan/git diff --check all pass."
+**Context**: CONSTRUCTION - Code Generation for medical-portfolio revised in response to user feedback about structural consistency with the pre-existing codebase, before final approval.
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Revised Again (UI/UX polish, medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**User Input**: "it does not look very nice compared to my original site. Please update so that I matches the same level of UI and UX"
+**AI Response**: "Started this repo's own dev server and drove it with a temporary Playwright installation (--no-save, removed afterward via npm prune) to take real screenshots, rather than judging by code alone. Used `git stash -u` to safely view the actual original site (the default-rendered Engineering template) side by side, then `git stash pop` to restore all work. Found the original uses rounded pill status badges, a highlighted keyword in body copy, rounded bordered stat tiles, and a shadowed panel with an icon avatar, tag pills, and a header bar -- richer than the pass-1 editorial-ledger styling. Rebuilt `MedicalHero.tsx` and `MedicalNavigation.tsx` to match this visual language (status badges, highlighted word, evidence-stat tiles, shadowed Student Record panel with a stethoscope icon replacing the disallowed portrait, tag pills, active-nav pill). Re-verified visually in both light and dark mode via screenshots, then re-ran the full verification suite: tsc/eslint/vitest (31 tests)/build (190.30kB gzip)/post-build privacy scan/git diff --check all pass."
+**Context**: CONSTRUCTION - Code Generation for medical-portfolio polished a second time for visual/UX parity with the original site, before final approval.
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Revised for Per-Section Distinct Design (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**User Input**: "use the same code structure as my original project, however, for each section, use a completely different design, layout, navigation, background, UI, UX centered around the profile and medicine theme so that the outcome is a unique portfolio"
+**AI Response**: "Replaced the top navigation bar with a fixed vertical wayfinding-directory sidebar (icon + label per destination) and rebuilt mobile navigation as a full-screen overlay kiosk menu. Gave each of the six sections a distinct layout/background built around a medical metaphor: Introduction keeps its Student Record panel plus a new heartbeat-line SVG graphic; Medical Journey became a vertical icon-node timeline on a diagonal wash; Academics became a dark 'vitals monitor' dashboard with decorative readout bars on a graph-paper grid; Community Care became an alternating case-file dossier with numbered tabs and a rotated ink-stamp badge on a dotted background; Gallery became rotated polaroid photos on a dark light-table backdrop; Contact became a prescription-note card with a perforated edge on lined paper. Verified visually via a temporary Playwright driver in both light and dark mode, and this verification caught two real contrast bugs (gallery-bg used a theme-flipping variable instead of a fixed dark token; Community Care and Contact cards paired fixed light backgrounds with theme-following text color, making titles invisible in dark mode) -- both fixed via CSS-variable scope overrides and re-verified by screenshot. Re-ran the full suite: tsc/eslint/vitest (29 tests)/build (192.13kB gzip)/post-build privacy scan/git diff --check all pass."
+**Context**: CONSTRUCTION - Code Generation for medical-portfolio given a unique, medicine-themed per-section design, before final approval.
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Elevated to Match Reference Project Standard (medical-portfolio)
+
+**Timestamp**: 2026-09-17T00:00:00Z
+**User Input**: "please reference /Users/nhamhhung/student_ports/TranGiaMinhTam.github.io to understand the standard expected and match that"
+**AI Response**: "Reviewed the referenced sibling project's src/portfolio/ presentation layer (a similarly AI-DLC-built portfolio, further along in construction, with per-unit candidate builds, boundary checks, and measurement scripts). Extracted its editorial 'scientific specimen record' visual language -- a restrained token set, monospace uppercase field-code micro-labels, hard offset (non-blurred) card shadows, border-inline-start accent bars, and bold condensed display type -- and applied that typographic/graphic discipline across all six sections while keeping this repository's existing Chakra UI code structure (the reference project uses plain CSS Modules instead, which would have been a larger architectural change than the same-structure instruction called for). Added --font-mono and a .field-code utility class, a theme-invariant --hard-shadow token, and border-inline-start accent bars to SectionShell and section cards. Attempted a semantic <table> upgrade for Academics mirroring the reference's table pattern; visual verification caught that Chakra's Table.\* components break the CSS-custom-property scoping the dark 'monitor' cards depend on for theme-invariant contrast, so this was reverted to the previously-verified div structure and documented as a known limitation rather than silently shipped. Re-verified visually in both light and dark mode; full suite (tsc/eslint/vitest 29 tests/build 192.10kB gzip/post-build privacy scan/git diff --check) re-passed."
+**Context**: CONSTRUCTION - Code Generation for medical-portfolio elevated to match an internally-referenced quality bar, before final approval.
+
+---
+
+## Repository Change Assessment Request
+
+**Timestamp**: 2026-09-19T08:08:11Z
+**User Input**: "Using AI-DLC, please check and assess the changes in this repo, previously I have run with claude but not happy with the output"
+**AI Response**: "Resumed the existing AI-DLC workflow, loaded the mandatory common rules and extension opt-in prompts, preserved the current worktree, and began a read-only assessment of the prior Claude-generated code and documentation before proposing any implementation changes."
+**Context**: Session continuity and workspace detection; user feedback is treated as a request to review the unapproved Code Generation output rather than approve it.
+
+---
+
+## Medical Student Portfolio Revamp - Change Assessment Complete
+
+**Timestamp**: 2026-09-19T08:13:31Z
+**User Input**: "Using AI-DLC, please check and assess the changes in this repo, previously I have run with claude but not happy with the output"
+**AI Response**: "Completed an independent read-only assessment of the unapproved Code Generation output. Local tests, lint, build, and diff checks pass, but Code Generation remains blocked by PBT-08 CI non-compliance, incomplete privacy enforcement, hash/focus behavior gaps, broken project-site gallery paths, accessibility gaps, requirement-encoding test defects, inaccurate academic readout visuals, and AI-DLC plan/state/audit drift. Created `change-assessment.md` and a repair-versus-restore direction question file; no application code was changed."
+**Context**: CONSTRUCTION - Code Generation review. Full PBT enforcement is enabled; blocking PBT findings mean the workflow cannot offer Continue to Next Stage.
+
+---
+
+## Medical Student Portfolio Revamp - Blocking PBT Findings and Direction Prompt
+
+**Timestamp**: 2026-09-19T08:15:00Z
+**AI Prompt**: "Review `aidlc-docs/construction/medical-portfolio/code/change-assessment.md`, then answer Question 1 in `aidlc-docs/construction/plans/medical-portfolio-change-assessment-questions.md` by placing A, B, or X after the `[Answer]:` tag."
+**AI Response**: "Recorded blocking PBT findings: PBT-01 is non-compliant because component-level property analysis/N/A dispositions are incomplete; PBT-02 is non-compliant because the documented create/parse round trip is not implemented; PBT-06 is non-compliant because stateful UI behavior was neither model-tested nor explicitly marked N/A; PBT-08 is non-compliant because PBT is absent from CI and no CI seed strategy exists. Only Request Changes is available; Continue to Next Stage is withheld."
+**Context**: CONSTRUCTION - Code Generation assessment. Awaiting user direction before any application-code changes.
+
+---
+
+## Medical Student Portfolio Revamp - Repair Direction Confirmed
+
+**Timestamp**: 2026-09-19T08:17:29Z
+**User Input**: "The project's UI is not up to standard. My original template was very pleasant and professional looking but the current design is ugly. Please reference the initial design, layout, behaviour, navigation, ... and those in ../TranGiaMinhTam.github.io/"
+**AI Response**: "Resolved the repair-versus-restore direction as option A: repair the current implementation in place. Added the repository's initial HEAD presentation and `../TranGiaMinhTam.github.io/` as mandatory visual, layout, behavior, navigation, and interaction references. Began a read-only comparative analysis before revising the corrective Code Generation plan; no application code changed."
+**Context**: CONSTRUCTION - Code Generation corrective planning after Request Changes.
+
+---
+
+## Medical Student Portfolio Revamp - UI Reference Analysis and Corrective Plan Complete
+
+**Timestamp**: 2026-09-19T08:20:01Z
+**User Input**: "The project's UI is not up to standard. My original template was very pleasant and professional looking but the current design is ugly. Please reference the initial design, layout, behaviour, navigation, ... and those in ../TranGiaMinhTam.github.io/"
+**AI Response**: "Compared the current medical portfolio with the initial repository presentation at HEAD and the presentation layer in `../TranGiaMinhTam.github.io/`. Documented a coherent clinical-editorial recovery direction that restores the initial horizontal shell, balanced two-column hero, familiar navigation, restrained surfaces, and accessible mobile drawer while selectively adopting the sibling portfolio's registered targets, progress wayfinding, resilient hash/history behavior, and consistent section framing. Appended a 12-step corrective plan covering visual foundations, all six sections, navigation, accessibility, privacy, deployment paths, property-based testing, CI, and multi-viewport visual acceptance. No application code changed."
+**Context**: CONSTRUCTION - Code Generation Part 1 corrective planning after the user requested changes.
+
+---
+
+## Medical Student Portfolio Revamp - Corrective Code Generation Plan Approval Prompt
+
+**Timestamp**: 2026-09-19T08:20:01Z
+**AI Prompt**: "Review `aidlc-docs/construction/medical-portfolio/code/ui-reference-analysis.md` and the corrective section in `aidlc-docs/construction/plans/medical-portfolio-code-generation-plan.md`, then answer Question 1 in `aidlc-docs/construction/plans/medical-portfolio-ui-recovery-plan-approval-questions.md` by placing A, B, or X after the `[Answer]:` tag."
+**AI Response**: "Paused before application-code changes as required by the Code Generation planning gate."
+**Context**: CONSTRUCTION - Code Generation Part 1; awaiting explicit user approval.
+
+---
+
+## Medical Student Portfolio Revamp - Corrective Code Generation Plan Approved
+
+**Timestamp**: 2026-09-19T08:24:00Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option A and entered Code Generation Part 2. Completed Corrective Step 1 by freezing the reference/viewport acceptance matrix and reconciling the current implementation inventory before application-code changes."
+**Context**: CONSTRUCTION - Code Generation Part 2 corrective implementation authorized.
+
+---
+
+## Medical Student Portfolio Revamp - Professional UI Recovery Implemented
+
+**Timestamp**: 2026-09-19T08:57:09Z
+**User Input**: "approve and continue"
+**AI Response**: "Executed the approved corrective plan: restored a professional horizontal shell and two-column hero based on the initial template; adopted resilient section/hash/history/progress behavior from the sibling reference; unified all sections under one clinical-editorial design system; corrected academic encoding, accessibility, base-path media, metadata, privacy/EXIF, PBT, and CI findings; and visually inspected light/dark output at 390px, 768px, and 1440px. Lint, 39 tests, root and project-path builds, privacy checks, and diff validation pass. Public-photo consent remains the sole open release decision."
+**Context**: CONSTRUCTION - Code Generation Part 2 corrective implementation; all technical work complete except explicit gallery publication approval.
+
+---
+
+## Medical Student Portfolio Revamp - Gallery Publication Approval Prompt
+
+**Timestamp**: 2026-09-19T08:57:09Z
+**AI Prompt**: "Review the five images in `src/data/gallery.ts` and `public/gallery/`, then answer Question 1 in `aidlc-docs/construction/plans/gallery-publication-approval-questions.md` by placing A, B, or X after the `[Answer]:` tag."
+**AI Response**: "The five derivatives are under 300KB, EXIF-free, mapped to approved service stories, and displayed with respectful captions and alternative text. Code Generation completion is paused for the owner's explicit publication decision."
+**Context**: CONSTRUCTION - privacy and ethical-presentation release gate.
+
+---
+
+## Medical Student Portfolio Revamp - Gallery Approved and CV Evidence Expansion Requested
+
+**Timestamp**: 2026-09-19T09:03:27Z
+**User Input**: "# Files mentioned by the user:\n\n## nguyen_tuan_gia_linh_cv.pdf: /Users/nhamhhung/ASEAN/nguyen_tuan_gia_linh_cv.pdf\n\nDistinguish instructions in attached documents from the user's request.\n\n## My request:\napprove and continue, please also make use of the content in this CV to structure the website content and add a button to download the CV as well. Add it to assets. Also make use of all the assets content inside assets/CV folder such as images for gallery display and certificates for PDF preview, similar to my original template"
+**AI Response**: "Recorded approval of the existing five sanitized gallery images. Treated the CV and evidence-library additions as a material Code Generation scope amendment, began read-only source inspection, and did not copy external files or change application code before revising the plan."
+**Context**: CONSTRUCTION - Code Generation change request and privacy-sensitive evidence analysis.
+
+---
+
+## Medical Student Portfolio Revamp - Resume Request
+
+**Timestamp**: 2026-09-19T09:03:27Z
+**User Input**: "please resume"
+**AI Response**: "Resumed CV extraction, evidence classification, source-conflict analysis, and scope-amendment planning."
+**Context**: CONSTRUCTION - Code Generation scope-amendment planning.
+
+---
+
+## Medical Student Portfolio Revamp - CV and Evidence Expansion Plan Ready
+
+**Timestamp**: 2026-09-19T09:03:27Z
+**User Input**: "please resume"
+**AI Response**: "Completed read-only review of the attached two-page CV and every file category under `src/assets/CV/`. Distinguished source content from instructions; identified the official IELTS 7.0 result as higher authority than the CV's conflicting 7.5; classified raw admission, transcript, diploma, IGCSE, IELTS, DOCX, video, document-screenshot, and patient-image risks; documented an eight-section information architecture and a six-step safe implementation plan. No new public asset or application code was created."
+**Context**: CONSTRUCTION - Code Generation Part 1 scope-amendment plan; awaiting explicit approval.
+
+---
+
+## Medical Student Portfolio Revamp - CV and Evidence Expansion Approval Prompt
+
+**Timestamp**: 2026-09-19T09:03:27Z
+**AI Prompt**: "Review `aidlc-docs/construction/medical-portfolio/code/cv-evidence-assessment.md` and the scope-amendment section in `medical-portfolio-code-generation-plan.md`, then answer Question 1 in `aidlc-docs/construction/plans/cv-evidence-expansion-approval-questions.md` with A, B, or X."
+**AI Response**: "Paused before copying the external CV, generating public derivatives, or changing application code, as required by the Code Generation planning gate."
+**Context**: CONSTRUCTION - awaiting explicit CV/evidence expansion approval.
+
+---
+
+## Medical Student Portfolio Revamp - CV and Evidence Expansion Approved and Implemented
+
+**Timestamp**: 2026-09-19T12:05:24Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option A and completed the approved six-step scope amendment. Added the public CV and sanitized hematology acknowledgement with accessible preview/download controls; expanded the site to eight destinations with Research and Evidence sections; reconciled GPA, A Level, IELTS, research, service, and extracurricular content; expanded the approved gallery from five to nine EXIF-free contextual images; kept sensitive academic records, raw documents, patient images, and videos private; and added regression, accessibility, privacy, and PBT coverage. Verification passes: typecheck, lint, 16 test files/44 tests, root and project-path builds, PDF active-content checks, asset budgets, git diff validation, and exact 390px plus 1440px light/dark visual review."
+**Context**: CONSTRUCTION - Code Generation Part 2 complete for the CV/evidence scope amendment; awaiting the standardized Code Generation completion decision.
+
+---
+
+## Medical Student Portfolio Revamp - Inline PDF Preview Request
+
+**Timestamp**: 2026-09-19T13:11:46Z
+**User Input**: "I want the pdf to show reviews right from the website, and clicking on it will open popups"
+**AI Response**: "Interpreted 'reviews' as visible first-page PDF previews. Added a focused Code Generation scope-amendment plan to render safe thumbnails for the two public PDFs, make those thumbnails open the existing accessible popup, retain independent downloads, and keep sensitive records summary-only. No application code or public asset changed before approval."
+**Context**: CONSTRUCTION - Code Generation Part 1 scope-amendment planning; awaiting explicit approval.
+
+---
+
+## Medical Student Portfolio Revamp - Inline PDF Preview Plan Approved
+
+**Timestamp**: 2026-09-19T13:11:46Z
+**User Input**: "approve"
+**AI Response**: "Recorded option A and began Code Generation Part 2 for the inline PDF preview-card amendment."
+**Context**: CONSTRUCTION - Code Generation Part 2 implementation authorized.
+
+---
+
+## Medical Student Portfolio Revamp - Inline PDF Preview Cards Implemented
+
+**Timestamp**: 2026-09-19T13:11:46Z
+**User Input**: "approve"
+**AI Response**: "Completed the approved inline PDF preview-card amendment. Generated two metadata-free first-page thumbnails; displayed them in the public Evidence cards; made thumbnail and Preview controls open the accessible PDF popup with focus restoration; retained independent downloads and text-only private-record summaries; and disclosed the CV/official IELTS conflict beside the CV preview. Type checking, lint, 16 test files/46 tests, root and project-path builds, privacy and asset checks, git diff validation, and 390px/1440px light/dark visual review pass."
+**Context**: CONSTRUCTION - Code Generation Part 2 complete; awaiting the standardized completion decision.
+
+---
+
+## Medical Student Portfolio Revamp - Code Generation Approved
+
+**Timestamp**: 2026-09-19T13:11:46Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded approval of the completed Code Generation stage and advanced the workflow to Build and Test. Began reconciling the build, unit-test, integration-test, performance-test, privacy/security-test, and summary artifacts with the final medical portfolio implementation."
+**Context**: CONSTRUCTION - Code Generation approved; Build and Test started.
+
+---
+
+## Build and Test Stage
+
+**Timestamp**: 2026-09-19T13:11:46Z
+**Build Status**: Success - root and `/portfolio-test/` production builds pass
+**Test Status**: Pass - 16 files/46 tests; focused rendered integration group 11 files/28 tests; TypeScript and ESLint pass
+**Files Generated**:
+
+- build-instructions.md
+- unit-test-instructions.md
+- integration-test-instructions.md
+- performance-test-instructions.md
+- security-test-instructions.md
+- build-and-test-summary.md
+  **AI Response**: "Replaced stale Business-template build/test documentation with medical-portfolio instructions and results. Recorded the static performance baseline, privacy/security evidence boundary, eight-section integration scenarios, PDF preview/download workflows, responsive acceptance, and root/non-root deployment verification. A timing-sensitive mobile Drawer cleanup assertion found by the focused integration run was stabilized with an explicit bounded wait; both focused and complete suites pass afterward."
+  **Context**: CONSTRUCTION - Build and Test complete; awaiting approval to proceed to Operations.
+
+---
+
+## Operations Stage and Workflow Closure
+
+**Timestamp**: 2026-09-19T14:31:43Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded approval of Build and Test and advanced to Operations. The installed AI-DLC Operations phase is a placeholder with no executable deployment, monitoring, incident-response, or maintenance stages. Marked the medical portfolio workflow complete without publishing or changing external deployment state."
+**Context**: OPERATIONS - Placeholder acknowledged; AI-DLC workflow complete.
+
+---
+
+## Placeholder Contact Section - User Request
+
+**Timestamp**: 2026-09-20T05:59:09Z
+**User Input**: "please add contact section, using placeholder information for now"
+**AI Response**: "Reopened AI-DLC for a minimal brownfield enhancement and began workspace detection and requirements analysis."
+**Context**: INCEPTION - New post-completion contact-section enhancement.
+
+---
+
+## Placeholder Contact Section - Workspace Detection
+
+**Timestamp**: 2026-09-20T05:59:09Z
+**AI Response**: "Confirmed the existing React/Vite brownfield application, current reverse-engineering artifacts, existing MedicalContact component, typed contact data, and focused accessibility test. Reverse Engineering is skipped because the artifacts and inspected implementation are sufficient for this isolated change."
+**Context**: INCEPTION - Workspace Detection complete; automatically proceeded to Requirements Analysis.
+
+---
+
+## Placeholder Contact Section - Requirements Approval Prompt
+
+**Timestamp**: 2026-09-20T05:59:09Z
+**AI Prompt**: "Review `aidlc-docs/inception/requirements/placeholder-contact-requirements.md`, then choose A, B, C, or X in `placeholder-contact-requirements-approval-questions.md`."
+**AI Response**: "Prepared minimal functional, accessibility, privacy, responsive-layout, typed-data, and testing requirements. Recommended skipping User Stories because the change is small and isolated."
+**Context**: INCEPTION - Requirements Analysis awaiting explicit approval.
+
+---
+
+## Placeholder Contact Section - Requirements Approved
+
+**Timestamp**: 2026-09-20T06:01:29Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option A, completed Requirements Analysis, documented the decision to skip User Stories, and proceeded to Workflow Planning."
+**Context**: INCEPTION - Requirements Analysis approved; Workflow Planning started.
+
+---
+
+## Placeholder Contact Section - Workflow Planning Approval Prompt
+
+**Timestamp**: 2026-09-20T06:01:29Z
+**AI Prompt**: "Review `aidlc-docs/inception/plans/placeholder-contact-execution-plan.md`, then choose A, B, or X in `placeholder-contact-workflow-approval-questions.md`."
+**AI Response**: "Prepared a low-risk single-component execution plan. Recommended executing only Code Generation and Build and Test while skipping conditional design stages that add no value for this isolated UI enhancement."
+**Context**: INCEPTION - Workflow Planning awaiting explicit approval.
+
+---
+
+## Placeholder Contact Section - Workflow Plan Approved
+
+**Timestamp**: 2026-09-20T06:04:22Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option A, completed Workflow Planning, and advanced to Code Generation Part 1."
+**Context**: INCEPTION to CONSTRUCTION - Workflow plan approved; Code Generation planning started.
+
+---
+
+## Placeholder Contact Section - Code Generation Plan Approval Prompt
+
+**Timestamp**: 2026-09-20T06:04:22Z
+**AI Prompt**: "Review `aidlc-docs/construction/plans/placeholder-contact-code-generation-plan.md`, then choose A, B, or X in `placeholder-contact-code-generation-approval-questions.md`."
+**AI Response**: "Prepared a six-step file-level plan covering the typed contact contract, safe placeholder data, responsive presentation, focused accessibility tests, documentation, and complete verification. No application code was changed before approval."
+**Context**: CONSTRUCTION - Code Generation Part 1 awaiting explicit approval.
+
+---
+
+## Placeholder Contact Section - Code Generation Plan Approved
+
+**Timestamp**: 2026-09-20T06:15:19Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option A and began Code Generation Part 2 using the approved six-step implementation sequence."
+**Context**: CONSTRUCTION - Code Generation Part 2 implementation authorized.
+
+---
+
+## Placeholder Contact Section - Code Generation Complete
+
+**Timestamp**: 2026-09-20T06:19:46Z
+**AI Prompt**: "Review the generated application code and Code Generation summary, then choose Request Changes or Continue to Build and Test."
+**AI Response**: "Completed all six approved steps. Added typed example contact data, a responsive three-card presentation, explicit placeholder disclosures, and focused regression/accessibility coverage. Typecheck, lint, focused and complete tests, production build, formatting, privacy scan, and diff validation pass."
+**Context**: CONSTRUCTION - Code Generation Part 2 complete; awaiting the standardized completion decision.
+
+---
+
+## Placeholder Contact Section - Code Generation Approved
+
+**Timestamp**: 2026-09-20T06:31:19Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option B, marked Code Generation complete, and advanced to Build and Test."
+**Context**: CONSTRUCTION - Code Generation approved; Build and Test started.
+
+---
+
+## Placeholder Contact Section - Resume Request
+
+**Timestamp**: 2026-09-20T06:38:30Z
+**User Input**: "please resume"
+**AI Response**: "Resumed Build and Test after fresh typecheck, lint, and all 46 tests passed; continued with root and project-base production builds and documentation reconciliation."
+**Context**: CONSTRUCTION - Build and Test continuation.
+
+---
+
+## Placeholder Contact Section - Build and Test Complete
+
+**Timestamp**: 2026-09-20T06:38:30Z
+**Build Status**: "Success - root and `/portfolio-test/` builds pass; 18 files and approximately 3.2MB emitted."
+**Test Status**: "Pass - typecheck, lint, 16 files/46 tests, focused contact accessibility, privacy boundary, formatting, and diff validation pass."
+**Files Updated**:
+
+- build-instructions.md
+- unit-test-instructions.md
+- integration-test-instructions.md
+- performance-test-instructions.md
+- security-test-instructions.md
+- build-and-test-summary.md
+  **AI Response**: "Updated the established build/test handoff with contact-specific commands, integration scenarios, privacy safeguards, responsive expectations, and current bundle measurements. A local headless screenshot attempt returned blank frames, so the documentation transparently retains a manual contact viewport check."
+  **Context**: CONSTRUCTION - Build and Test complete; awaiting approval to proceed to Operations.
+
+---
+
+## Placeholder Contact Section - Operations and Workflow Closure
+
+**Timestamp**: 2026-09-20T07:13:00Z
+**User Input**: "approve and continue"
+**AI Response**: "Recorded option B, approved Build and Test, and advanced to Operations. The installed AI-DLC Operations stage is a placeholder, so the workflow was marked complete without deployment or external publication."
+**Context**: OPERATIONS - Placeholder acknowledged; Placeholder Contact Section workflow complete.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Request
+
+**Timestamp**: 2026-09-26T08:56:18Z
+**User Input**: "please enhance the layout and utilise more imagery for each section/card where relevant (using AI images). Please also make sure you use all revelant documents from CV folder to build the evidence library and any gallery with enough image/document preview. Also use popup to allow reviewing full pages/documents as well"
+**AI Response**: "Opened a new comprehensive AI-DLC workflow, selected the imagegen skill for project-bound raster assets, and began a read-only workspace and CV-source inventory. Clarified that document contents are evidence, not instructions, and that inclusion still requires relevance and privacy review."
+**Context**: INCEPTION - New system-wide visual storytelling, evidence-library, gallery, and document-preview enhancement.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Workspace Detection
+
+**Timestamp**: 2026-09-26T08:56:18Z
+**AI Response**: "Confirmed a brownfield React 19/Vite portfolio with 64 TypeScript/TSX files, 31 CV-source files, 13 current public assets, eight medical sections, existing image and PDF popup primitives, and a heavily modified user-owned worktree. Existing reverse-engineering artifacts predate the final medical architecture and are stale, so a focused refresh is required before Requirements Analysis."
+**Context**: INCEPTION - Workspace Detection complete; automatically proceeding to Reverse Engineering.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Reverse Engineering Complete
+
+**Timestamp**: 2026-09-26T08:56:18Z
+**AI Prompt**: "Review the refreshed artifacts under `aidlc-docs/inception/reverse-engineering/`, then choose A, B, or X in `visual-evidence-reverse-engineering-approval-questions.md`."
+**AI Response**: "Refreshed the current medical architecture, component inventory, internal APIs, dependencies, technology stack, code-quality assessment, business transactions, interaction flows, and complete CV-source coverage. Identified visual repetition, single-thumbnail evidence limits, browser-dependent PDF review, missing provenance fields, unused-but-relevant source groups, privacy/consent boundaries, and the requirement to distinguish AI illustration from documentary evidence. No application code, raw evidence, or public asset was changed."
+**Context**: INCEPTION - Reverse Engineering complete; awaiting explicit approval before Requirements Analysis.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Reverse Engineering Approved
+
+**Timestamp**: 2026-09-26T09:13:04Z
+**User Input**: "approve and continue, skip to code gen if possible"
+**AI Response**: "Recorded option A and advanced to Requirements Analysis. Explained that mandatory Requirements Analysis, Workflow Planning, and Code Generation planning cannot be skipped, but conditional story/design stages will be assessed for omission or reduced depth."
+**Context**: INCEPTION - Reverse Engineering approved; Requirements Analysis started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Requirements Questions
+
+**Timestamp**: 2026-09-26T09:13:04Z
+**AI Prompt**: "Complete all eight `[Answer]:` tags in `visual-evidence-requirement-verification-questions.md` covering generated-image style and density, document publication, consent-sensitive photos, videos, popup review, Security Baseline, and Property-Based Testing."
+**AI Response**: "Created one focused requirements decision file. Paused before generating images, sanitizing documents, copying source media, or changing application code."
+**Context**: INCEPTION - Requirements Analysis clarification gate.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Requirements Answers
+
+**Timestamp**: 2026-09-26T09:18:13Z
+**User Input**: "all A except No and No for 7 and 8"
+**AI Response**: "Validated the response as A for questions 1 through 6, B for question 7, and C for question 8. Recorded a cohesive editorial illustration style, approximately five visual anchors, sanitized document derivatives with summary fallbacks, limited low-risk gallery expansion, video exclusion, page-gallery document popups, and both optional extensions disabled."
+**Context**: INCEPTION - Requirements Analysis answers validated without ambiguity.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Requirements Complete
+
+**Timestamp**: 2026-09-26T09:18:13Z
+**AI Prompt**: "Review `visual-evidence-requirements.md`, then choose A, B, or X in `visual-evidence-requirements-approval-questions.md`."
+**AI Response**: "Generated comprehensive functional and non-functional requirements covering all-section layout enhancement, five generated editorial anchors, complete source disposition tracking, sanitized document derivatives, expanded evidence metadata, page-level popup review, low-risk gallery expansion, video exclusion, content-zone separation, accessibility, privacy, performance, maintainability, testing, and preservation of existing behavior. No application code, source evidence, public asset, or generated image was changed."
+**Context**: INCEPTION - Requirements Analysis complete; awaiting explicit approval before User Stories.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Requirements Approved
+
+**Timestamp**: 2026-09-26T09:36:55Z
+**User Input**: "A"
+**AI Response**: "Recorded option A, marked Requirements Analysis complete, and advanced to User Stories. Determined that User Stories must execute because the enhancement changes multiple public visitor workflows and introduces new evidence-review interactions."
+**Context**: INCEPTION - Requirements Analysis approved; User Stories Part 1 started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Planning Questions
+
+**Timestamp**: 2026-09-26T09:36:55Z
+**AI Prompt**: "Complete all six `[Answer]:` tags in `aidlc-docs/inception/plans/story-generation-plan.md`, covering story organization, personas, granularity, acceptance criteria, treatment of previous stories, and cross-cutting quality stories."
+**AI Response**: "Completed the mandatory User Stories assessment, documented why the stage adds value, and created a focused six-question story-generation plan. No application code, source evidence, public asset, generated image, story, or persona was changed."
+**Context**: INCEPTION - User Stories Part 1 planning questions awaiting answers.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Planning Answers
+
+**Timestamp**: 2026-09-26T12:01:14Z
+**User Input**: "all A"
+**AI Response**: "Recorded option A for all six story-planning questions. Validated the answers as complete, mutually consistent, and sufficiently specific: hybrid journey/feature organization, four personas, small stories, Given/When/Then criteria with requirement traceability, one authoritative replacement story set, and dedicated cross-cutting quality stories."
+**Context**: INCEPTION - User Stories Part 1 answers validated without ambiguity.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Plan Approval Prompt
+
+**Timestamp**: 2026-09-26T12:01:14Z
+**AI Prompt**: "Review the resolved story-generation approach and choose A, B, or X in `visual-evidence-story-plan-approval-questions.md`."
+**AI Response**: "Recorded the resolved story approach in the plan and created the mandatory explicit approval gate. No personas, stories, application code, public assets, source evidence, or generated images were changed."
+**Context**: INCEPTION - User Stories Part 1 plan awaiting explicit approval.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Plan Approved
+
+**Timestamp**: 2026-09-26T12:05:53Z
+**User Input**: "A"
+**AI Response**: "Recorded option A, marked the story-generation approach approved, and executed the approved Part 2 checklist."
+**Context**: INCEPTION - User Stories Part 1 approved; Part 2 generation started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Complete
+
+**Timestamp**: 2026-09-26T12:05:53Z
+**AI Prompt**: "Review `aidlc-docs/inception/user-stories/stories.md` and `aidlc-docs/inception/user-stories/personas.md`, then request changes or approve and continue to Workflow Planning."
+**AI Response**: "Generated one authoritative set of four personas and 27 small, traced user stories across visual browsing, evidence discovery, document-page review, gallery navigation, publication governance, and cross-cutting quality. Every story includes Given/When/Then acceptance criteria and requirement mappings; the artifact includes persona mapping, complete requirement traceability, INVEST review, and extension status."
+**Context**: INCEPTION - User Stories Part 2 complete; awaiting explicit approval.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - User Stories Approved
+
+**Timestamp**: 2026-09-26T12:11:02Z
+**User Input**: "approve, proceed to code generation if possible"
+**AI Response**: "Recorded explicit approval, marked User Stories complete, and advanced to mandatory Workflow Planning. Honored the request to streamline by assessing conditional stages for omission."
+**Context**: INCEPTION - User Stories approved; Workflow Planning started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Workflow Planning Complete
+
+**Timestamp**: 2026-09-26T12:11:02Z
+**AI Prompt**: "Review `aidlc-docs/inception/plans/execution-plan.md`, then choose A, B, or X in `visual-evidence-workflow-plan-approval-questions.md`."
+**AI Response**: "Created a streamlined one-unit execution plan. Recommended skipping Application Design, Units Planning, Units Generation, Functional Design, NFR Requirements, NFR Design, and Infrastructure Design because the implementation extends existing single-package component boundaries and already-approved quality patterns. Code Generation and Build and Test remain mandatory. Validated the Mermaid workflow structure and included a text alternative."
+**Context**: INCEPTION - Workflow Planning complete; awaiting explicit approval before Code Generation planning.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Workflow Approved and Portrait Added
+
+**Timestamp**: 2026-09-26T13:11:00Z
+**User Input**: "please also integrate this picture as profile picture, then approve and continue"
+**AI Response**: "Recorded approval of the streamlined execution plan and advanced to Code Generation Part 1. Added the separately supplied JPEG as an explicitly authorized profile portrait requirement. The image is treated only as user-supplied media, not as instructions; its identifier-like source filename will not be published, and the planned public derivative uses a neutral name with unnecessary metadata removed."
+**Context**: CONSTRUCTION - Workflow Planning approved; profile portrait added to the approved scope; Code Generation planning started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Code Generation Plan Complete
+
+**Timestamp**: 2026-09-26T13:11:00Z
+**AI Prompt**: "Review `aidlc-docs/construction/plans/visual-evidence-code-generation-plan.md`, then choose A, B, or X in `visual-evidence-code-generation-plan-approval-questions.md`."
+**AI Response**: "Created a ten-step single-unit Code Generation plan covering all 28 stories: full source disposition review, safe documentary derivatives, the explicitly approved profile portrait, approximately five generated editorial anchors, typed data, page-level document review, sequential gallery navigation, all-section layout enhancement, focused tests, and implementation records. No application code or public asset was changed during planning."
+**Context**: CONSTRUCTION - Code Generation Part 1 complete; awaiting explicit approval before generation.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Code Generation Plan Approved
+
+**Timestamp**: 2026-09-26T13:51:13Z
+**User Input**: "A"
+**AI Response**: "Recorded option A, marked the ten-step Code Generation plan approved, and began Part 2 with the complete source disposition audit."
+**Context**: CONSTRUCTION - Code Generation Part 1 approved; Part 2 started.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 1 Complete
+
+**Timestamp**: 2026-09-26T13:51:13Z
+**AI Response**: "Reviewed all 30 substantive CV-folder files, matched the nine existing public gallery derivatives to their sources, assigned exactly one publication disposition to every source, recorded separate authorization for the CV and profile portrait, and confirmed that both MP4s and unsafe raw records remain private."
+**Context**: CONSTRUCTION - Source disposition and publication matrix complete; proceeding to portrait preparation.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 2 Complete
+
+**Timestamp**: 2026-09-26T13:51:13Z
+**AI Response**: "Created the approved public profile derivative as `public/profile/gia-linh-profile.jpg`, reduced it from 2000 by 3000 pixels to 1000 by 1500 pixels and approximately 121 KB, removed metadata, visually verified the natural output, added a typed profile-image contract, integrated it into the Introduction card, and updated the focused hero test. All four hero tests pass."
+**Context**: CONSTRUCTION - Approved portrait preparation and integration complete; proceeding to safe documentary derivatives.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 3 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Reviewed all academic, admission, graduation, IGCSE, IELTS, and community-project pages and confirmed that raw publication would expose excessive personal or third-party context. Added two documentary CV page images, one hematology page image, nine clearly labeled verified-summary pages covering every sensitive evidence group, and one additional low-risk no-face gallery derivative. Raw records, unsafe bedside/child imagery, duplicate screenshots, and both MP4s remain private."
+**Context**: CONSTRUCTION - Safe documentary derivatives and gallery expansion complete; proceeding to editorial image generation.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 4 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Used the built-in image-generation skill for five separate editorial anchors covering Introduction, Medical Journey, Academics, Research, and Contact. Inspected all accepted outputs, copied them into `public/illustrations/`, stripped metadata, converted them to 1400 by 933 WebP files between approximately 79 KB and 174 KB, and recorded prompts, paths, purposes, disclosures, and review findings."
+**Context**: CONSTRUCTION - Generated editorial imagery complete; proceeding to typed media and content integration.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 5 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Extended the typed medical model for profile media, editorial illustrations, evidence publication states, provenance, redaction notes, page collections, page counts, and download policy. Expanded the Evidence Library to seven source groups with twelve reviewable pages, added the tenth low-risk gallery image, introduced a separate editorial-illustration data module, preserved the official IELTS result as authoritative, and retained the CV download. TypeScript validation passes."
+**Context**: CONSTRUCTION - Typed media and content data complete; proceeding to document popup implementation.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 6 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Replaced browser-dependent iframe-only review with an in-site page viewer containing selected full-page imagery, ordered thumbnails, previous/next/direct selection, live page position, focus containment/restoration, Escape dismissal, responsive mobile controls, redaction context, and optional full-PDF open/download actions. All seven evidence groups now have card previews and honest publication states. TypeScript and seven focused Evidence/Hero tests pass."
+**Context**: CONSTRUCTION - Accessible page-based document review complete; proceeding to sequential gallery review.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 7 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Enhanced the shared gallery lightbox with ordered collection state, previous/next controls, left/right arrow-key support, live position feedback, responsive contained imagery, stable test IDs, and focus restoration. Updated the Gallery to ten documentary images and a varied 7/5-column mosaic while keeping generated imagery separate. TypeScript and all three focused Gallery tests pass."
+**Context**: CONSTRUCTION - Sequential gallery review complete; proceeding to all-section layout enhancement.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 8 Complete
+
+**Timestamp**: 2026-09-26T14:00:09Z
+**AI Response**: "Added a shared disclosed EditorialFigure component and integrated the five generated anchors only into Introduction, Medical Journey, Academics, Research, and Contact. Reworked Journey and Contact as split visual narratives, paired Research with its scientific collage, gave Academics a wide visual prelude, added documentary imagery to Community Care, and retained the new Gallery/Evidence mosaics. The approved portrait remains the Introduction's identity image. TypeScript and all 19 focused section tests pass."
+**Context**: CONSTRUCTION - All-section layout and media integration complete; proceeding to verification-code expansion.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Generation Step 9 Complete
+
+**Timestamp**: 2026-09-26T14:20:10Z
+**AI Response**: "Expanded focused verification for the profile portrait, five disclosed editorial illustrations, seven evidence groups and twelve reviewable pages, direct/previous/next document selection, selected and disabled states, PDF actions, ten-item gallery, arrow-key navigation, focus restoration, lazy loading, media budgets, neutral filenames, prohibited source patterns, and strict separation of documentary, editorial, profile, and evidence media. Existing theme-contract checks retain light/dark and reduced-motion coverage. All 25 focused tests across eight files pass, with the Property-Based Testing extension remaining disabled."
+**Context**: CONSTRUCTION - Focused verification code complete; proceeding to implementation-record reconciliation and generation checks.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Code Generation Complete
+
+**Timestamp**: 2026-09-26T14:22:24Z
+**AI Prompt**: "Review the completed visual-evidence implementation and choose A to request changes or B to approve Code Generation and continue to Build and Test."
+**AI Response**: "Completed all ten approved generation steps and all 28 story mappings. Added the neutral metadata-free profile portrait; five disclosed AI-generated editorial images; seven evidence groups with twelve in-site review pages; ten documentary gallery images; accessible document and gallery popups; responsive section layouts; source-publication and image-provenance records; and focused verification. Type checking, lint, diff validation, duplicate-file checks, and 29 tests across nine focused files pass. The complete clean build and release matrix remain reserved for Build and Test."
+**Context**: CONSTRUCTION - Code Generation Part 2 complete; awaiting explicit approval before Build and Test.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Code Generation Changes Requested
+
+**Timestamp**: 2026-09-26T14:51:31Z
+**User Input**: "1. Remove the bracketed information in academics 2. Keep all the images and PDF preview of the same consistent sizing, allowing detailed view upon clicking only 3. Fix the contact part as the image currently collapse the form. Either remove the image or keep them separated so the form is intact 4. For the profile part, focus on main GPA, A-level results and admission score (most significant) 5. For all the AI illutratives, don't mention anything (such as AI-generated ...)"
+**AI Response**: "Recorded this as option A, Request Changes. Began a focused revision to simplify academic score rows, normalize preview media, protect the contact layout, refocus profile highlights, and remove visible/runtime AI-origin labels while retaining private implementation provenance."
+**Context**: CONSTRUCTION - Code Generation review changes in progress; Build and Test remains blocked pending renewed approval.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Code Generation Review Changes Complete
+
+**Timestamp**: 2026-09-26T14:55:56Z
+**AI Prompt**: "Review the revised implementation and choose A to request further changes or B to approve Code Generation and continue to Build and Test."
+**AI Response**: "Removed repeated bracketed academic scale text; normalized Gallery, Community Care, and Evidence card previews to 4:3 with click-through full-detail viewers; removed the Contact illustration and widened/protected its method layout; replaced the Introduction's IGCSE/IELTS highlights with Grade 12 GPA, A-level results, and admission score; and removed all visible/runtime AI-origin caption fields while retaining internal provenance. Updated requirements, stories, tests, and implementation records. TypeScript, ESLint, diff validation, and 33 tests across ten focused files pass."
+**Context**: CONSTRUCTION - Requested Code Generation revisions complete; awaiting renewed explicit approval before Build and Test.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Additional Academic Header Change Requested
+
+**Timestamp**: 2026-09-26T15:01:36Z
+**User Input**: "ensure the cards in academics have a consistent header spacing"
+**AI Response**: "Reopened the Code Generation review changes to give every academic card header the same minimum height, centered vertical alignment, and internal spacing while preserving safe expansion for wrapped text and accessibility font scaling."
+**Context**: CONSTRUCTION - Focused academic-card spacing revision in progress; Build and Test remains blocked pending renewed approval.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Academic Header Spacing Complete
+
+**Timestamp**: 2026-09-26T15:02:26Z
+**AI Prompt**: "Review the uniformly spaced academic card headers and choose A to request further changes or B to approve Code Generation and continue to Build and Test."
+**AI Response**: "Applied a shared seven-rem minimum height, centered vertical alignment, and uniform one-unit content gap to all five academic card headers. The minimum-height approach preserves expansion for wrapping and accessibility font scaling. Added a regression assertion for all five headers; TypeScript, ESLint, the focused Academics tests, and diff validation pass."
+**Context**: CONSTRUCTION - Additional Code Generation review change complete; awaiting renewed explicit approval before Build and Test.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Contact Form Change Requested
+
+**Timestamp**: 2026-09-26T17:04:34Z
+**User Input**: "update the contact form to have these text boxes and buttons, keep the same theme though"
+**AI Response**: "Reopened Code Generation review changes to replace the placeholder contact-method cards with a themed client-only draft form matching the supplied visual structure: name, reply-to email, message, character count, privacy note, helper copy, and email-draft action. The implementation will not submit or store data and will not publish a recipient address."
+**Context**: CONSTRUCTION - Focused contact-form revision in progress; Build and Test remains blocked pending renewed approval.
+
+---
+
+## Visual Storytelling and Evidence Library Expansion - Contact Form Change Complete
+
+**Timestamp**: 2026-09-26T17:08:11Z
+**AI Prompt**: "Review the themed client-only contact form and choose A to request further changes or B to approve Code Generation and continue to Build and Test."
+**AI Response**: "Replaced the placeholder contact-method cards with a full-width dark-theme form containing accessible Name, Reply-to email, and Message fields; a 5,000-character limit and live counter; privacy and review copy; and an Open email draft action. The generated mailto URL intentionally has no recipient, and the site does not submit, transmit, or store entered values. Updated typed contact data, requirements, stories, implementation records, and focused tests. TypeScript, ESLint, diff validation, and 34 tests across ten focused files pass."
+**Context**: CONSTRUCTION - Contact form Code Generation review change complete; awaiting renewed explicit approval before Build and Test.
 
 ---

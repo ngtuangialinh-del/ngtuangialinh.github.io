@@ -2,98 +2,92 @@
 
 ## Prerequisites
 
-| Requirement                   | Project value                                                      |
-| ----------------------------- | ------------------------------------------------------------------ |
-| Runtime                       | Node.js 20.19 or newer; the verified local run used Node.js 24.0.0 |
-| Package manager               | npm; the verified local run used npm 11.3.0                        |
-| Build tools                   | TypeScript 5.9 and Vite 7 through the package scripts              |
-| Required secrets              | None                                                               |
-| Optional environment variable | `VITE_BASE_PATH` for a non-root GitHub Pages path                  |
-| Output directory              | `dist/`                                                            |
-
-The GitHub Pages workflow uses the current Node.js 20 release and derives `VITE_BASE_PATH` automatically.
+| Requirement                   | Project value                                                        |
+| ----------------------------- | -------------------------------------------------------------------- |
+| Runtime                       | Node.js 20.19+ or 22.12+; verified with Node.js 24.0.0               |
+| Package manager               | npm with the committed `package-lock.json`; verified with npm 11.3.0 |
+| Build tools                   | TypeScript 5.9 and Vite 7 through package scripts                    |
+| Required secrets              | None                                                                 |
+| Optional environment variable | `VITE_BASE_PATH` for a non-root static deployment                    |
+| Output directory              | `dist/`                                                              |
 
 ## Build Steps
 
 ### 1. Install Locked Dependencies
 
-From the repository root, run:
-
 ```bash
 npm ci
 ```
 
-Use `npm install` only when intentionally changing dependencies or regenerating `package-lock.json`.
+Use `npm install` only when intentionally changing dependencies or the lockfile.
 
-### 2. Run Quality Checks
+### 2. Run Blocking Quality Gates
 
 ```bash
-npm run test
+npm run typecheck
 npm run lint
+npm test -- --run
 ```
 
-Expected verified result: 9 test files and 88 tests pass, with no ESLint errors.
+Expected result: TypeScript and ESLint exit successfully; 16 test files and 46 tests pass.
 
-### 3. Build the Static Site
+The contact-specific regression can be run independently with:
+
+```bash
+npx vitest run src/templates/medical/MedicalContact.test.tsx
+```
+
+### 3. Build for a Root Deployment
 
 ```bash
 npm run build
 ```
 
-This runs the TypeScript project build and then creates the Vite production bundle.
+This runs the TypeScript project build and creates the production bundle with `/` as the base.
 
-### 4. Verify Build Success
+### 4. Build for a Project-Site Deployment
 
-Expected results:
+```bash
+VITE_BASE_PATH=/portfolio-test/ npm run build
+```
 
-- The command exits successfully.
-- `dist/index.html` exists.
-- `dist/assets/` contains the bundled JavaScript, CSS, images, resume, and certificates.
-- The generated site remains compatible with static GitHub Pages hosting.
+This verifies imported PDFs, public document thumbnails, gallery media, navigation, and metadata below a non-root base path. The second command replaces the prior contents of `dist/`.
 
-The current build emits a non-blocking Vite warning because the main JavaScript chunk is larger than 500 kB. The verified output is 975.76 kB minified and 296.49 kB gzip.
+### 5. Verify Build Success
 
-### 5. Preview the Production Build
+Expected artifacts include:
+
+- `dist/index.html`
+- `dist/assets/index-*.js` and `dist/assets/index-*.css`
+- Two hashed PDF files under `dist/assets/`
+- Nine curated images under `dist/gallery/`
+- Two first-page thumbnails under `dist/documents/`
+- `dist/medical-mark.svg`
+
+The verified project-base build contains 18 files and is approximately 3.2MB. Vite reports a non-blocking warning because the raw JavaScript chunk exceeds 500KB; the compressed JavaScript remains within the approved 300KB budget.
+
+## Optional Local Preview
 
 ```bash
 npm run preview
 ```
 
-Open the local URL printed by Vite. The verified preview served `/` with HTTP 200.
-
-## Build Artifacts
-
-| Artifact                  | Description                                             |
-| ------------------------- | ------------------------------------------------------- |
-| `dist/index.html`         | Static application entry point                          |
-| `dist/assets/index-*.js`  | Minified React application bundle                       |
-| `dist/assets/index-*.css` | Compiled shared and theme styling                       |
-| `dist/assets/` media      | Bundled images, resume, certificates, and project media |
-
-The verified `dist/` directory is approximately 9.4 MB, including portfolio media and PDF certificates.
+Open the URL printed by Vite. When validating a project-base build, request pages and assets below the same configured base.
 
 ## Troubleshooting
 
-### Native SWC Binding Fails to Load
+### Dependency or Native SWC Failure
 
-This usually means `node_modules` was installed with another Node.js version or computer architecture.
+Confirm the Node.js version and platform, remove only the repository's `node_modules` directory if it is stale, then rerun `npm ci`.
 
-1. Confirm the active runtime with `node --version`.
-2. Stop the development server.
-3. Remove only the repository's `node_modules` directory.
-4. Run `npm ci` again.
-5. Retry `npm run build` or `npm run dev`.
+### TypeScript Failure
 
-### Dependency Installation Fails
+Run `npm run typecheck` and fix the first reported mismatch. Evidence records must satisfy `EvidenceDocument`; navigation destinations must satisfy `SectionId`; contact methods must satisfy `ContactContent` and its constrained identifiers.
 
-- Confirm Node.js meets the minimum version above.
-- Confirm the terminal is open in the repository root.
-- Keep `package-lock.json` and use `npm ci` for a reproducible installation.
+### Missing Images or PDFs
 
-### TypeScript Build Fails
+Confirm that public media lives under `public/gallery/` or `public/documents/`, imported PDFs live under `src/assets/documents/`, and public URLs are passed through the base-path helper.
 
-Run `npm run test` and inspect the first reported file. Common causes are a typed data value that no longer matches `src/types/portfolio.ts`, a missing asset import, or an incomplete template registry entry.
+### Privacy Gate Failure
 
-### Built Assets Do Not Load
-
-Check that imported files still exist under `src/assets/`. For project-site deployment, confirm the GitHub workflow supplies the correct `VITE_BASE_PATH` before building.
+Do not weaken or delete the failing assertion. Remove the restricted public value or asset, regenerate the sanitized derivative, and rerun the full suite.

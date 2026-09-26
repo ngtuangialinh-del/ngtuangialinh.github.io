@@ -2,46 +2,50 @@
 
 ## Purpose
 
-Track build output and browser-delivery risks appropriate to a static GitHub Pages portfolio. Server load, throughput, concurrent-user, and API stress testing are not applicable because the project has no application server or API.
+Validate static-delivery budgets appropriate to a GitHub Pages portfolio. Server load, throughput, concurrent-user, database, and autoscaling tests are not applicable because the project has no application server or API.
 
-## Performance Requirements
+## Approved Budgets
 
-- The production build must complete successfully.
-- Decorative theme work must not add a large external download or materially regress startup size.
-- The built entry page and assets must be servable from the local production preview.
-- Background decoration must remain CSS-based, pointer-inert, and free of scroll-linked processing.
+- Main JavaScript: no more than 300KB gzip.
+- Each public gallery or document-thumbnail image: no more than 300KB.
+- Below-the-fold images: lazy loading and async decoding.
+- Both root and non-root production builds must complete successfully.
 
 ## Execute the Static Performance Check
 
 ```bash
 npm run build
+VITE_BASE_PATH=/portfolio-test/ npm run build
 ```
 
-Record the JavaScript and CSS sizes printed by Vite and compare them with the current baseline.
+Record the Vite gzip results and compare them with this baseline:
 
-## Verified Baseline
+| Measure                        | Verified result                |
+| ------------------------------ | ------------------------------ |
+| Main JavaScript                | 684.09KB raw / 196.33KB gzip   |
+| Main CSS                       | 13.92KB raw / 4.08KB gzip      |
+| CV PDF                         | 86.70KB                        |
+| Hematology acknowledgement PDF | 332.21KB                       |
+| Largest public image           | 252,489 bytes                  |
+| Complete project-base `dist/`  | Approximately 3.2MB / 18 files |
 
-| Measure          | Observed result                                            |
-| ---------------- | ---------------------------------------------------------- |
-| Vite build time  | Approximately 6.00 seconds on the verification machine     |
-| Main JavaScript  | 975.76 kB minified; 296.49 kB gzip                         |
-| Main CSS         | 34.61 kB minified; 7.43 kB gzip                            |
-| Complete `dist/` | Approximately 9.4 MB including images and PDF certificates |
-| Preview response | HTTP 200 for `/` on the local Vite production preview      |
+The raw JavaScript triggers Vite's 500KB advisory. It is tracked but non-blocking because the approved budget is compressed transfer size and the result is about 104KB below that limit. The placeholder contact enhancement remains inside the existing bundle budget and adds no media or runtime dependency.
 
-The main JavaScript remains above Vite's 500 kB warning threshold. This is a tracked, non-blocking warning; the current bundle is smaller than the previous recorded baseline.
+## Verify Media Budgets
 
-## Optional Browser Measurement
+```bash
+npx vitest run src/test/content-privacy.test.ts
+```
 
-For a future performance-focused change, run Lighthouse against `npm run preview` and record mobile performance, accessibility, and largest-contentful-paint results on the same machine and network profile. No Lighthouse threshold is claimed for this change because a controlled browser performance run was not part of the approved scope.
+This checks every gallery image and PDF thumbnail against the 300KB cap and rejects EXIF markers.
 
-## Optimization Candidates if the Baseline Regresses
+## Optional Browser Profiling
 
-1. Split theme code with dynamic imports.
-2. Compress the largest local images.
-3. Review whether all PDFs must ship in the initial static artifact.
-4. Lazy-load media below the fold.
-5. Rebuild and compare the same Vite output fields.
+For a future performance-specific change, run Lighthouse against a production preview on a controlled machine/network and record mobile performance, accessibility, and largest-contentful-paint results. No Lighthouse score is claimed by this stage.
+
+## Optimization Candidates
+
+If the gzip budget regresses, consider route/section code splitting, narrower icon imports, and dialog/PDF-viewer lazy loading. If media grows, resize and strip derivatives rather than lowering the privacy or accessibility requirements.
 
 ## Not Applicable
 

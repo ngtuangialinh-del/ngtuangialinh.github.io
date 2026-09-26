@@ -1,183 +1,80 @@
-# Components
+# Components — Medical Student Portfolio
 
-## Design Decisions
+Location convention: `src/templates/medical/` (Application Design Plan Q1/Q2). Exactly one presentation is rendered by the app; no selector exists.
 
-- **Data organization**: Hybrid. Focused files under `src/data/*` plus a `src/data/portfolio.ts` aggregator.
-- **Reusable component extraction**: Moderate. Keep section components recognizable while extracting repeated wrappers, cards, and external action patterns.
-- **Deployment base path**: GitHub Actions passes `VITE_BASE_PATH` derived from repository metadata; local fallback is `/`.
-- **Test approach**: Vitest with React Testing Library for smoke rendering and data/config tests.
+## MedicalShell
 
-## Application Shell Components
-
-### `App`
-
-- **Purpose**: Render the portfolio page, coordinate section order, and track the active section.
+- **Purpose**: The single root composition component. Replaces `BusinessShell`/`EngineeringShell` and the retired `PortfolioStyleSelector`.
 - **Responsibilities**:
-  - Import section config from portfolio data.
-  - Render `Navbar` and all section components in configured order.
-  - Use shared active-section logic.
-  - Preserve current one-page portfolio experience.
-- **Interfaces**:
-  - Inputs: portfolio section configuration and section component registry.
-  - Outputs: React page tree.
+  - Render the skip link (B5) and top-level semantic landmarks (header/nav, main, footer).
+  - Compose the six sections in the approved order: Introduction, Medical Journey, Academics, Community Care, Gallery, Contact.
+  - Host the sticky `Navigation` and `MobileNav`.
+  - Delegate active-section tracking and hash-routing to the reused navigation service (see `services.md`).
+- **Interfaces**: No external props — reads from typed content data modules directly; owns no local business state beyond what the navigation service exposes.
 
-### `Navbar`
+## Navigation
 
-- **Purpose**: Provide fixed desktop and mobile navigation.
-- **Responsibilities**:
-  - Render navigation items from shared section config.
-  - Highlight the active section.
-  - Use shared scroll behavior.
-  - Expose accessible labels for menu controls and profile/navigation links.
-- **Interfaces**:
-  - Props: `activeSection?: SectionId`
-  - Data: `navigationItems`
+- **Purpose**: Sticky desktop navigation bar listing the six destinations (B1, B2).
+- **Responsibilities**: Render ordered links to the six section hashes; mark the active destination (`aria-current`); remain visible while scrolling.
+- **Interfaces**: Consumes `activeSectionId` and the ordered destination list from the navigation service; emits navigation intents through anchor hash links.
 
-## Content Section Components
+## MobileNav
 
-### `Hero`
+- **Purpose**: Compact mobile navigation control (B3).
+- **Responsibilities**: Toggle open/closed state with accessible labeling; close on destination selection, Escape, or outside close action; return focus to the toggle on close.
+- **Interfaces**: Consumes the same ordered destination list as `Navigation`; owns local open/closed UI state; emits the same navigation intents.
 
-- **Purpose**: Present profile identity, headline, highlights, CTAs, social links, and profile image.
-- **Responsibilities**:
-  - Consume `profile` and `hero` data.
-  - Render primary calls to action from data.
-  - Expose accessible names for social links.
+## Hero (Introduction)
 
-### `About`
+- **Purpose**: Portrait-free opening section (A1, A2, A3; MSP-FR-01, MSP-FR-06).
+- **Responsibilities**: Present name, approved medical-status wording, concise value statement, and medical-motif editorial composition; provide primary calls to action into Medical Journey and Community Care.
+- **Interfaces**: Consumes the `identity` content data module.
 
-- **Purpose**: Present about copy and summary metrics.
-- **Responsibilities**:
-  - Consume `about` data.
-  - Render paragraphs and metrics.
+## MedicalJourney
 
-### `Education`
+- **Purpose**: Chronological narrative section (C1; MSP-FR-07).
+- **Responsibilities**: Render the connected chronology (school → strengths → service → admission) without implying admission equals qualification.
+- **Interfaces**: Consumes the `academics` content data module (admission fact) and a journey-narrative content structure (see `services.md`/data note).
 
-- **Purpose**: Present education entries.
-- **Responsibilities**:
-  - Consume `education` data.
-  - Render institution logos and education cards.
+## Academics
 
-### `Experience`
+- **Purpose**: Designed academic evidence summaries (D1–D5; MSP-FR-08).
+- **Responsibilities**: Render IGCSE, IELTS, Grade 12, excellent-student recognition, and admission-score summaries, each labeled with its score type/scale to prevent misreading.
+- **Interfaces**: Consumes the `academics` content data module.
 
-- **Purpose**: Present professional experience timeline.
-- **Responsibilities**:
-  - Consume `experience` data.
-  - Render timeline entries and descriptions.
+## CommunityCare
 
-### `Awards`
+- **Purpose**: Three dedicated initiative stories (E1–E4; MSP-FR-09).
+- **Responsibilities**: Render each story with collective-attribution framing; avoid self-congratulatory language.
+- **Interfaces**: Consumes the `communityCare` content data module.
 
-- **Purpose**: Present awards and achievements.
-- **Responsibilities**:
-  - Consume `awards` data.
-  - Render award cards and tags.
+## Gallery
 
-### `Projects`
+- **Purpose**: Curated image subset with accessible expanded view (F1–F4; MSP-FR-10).
+- **Responsibilities**: Render the curated image grid with alt text/captions/initiative mapping; lazy-load below-the-fold images; open images via the shared `Lightbox` primitive.
+- **Interfaces**: Consumes the `gallery` content data module; delegates expanded-view behavior to `Lightbox`.
 
-- **Purpose**: Present project cards and proof links.
-- **Responsibilities**:
-  - Consume `projects` data.
-  - Render technology tags.
-  - Use shared external action component for project links.
+## Contact
 
-### `Gallery`
+- **Purpose**: Future-looking placeholder destination (H1; MSP-FR-13).
+- **Responsibilities**: Render the concise statement; expose a structured slot for a future typed contact link with no current inherited email/social behavior.
+- **Interfaces**: Consumes the `contact` content data module.
 
-- **Purpose**: Present journey images with modal preview.
-- **Responsibilities**:
-  - Consume `gallery` data.
-  - Render image cards.
-  - Preserve modal image preview behavior.
+## Lightbox (shared primitive)
 
-### `Videos`
+- **Purpose**: Reusable accessible dialog for expanded gallery media (F4; MSP-NFR-01; Application Design Plan Q3).
+- **Location**: `src/components/ui/lightbox.tsx`.
+- **Responsibilities**: Trap and restore focus; close on Escape or explicit close control; expose an accessible name/description for the open item.
+- **Interfaces**: Accepts the active gallery item and open/close handlers; has no dependency on Gallery-specific data shape beyond image/alt/caption.
 
-- **Purpose**: Present YouTube educational videos.
-- **Responsibilities**:
-  - Consume `videos` data.
-  - Build YouTube embed/watch URLs through a utility.
-  - Render accessible external watch links.
+## Reused Shared Components (unchanged ownership)
 
-### `Skills`
+- `ContentCard`, `SectionShell`, `ExternalAction`, `LogoMark` (`src/components/shared/`) — reused by the medical sections where their existing contract fits; `PortfolioStyleSelector` is retired (I1).
+- Color mode primitives (`src/components/ui/color-mode.tsx`, `provider.tsx`) — reused unmodified (G1–G4).
+- Tooltip/toaster primitives — reused only if a medical section needs them; not mandatory.
 
-- **Purpose**: Present skill categories and certificate previews.
-- **Responsibilities**:
-  - Consume `skills` and certificate metadata.
-  - Preserve certificate PDF preview and expanded modal behavior.
-  - Use data validation tests for required certificate fields.
+## Retired Components
 
-### `Contact`
-
-- **Purpose**: Provide contact form and contact/social links.
-- **Responsibilities**:
-  - Consume profile contact data.
-  - Build mailto URL through a utility.
-  - Render accessible social/contact links.
-
-## Shared UI Components
-
-### `SectionShell`
-
-- **Purpose**: Standardize repeated section container structure.
-- **Responsibilities**:
-  - Render root section `Box`, `Container`, heading eyebrow, title, and optional intro.
-  - Preserve `engineering-grid` styling and responsive spacing.
-- **Use**: Sections with repeated heading and container structure.
-
-### `ContentCard`
-
-- **Purpose**: Standardize repeated card chrome.
-- **Responsibilities**:
-  - Provide consistent background, border, hover, radius, and transition props.
-  - Avoid hiding section-specific content.
-
-### `ExternalAction`
-
-- **Purpose**: Standardize external links/buttons.
-- **Responsibilities**:
-  - Render link/action label, icon, target behavior, and accessible label.
-  - Support project, social, video, and certificate actions.
-
-## Data Components
-
-### `src/types/portfolio.ts`
-
-- **Purpose**: Define shared portfolio data shapes.
-- **Responsibilities**:
-  - Export `SectionId`, `NavigationItem`, `Profile`, `EducationEntry`, `ExperienceEntry`, `AwardEntry`, `ProjectEntry`, `GalleryItem`, `VideoEntry`, `SkillCategory`, `CertificateMetadata`, and related types.
-
-### `src/data/*`
-
-- **Purpose**: Store student-editable example content.
-- **Responsibilities**:
-  - Keep example content realistic.
-  - Make replacement points obvious.
-  - Maintain Vite-compatible asset imports.
-
-### `src/data/portfolio.ts`
-
-- **Purpose**: Aggregate focused data modules.
-- **Responsibilities**:
-  - Export a single `portfolio` object for app-level consumption.
-  - Re-export focused data where useful.
-
-## Support Components
-
-### Deployment Configuration
-
-- **Purpose**: Make GitHub Pages base path easier for student forks.
-- **Responsibilities**:
-  - `vite.config.ts` reads `process.env.VITE_BASE_PATH ?? '/'`.
-  - GitHub Actions derives and passes the correct base path for repository Pages builds.
-
-### Test Suite
-
-- **Purpose**: Provide lightweight guardrails.
-- **Responsibilities**:
-  - Smoke render the app.
-  - Validate navigation IDs and required sections.
-  - Validate key profile/template data.
-
-## Extension Rule Compliance
-
-| Extension | Status | Rationale |
-|---|---|---|
-| Security Baseline | Disabled | User opted out during Requirements Analysis. |
-| Property-Based Testing | Disabled | User opted out during Requirements Analysis. |
+- `PortfolioStyleSelector`
+- `BusinessShell`, `EngineeringShell`, and all `Business*`/`Engineering*` section components
+- Journal-related components and routes (`src/content/journal/`, `BusinessJournal`, `BusinessJournalPostPage`)

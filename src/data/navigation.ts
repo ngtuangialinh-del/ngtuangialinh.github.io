@@ -1,27 +1,25 @@
-import type { NavigationItem, SectionId } from '../types/portfolio'
+import type { NavDestination, SectionId } from "../types/medical";
 
 export const sectionIds = [
-  'home',
-  'about',
-  'education',
-  'experience',
-  'awards',
-  'projects',
-  'gallery',
-  'journal',
-  'skills',
-  'contact',
-] as const satisfies readonly SectionId[]
+  "introduction",
+  "medical-journey",
+  "academics",
+  "research",
+  "community-care",
+  "gallery",
+  "evidence",
+  "contact",
+] as const satisfies readonly SectionId[];
 
-export const navigation = [
-  { id: 'home', label: 'Home', enabled: true },
-  { id: 'about', label: 'About', enabled: true },
-  { id: 'education', label: 'Education', enabled: true },
-  { id: 'experience', label: 'Experience', enabled: true },
-  { id: 'awards', label: 'Awards', enabled: true },
-  { id: 'projects', label: 'Projects', enabled: true },
-  { id: 'gallery', label: 'Gallery', enabled: true },
-  { id: 'journal', label: 'Journal', enabled: true },
-  { id: 'skills', label: 'Skills', enabled: true },
-  { id: 'contact', label: 'Contact', enabled: true },
-] satisfies NavigationItem[]
+export const navDestinations = [
+  { id: "introduction", label: "Introduction", hash: "#introduction" },
+  { id: "medical-journey", label: "Medical Journey", hash: "#medical-journey" },
+  { id: "academics", label: "Academics", hash: "#academics" },
+  { id: "research", label: "Research", hash: "#research" },
+  { id: "community-care", label: "Community Care", hash: "#community-care" },
+  { id: "gallery", label: "Gallery", hash: "#gallery" },
+  { id: "evidence", label: "Evidence", hash: "#evidence" },
+  { id: "contact", label: "Contact", hash: "#contact" },
+] satisfies NavDestination[];
+
+export const DEFAULT_SECTION_ID: SectionId = "introduction";

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#f6f4ed"/><rect x="72" y="72" width="1056" height="1456" rx="36" fill="#fff" stroke="#d7ded9" stroke-width="3"/><rect x="72" y="72" width="1056" height="22" rx="11" fill="#176b61"/>
+  <text x="132" y="180" fill="#176b61" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">VERIFIED SUMMARY</text>
+  <text x="132" y="280" fill="#16352f" font-family="Georgia, serif" font-size="62" font-weight="700">Grade 12 highlights</text>
+  <text x="132" y="342" fill="#62736e" font-family="Arial, sans-serif" font-size="28">Annual subject averages · 10-point scale</text>
+  <g font-family="Arial, sans-serif" font-size="29">
+    <rect x="132" y="430" width="936" height="104" rx="20" fill="#e8f3ef"/><text x="176" y="496" fill="#16352f">English</text><text x="952" y="496" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">9.8</text>
+    <rect x="132" y="554" width="936" height="104" rx="20" fill="#f3f6f4"/><text x="176" y="620" fill="#16352f">Biology</text><text x="952" y="620" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">9.8</text>
+    <rect x="132" y="678" width="936" height="104" rx="20" fill="#e8f3ef"/><text x="176" y="744" fill="#16352f">History</text><text x="952" y="744" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">9.8</text>
+    <rect x="132" y="802" width="936" height="104" rx="20" fill="#f3f6f4"/><text x="176" y="868" fill="#16352f">Computer Science</text><text x="952" y="868" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">9.8</text>
+    <rect x="132" y="926" width="936" height="104" rx="20" fill="#e8f3ef"/><text x="176" y="992" fill="#16352f">Chemistry</text><text x="952" y="992" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">9.4</text>
+    <rect x="132" y="1050" width="936" height="104" rx="20" fill="#f3f6f4"/><text x="176" y="1116" fill="#16352f">Mathematics</text><text x="952" y="1116" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">8.6</text>
+    <rect x="132" y="1174" width="936" height="104" rx="20" fill="#e8f3ef"/><text x="176" y="1240" fill="#16352f">Literature</text><text x="952" y="1240" text-anchor="end" fill="#176b61" font-size="42" font-weight="700">7.8</text>
+  </g>
+  <text x="132" y="1374" fill="#62736e" font-family="Arial, sans-serif" font-size="22">Values were cross-checked against the supplied school record.</text>
+  <text x="132" y="1450" fill="#176b61" font-family="Arial, sans-serif" font-size="22" font-weight="700">SUMMARY 2 OF 2</text>
+</svg>

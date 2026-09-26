@@ -2,12 +2,17 @@
 
 ## Active Change
 
-- **Change**: Business Color and Two-Theme Refresh
-- **Requirement questions**: `inception/requirements/business-youthful-color-refresh-requirement-questions.md`
-- **Requirements**: `inception/requirements/business-youthful-color-refresh-requirements.md`
-- **Execution plan**: `inception/plans/business-youthful-color-refresh-execution-plan.md`
-- **Code-generation plan**: `construction/plans/business-youthful-color-refresh-code-generation-plan.md`
-- **Code-generation summary**: `construction/business-youthful-color-refresh/code/code-generation-summary.md`
+- **Change**: Medical Student Portfolio Revamp
+- **Current stage**: Workflow Planning - awaiting execution plan approval
+- **Requirement questions**: `inception/requirements/requirement-verification-questions.md`
+- **Requirements**: `inception/requirements/requirements.md`
+- **Requirements approval**: `inception/requirements/requirements-approval-questions.md`
+- **User Stories assessment**: `inception/plans/user-stories-assessment.md`
+- **Story-generation plan**: `inception/plans/story-generation-plan.md`
+- **Personas**: `inception/user-stories/personas.md`
+- **Stories**: `inception/user-stories/stories.md`
+- **CV evidence inventory**: `inception/reverse-engineering/cv-evidence-inventory.md`
+- **Execution plan**: `inception/plans/execution-plan.md`
 - **Current reverse engineering**: `inception/reverse-engineering/`
 - **Build and Test guidance**: `construction/build-and-test/`
 - **State**: `aidlc-state.md`
@@ -15,9 +20,10 @@
 
 ## Current Product Boundary
 
-- Engineering and Business are the complete supported template set.
-- Business uses the approved background and text palettes.
-- Shared content, routes, layout modes, color mode, and GitHub Pages behavior remain authoritative.
+- Engineering and Business remain the current runtime template set pending the approved medical redesign.
+- The supplied CV evidence is unintegrated and raw sensitive documents remain outside the public build.
+- Shared typed data, hash routing, responsive behavior, accessibility safeguards, and GitHub Pages delivery are the reusable foundation.
+- Personas and stories are approved; the execution plan recommends executing Application Design, Units Planning, Units Generation, Functional Design, NFR Requirements, and NFR Design, and skipping Infrastructure Design.
 
 ## Documentation Controls
 
