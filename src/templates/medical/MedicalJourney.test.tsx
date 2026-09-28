@@ -22,13 +22,11 @@ describe("MedicalJourney", () => {
     expect(screen.queryByText(/AI-generated/i)).not.toBeInTheDocument();
   });
 
-  it("does not imply admission alone constitutes medical qualification", async () => {
+  it("omits the former clinical-qualification disclaimer", async () => {
     await renderAndCheckA11y(<MedicalJourney />);
 
     expect(
-      screen.getByText(
-        /is the beginning of medical training, not a clinical qualification/,
-      ),
-    ).toBeInTheDocument();
+      screen.queryByText(/clinical qualification/i),
+    ).not.toBeInTheDocument();
   });
 });

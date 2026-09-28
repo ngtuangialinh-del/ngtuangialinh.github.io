@@ -15,22 +15,37 @@ describe("MedicalEvidence", () => {
   it("renders every evidence group with honest publication states and page previews", async () => {
     await renderAndCheckA11y(<MedicalEvidence />);
 
-    expect(evidenceDocuments).toHaveLength(7);
+    expect(evidenceDocuments).toHaveLength(8);
+    expect(evidenceDocuments.map((document) => document.id)).toEqual([
+      "research-gold-medal",
+      "admission-and-graduation",
+      "ielts-result",
+      "igcse-statement",
+      "school-record",
+      "curriculum-vitae",
+      "community-project-records",
+      "hematology-acknowledgement",
+    ]);
     expect(
       evidenceDocuments.filter(
         (document) => document.publicationState === "public-sanitized-evidence",
       ),
-    ).toHaveLength(2);
+    ).toHaveLength(3);
     expect(
       evidenceDocuments.filter(
         (document) => document.publicationState === "verified-summary",
       ),
     ).toHaveLength(5);
     expect(screen.getAllByText("Verified summary")).toHaveLength(5);
-    expect(screen.getAllByTestId(/^preview-thumbnail-/)).toHaveLength(7);
+    expect(screen.getAllByTestId(/^preview-thumbnail-/)).toHaveLength(8);
     expect(
       screen.getByRole("link", { name: "Download Curriculum Vitae" }),
     ).toHaveAttribute("download", "nguyen-tuan-gia-linh-cv.pdf");
+    expect(
+      screen.getByRole("link", {
+        name: "Download Research project Gold Medal certificate",
+      }),
+    ).toHaveAttribute("download", "research-gold-medal-certificate.pdf");
   });
 
   it("reviews every CV page in the popup and restores focus when closed", async () => {
@@ -102,5 +117,22 @@ describe("MedicalEvidence", () => {
     expect(
       within(dialog).getByTestId("document-page-position"),
     ).toHaveTextContent("Page 2 of 2");
+  });
+
+  it("reviews and downloads the research Gold Medal certificate", async () => {
+    await renderAndCheckA11y(<MedicalEvidence />);
+    fireEvent.click(screen.getByTestId("preview-research-gold-medal"));
+
+    const dialog = await screen.findByRole("dialog");
+    expect(
+      within(dialog).getByRole("img", {
+        name: "Gold Medal certificate for the nanoformulated Cordyceps militaris research project",
+      }),
+    ).toBeInTheDocument();
+    expect(within(dialog).getByTestId("document-open-pdf")).toBeInTheDocument();
+    expect(within(dialog).getByTestId("document-download-pdf")).toHaveAttribute(
+      "download",
+      "research-gold-medal-certificate.pdf",
+    );
   });
 });

@@ -23,13 +23,14 @@ describe("MedicalAcademics", () => {
     expect(igcseGroup.getByTestId("score-Mathematics")).toHaveTextContent(
       "92%",
     );
-    expect(ieltsGroup.getByTestId("score-Overall")).toHaveTextContent("7.0");
-    expect(ieltsGroup.getByTestId("score-Overall")).not.toHaveTextContent(
-      "7.5",
-    );
+    expect(ieltsGroup.getByTestId("score-Overall")).toHaveTextContent("7.5");
     expect(ieltsGroup.getByTestId("score-Overall")).toHaveTextContent(
       "CEFR C1",
     );
+    expect(ieltsGroup.getByTestId("score-Listening")).toHaveTextContent("8.5");
+    expect(ieltsGroup.getByTestId("score-Reading")).toHaveTextContent("8.0");
+    expect(ieltsGroup.getByTestId("score-Writing")).toHaveTextContent("7.0");
+    expect(ieltsGroup.getByTestId("score-Speaking")).toHaveTextContent("6.5");
     expect(gpaGroup.getByTestId("score-Grade 12")).toHaveTextContent("9.4");
     expect(aLevelGroup.getByTestId("score-Biology")).toHaveTextContent("A");
     expect(
@@ -50,6 +51,7 @@ describe("MedicalAcademics", () => {
       ),
     ).not.toBeInTheDocument();
     expect(screen.queryByText(/AI-generated/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/clinical credential/i)).not.toBeInTheDocument();
 
     const headers = screen.getAllByTestId(/^score-group-header-/);
     expect(headers).toHaveLength(5);

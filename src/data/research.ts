@@ -4,6 +4,12 @@ export const researchProject = {
   title:
     "Nanoformulated Cordyceps militaris extract with enhanced water dispersibility and in-vitro cytotoxic activity",
   year: "2026",
+  recognition: {
+    award: "Gold Medal",
+    event: "Innoverse Invention & Innovation Expo",
+    date: "24 August 2026",
+    attribution: "Awarded jointly to the four-person project team",
+  },
   question:
     "Could a lecithin–maltodextrin nanoformulation improve the water dispersibility of Cordyceps militaris extract while retaining measurable activity in cell-line assays?",
   methods: [
@@ -19,6 +25,4 @@ export const researchProject = {
     { subjectOrLabel: "Zeta potential", value: "−23.3 mV" },
     { subjectOrLabel: "A549 reported IC50", value: "119.85 µg/mL" },
   ],
-  scopeNote:
-    "These are CV-reported results from an educational in-vitro project. They do not establish clinical efficacy, safety, or a treatment recommendation.",
 } satisfies ResearchProject;

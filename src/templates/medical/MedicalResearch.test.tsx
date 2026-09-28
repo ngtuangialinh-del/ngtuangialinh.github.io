@@ -5,7 +5,7 @@ import { renderAndCheckA11y } from "../../test/a11y-helpers";
 import { MedicalResearch } from "./MedicalResearch";
 
 describe("MedicalResearch", () => {
-  it("presents methods, reported measurements, and an explicit in-vitro limitation", async () => {
+  it("presents the award, methods, and reported measurements", async () => {
     await renderAndCheckA11y(<MedicalResearch />);
 
     expect(
@@ -13,12 +13,17 @@ describe("MedicalResearch", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("325 nm")).toBeInTheDocument();
     expect(screen.getByText("119.85 µg/mL")).toBeInTheDocument();
+    expect(screen.getByTestId("research-recognition")).toHaveTextContent(
+      "Gold Medal · Innoverse Invention & Innovation Expo",
+    );
     expect(
-      screen.getByText(/do not establish clinical efficacy/i),
+      screen.getByText(/awarded jointly to the four-person project team/i),
     ).toBeInTheDocument();
     expect(
       screen.getByTestId("editorial-figure-research-nanoformulation-collage"),
     ).toBeInTheDocument();
     expect(screen.queryByText(/AI-generated/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/scope and limitation/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/clinical efficacy/i)).not.toBeInTheDocument();
   });
 });

@@ -13,7 +13,6 @@ import {
 import { useState } from "react";
 import {
   LuArrowRight,
-  LuBookOpen,
   LuCheck,
   LuDownload,
   LuEye,
@@ -26,6 +25,7 @@ import { academics } from "../../data/academics";
 import { cvDocument } from "../../data/evidence";
 import { identity } from "../../data/identity";
 import { editorialIllustrations } from "../../data/illustrations";
+import { withBasePath } from "../../utils/media";
 
 const evidenceStats = [
   {
@@ -264,7 +264,7 @@ export function MedicalHero() {
                 bg="var(--surface-subtle)"
               >
                 <Image
-                  src={identity.profileImage.src}
+                  src={withBasePath(identity.profileImage.src)}
                   alt={identity.profileImage.alt}
                   data-testid="hero-profile-image"
                   w="100%"
@@ -329,20 +329,6 @@ export function MedicalHero() {
                     </Box>
                   </Flex>
                 ))}
-                <Flex
-                  mt={5}
-                  p={4}
-                  borderRadius="md"
-                  bg="var(--active-bg)"
-                  gap={3}
-                  align="flex-start"
-                >
-                  <LuBookOpen color="var(--brand-200)" size={20} />
-                  <Text fontSize="sm" color="var(--text-muted)">
-                    Academic and service claims are presented with their source
-                    context and without implying clinical qualification.
-                  </Text>
-                </Flex>
               </VStack>
             </Box>
           </Box>

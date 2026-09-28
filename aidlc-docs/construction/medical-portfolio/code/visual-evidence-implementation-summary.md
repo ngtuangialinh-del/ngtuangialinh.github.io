@@ -2,7 +2,7 @@
 
 ## Outcome
 
-The medical-student portfolio now uses a more varied editorial layout, the owner-approved portrait, five section illustrations, ten documentary gallery images, and a seven-group Evidence Library with twelve in-site review pages. Documents and gallery images open in accessible popups with ordered navigation while sensitive originals remain outside the public runtime graph.
+The medical-student portfolio now uses a more varied editorial layout, the owner-approved portrait, five section illustrations, ten documentary gallery images, and an eight-group Evidence Library with thirteen in-site review pages. Documents and gallery images open in accessible popups with ordered navigation while sensitive originals remain outside the public runtime graph.
 
 ## Application Changes
 
@@ -17,9 +17,10 @@ The medical-student portfolio now uses a more varied editorial layout, the owner
 - Profile: `public/profile/gia-linh-profile.jpg`, a metadata-free 1000 by 1500 pixel derivative of the separately supplied portrait. The original identifier-like filename is not used publicly.
 - Editorial illustrations: five metadata-free 1400 by 933 pixel WebP assets under `public/illustrations/`. At the owner's request, the interface shows no AI-origin or generation-method captions; internal provenance remains documented.
 - Document review: three sanitized documentary page images and nine designed verified-summary pages under `public/documents/pages/`.
+- Research award: one metadata-flattened Gold Medal certificate PDF and one 215 KB page preview under neutral filenames.
 - Gallery: `public/gallery/cung-em-project-donated-clothing.jpg`, a low-risk no-face documentary derivative, bringing the curated gallery to ten images.
 
-All newly prepared raster assets are within the approximately 300 KB per-image budget. Existing reviewed CV and hematology PDFs remain the only public downloadable evidence files.
+All newly prepared raster assets are within the approximately 300 KB per-image budget. The reviewed CV, hematology acknowledgement, and research Gold Medal certificate are the three public downloadable evidence files.
 
 ## Evidence Publication Result
 
@@ -31,9 +32,10 @@ The Evidence Library represents:
 2. Hematology volunteering acknowledgement - one public sanitized page plus approved PDF actions.
 3. Upper-secondary academic record - two verified-summary pages.
 4. Cambridge IGCSE statement - one verified-summary page.
-5. IELTS Academic result - one verified-summary page, with the official 7.0 result authoritative over the conflicting CV entry.
-6. Medicine admission and graduation record - two verified-summary pages.
-7. Community project records - three verified-summary pages.
+5. IELTS Academic result - one verified-summary page showing the latest official overall 7.5 and updated component scores; the raw report remains private.
+6. Research project Gold Medal - one public certificate page plus approved PDF actions.
+7. Medicine admission and graduation record - two verified-summary pages.
+8. Community project records - three verified-summary pages.
 
 ## Generated Image Provenance
 
@@ -62,6 +64,13 @@ The full clean build, complete test matrix, and measured release report are inte
 - All visible AI-origin captions and runtime disclosure fields were removed. Generation provenance remains only in internal AI-DLC documentation.
 - Revised verification passes TypeScript, ESLint, diff validation, and 33 focused tests across ten files.
 - Academic result cards now share a seven-rem minimum header height with centered content and a uniform internal gap; longer or enlarged text can still expand the header safely.
+- The portrait source now resolves through the configured Vite base path, preventing a project-site deployment from requesting the image at the domain root.
+- The IELTS summary now reflects the latest official 7.5 overall result with Listening 8.5, Reading 8.0, Writing 7.0, Speaking 6.5, and CEFR C1; the identifying original remains private.
+- The Research section now presents the team Gold Medal recognition, and the Evidence Library provides an optimized preview plus a metadata-flattened certificate download.
+- Evidence-refresh verification passes 23 focused tests across six files, TypeScript, ESLint, XML parsing, diff validation, the post-build privacy gate, and a production build with `VITE_BASE_PATH=/ngtuangialinh.github.io/`. The generated JavaScript is 202.25 KB gzip, below the 300 KB budget.
+- Evidence Library cards are ordered by explicit significance rank: research Gold Medal, Medicine admission/graduation, IELTS, IGCSE, upper-secondary record, CV, community-project records, and hematology acknowledgement.
+- Removed the Research `Scope and limitation` panel and all visitor-facing clinical-qualification or clinical-credential disclaimer copy from Introduction, Medical Journey, Academics, and Research.
+- Ordering/disclaimer verification passes 22 focused tests across six files, TypeScript, ESLint, diff validation, the post-build privacy gate, a built-output copy scan, and the project-base production build. The revised JavaScript is 202.05 KB gzip.
 
 ## Known Limitations
 

@@ -8,7 +8,7 @@
 - **Current phase**: CONSTRUCTION
 - **Current stage**: Code Generation - revised implementation awaiting explicit approval
 - **Requirements depth**: Comprehensive - system-wide visual, evidence-publication, privacy, and document-preview changes
-- **Workflow status**: Awaiting Code Generation approval
+- **Workflow status**: Ordering and disclaimer revisions implemented and verified; awaiting Code Generation approval
 - **Active requirement questions**: `aidlc-docs/inception/requirements/visual-evidence-requirement-verification-questions.md`
 - **Active requirements**: `aidlc-docs/inception/requirements/visual-evidence-requirements.md`
 - **Active execution plan**: `aidlc-docs/inception/plans/execution-plan.md`
@@ -35,6 +35,7 @@
 - **Active CV/evidence assessment**: `aidlc-docs/construction/medical-portfolio/code/cv-evidence-assessment.md`
 - **Active CV/evidence expansion approval**: `aidlc-docs/construction/plans/cv-evidence-expansion-approval-questions.md`
 - **Active PDF preview-card approval**: `aidlc-docs/construction/plans/pdf-preview-cards-approval-questions.md`
+- **Active evidence refresh clarification**: `aidlc-docs/construction/plans/evidence-refresh-clarification-questions.md`
 - **Gallery publication**: Approved by the owner on 2026-09-19; nine sanitized contextual derivatives are now included
 - **Next action**: Owner reviews the revised Code Generation result and chooses Request Changes or Continue to Build and Test
 
@@ -44,6 +45,7 @@
 - Generate project-bound AI imagery where it adds context, while keeping it distinct from documentary evidence.
 - Reassess all relevant CV-folder documents and media for the Evidence Library and Gallery.
 - Provide page-level document previews and accessible popup review without weakening privacy controls.
+- Repair the deployed portrait URL, refresh the IELTS evidence from the newly supplied report, and add the Gold Medal research certificate.
 
 ## Extension Configuration
 
@@ -63,7 +65,7 @@
 - [x] Workflow Planning - Streamlined single-unit plan approved on 2026-09-26
 - [x] Application Design - SKIP because the enhancement extends established sections, typed data, and shared dialog boundaries
 - [x] Units Generation - SKIP because the single-package work is one coordinated implementation unit
-- [ ] Code Generation - Review changes completed on 2026-09-26; awaiting explicit owner approval before stage completion
+- [ ] Code Generation - Ordering/disclaimer changes completed on 2026-09-28; awaiting explicit owner approval before stage completion
 - [ ] Build and Test
 - [ ] Operations - Placeholder
 

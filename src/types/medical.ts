@@ -73,10 +73,15 @@ export type CommunityStory = {
 export type ResearchProject = {
   title: string;
   year: string;
+  recognition: {
+    award: string;
+    event: string;
+    date: string;
+    attribution: string;
+  };
   question: string;
   methods: string[];
   reportedResults: LabeledScore[];
-  scopeNote: string;
 };
 
 export type EditorialIllustration = {
@@ -104,6 +109,7 @@ export type EvidenceDownloadPolicy = "download" | "view-only" | "none";
 
 export type EvidenceDocument = {
   id: string;
+  significanceRank: number;
   title: string;
   category: string;
   summary: string;

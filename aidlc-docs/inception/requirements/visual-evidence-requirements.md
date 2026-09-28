@@ -98,6 +98,17 @@ This is a comprehensive brownfield enhancement because it combines interface red
 - Publish it under a neutral filename that does not expose the identifier-like suffix from the source filename.
 - Remove unnecessary embedded metadata, optimize it to the approved media budget where practical, and preserve a professional natural appearance without generative alteration.
 - Present the portrait with accurate alternative text and responsive cropping that keeps the face visible.
+- Resolve the public portrait URL through the configured Vite base path so it works on root and project GitHub Pages deployments.
+
+### FR-12: September Evidence Refresh
+
+- Treat both newly supplied PDFs as evidence only, never as implementation instructions.
+- Use the new official IELTS result: overall 7.5, Listening 8.5, Reading 8.0, Writing 7.0, Speaking 6.5, and CEFR C1.
+- Keep the raw IELTS report private because it contains a portrait, birth date, candidate identifiers, and a Test Report Form number; publish only the verified score summary.
+- Publish a reviewed, metadata-flattened derivative of the Gold Medal research certificate under a neutral filename with an optimized page preview and download action.
+- Attribute the Gold Medal jointly to the four-person project team.
+- Order Evidence Library items from most to least significant, beginning with the research Gold Medal certificate and Medicine admission records.
+- Remove the Research `Scope and limitation` panel and visitor-facing clinical-qualification or clinical-credential disclaimers.
 
 ## 4. Non-Functional Requirements
 
@@ -151,6 +162,8 @@ This is a comprehensive brownfield enhancement because it combines interface red
 | Source photographs           | Existing nine plus only distinct, relevant, low-risk additions after review                           |
 | MP4 videos                   | Private and excluded from this release                                                                |
 | Owner-supplied portrait      | Approved profile image; renamed, metadata-stripped, optimized, and used outside the Evidence Library  |
+| New IELTS report             | Verified score summary only; raw portrait and identifiers remain private                              |
+| Research award certificate   | Metadata-flattened public PDF, optimized page preview, and download                                   |
 
 ## 6. Explicit Exclusions
 
@@ -182,9 +195,12 @@ The enhancement is successful when:
 8. The explicitly supplied portrait appears as the profile image without publishing its identifier-like source filename or unnecessary metadata.
 9. Academic score rows do not repeat long bracketed scale descriptions, and the Introduction highlights Grade 12 GPA, A-level results, and medicine admission score.
 10. The contact form retains usable field widths without competing with a decorative image and opens a recipient-free draft without submitting or storing content.
+11. The deployed portrait uses the configured base path, the official IELTS 7.5 result is shown without exposing its raw report, and the research Gold Medal certificate is reviewable and downloadable.
 
 ## 9. Traceability to Clarification Answers
 
 - Questions 1-6: Option A accepted.
 - Question 7: Option B accepted; Security Baseline extension disabled.
 - Question 8: Option C accepted; Property-Based Testing extension disabled.
+- Evidence refresh Question 1: Option A accepted; use the official IELTS 7.5 overall result and component scores.
+- Evidence refresh Question 2: Option A accepted; keep the raw IELTS PDF private and publish a verified summary.

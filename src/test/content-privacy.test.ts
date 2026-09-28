@@ -134,7 +134,7 @@ describe("content privacy gate (BR-8)", () => {
     }
   });
 
-  it("publishes only the two approved PDFs without active-content markers", () => {
+  it("publishes only the three approved PDFs without active-content markers", () => {
     const files = collectFiles(publicDocumentsDir, [".pdf"]);
     const activeContentPatterns = [
       /\/JavaScript/i,
@@ -147,6 +147,7 @@ describe("content privacy gate (BR-8)", () => {
     expect(files.map((file) => file.split("/").at(-1)).sort()).toEqual([
       "hematology-volunteering-acknowledgement.pdf",
       "nguyen-tuan-gia-linh-cv.pdf",
+      "research-gold-medal-certificate.pdf",
     ]);
 
     for (const file of files) {
@@ -169,7 +170,7 @@ describe("content privacy gate (BR-8)", () => {
       ".svg",
     ]);
 
-    expect(files.length).toBe(14);
+    expect(files.length).toBe(15);
 
     for (const file of files) {
       const bytes = readFileSync(file);

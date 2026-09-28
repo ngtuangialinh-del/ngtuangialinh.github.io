@@ -29,15 +29,11 @@ export const academics = {
     label: "IELTS Academic",
     scaleDescription: "IELTS band score (0–9 scale), CEFR C1",
     entries: [
-      { subjectOrLabel: "Overall", value: "7.0", scaleNote: "CEFR C1" },
-      { subjectOrLabel: "Listening", value: "8.0" },
-      { subjectOrLabel: "Reading", value: "7.5" },
-      { subjectOrLabel: "Writing", value: "6.5" },
-      {
-        subjectOrLabel: "Speaking",
-        value: "6.0",
-        scaleNote: "after One Skill Retake",
-      },
+      { subjectOrLabel: "Overall", value: "7.5", scaleNote: "CEFR C1" },
+      { subjectOrLabel: "Listening", value: "8.5" },
+      { subjectOrLabel: "Reading", value: "8.0" },
+      { subjectOrLabel: "Writing", value: "7.0" },
+      { subjectOrLabel: "Speaking", value: "6.5" },
     ],
   },
   gpaSummary: {

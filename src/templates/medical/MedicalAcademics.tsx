@@ -152,10 +152,6 @@ export function MedicalAcademics() {
             </Box>
           </Flex>
           <ScoreDisplay score={academics.admissionScore} />
-          <Text mt={4} fontSize="sm" color="rgba(255,255,255,.76)">
-            Presented as an admission result, not as a percentage or clinical
-            credential.
-          </Text>
         </Box>
       </SimpleGrid>
     </SectionShell>

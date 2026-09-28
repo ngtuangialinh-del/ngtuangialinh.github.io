@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import { LuBeaker, LuMicroscope, LuShieldCheck } from "react-icons/lu";
+import { LuAward, LuBeaker, LuMicroscope } from "react-icons/lu";
 
 import SectionShell from "../../components/shared/SectionShell";
 import EditorialFigure from "../../components/shared/EditorialFigure";
@@ -40,6 +40,20 @@ export function MedicalResearch() {
               <Text className="field-code" color="#c4e9e2">
                 Research project · {researchProject.year}
               </Text>
+              <Flex
+                mt={3}
+                gap={2}
+                align="center"
+                color="#fff3bf"
+                fontWeight={800}
+                data-testid="research-recognition"
+              >
+                <LuAward aria-hidden="true" />
+                <Text>
+                  {researchProject.recognition.award} ·{" "}
+                  {researchProject.recognition.event}
+                </Text>
+              </Flex>
               <Text
                 mt={3}
                 fontSize={{ base: "xl", md: "2xl" }}
@@ -63,6 +77,10 @@ export function MedicalResearch() {
           </Flex>
           <Text mt={6} color="rgba(255,255,255,.78)" lineHeight="1.75">
             <strong>Research question:</strong> {researchProject.question}
+          </Text>
+          <Text mt={3} color="rgba(255,255,255,.72)" fontSize="sm">
+            {researchProject.recognition.attribution} ·{" "}
+            {researchProject.recognition.date}
           </Text>
         </Box>
         <Box className="reveal-up delay-2">
@@ -131,24 +149,6 @@ export function MedicalResearch() {
           </SimpleGrid>
         </Box>
       </SimpleGrid>
-      <Flex
-        mt={5}
-        p={5}
-        gap={3}
-        align="flex-start"
-        border="1px solid"
-        borderColor="var(--border-strong)"
-        borderRadius="lg"
-        bg="var(--active-bg)"
-      >
-        <LuShieldCheck color="var(--brand-200)" size={22} />
-        <Box>
-          <Text fontWeight={800}>Scope and limitation</Text>
-          <Text mt={1} color="var(--text-muted)" lineHeight="1.65">
-            {researchProject.scopeNote}
-          </Text>
-        </Box>
-      </Flex>
     </SectionShell>
   );
 }

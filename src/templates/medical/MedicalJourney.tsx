@@ -132,15 +132,6 @@ export function MedicalJourney() {
           })}
         </Box>
       </Grid>
-      <Text
-        mt={8}
-        fontSize="sm"
-        color="var(--text-300)"
-        className="reveal-up delay-2"
-      >
-        Admission to a medical program reflects academic preparation and is the
-        beginning of medical training, not a clinical qualification.
-      </Text>
     </SectionShell>
   );
 }

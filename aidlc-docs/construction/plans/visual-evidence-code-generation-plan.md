@@ -217,3 +217,18 @@ This is the single source of truth for Code Generation of the one `visual-eviden
 - [x] Update focused tests, implementation records, and generation checks for the reviewed result.
 - [x] Normalize academic card-header height, vertical alignment, and internal spacing while allowing accessible text expansion.
 - [x] Replace placeholder contact-method cards with a themed, client-only email-draft form containing name, reply-to email, message, character count, privacy copy, and draft action without publishing a recipient address.
+
+## Evidence Refresh Change Set - 2026-09-28
+
+- [x] Make the profile portrait URL respect the configured GitHub Pages base path and add a project-base regression assertion.
+- [x] Update the IELTS verified summary and academic data to the official 7.5 overall result with Listening 8.5, Reading 8.0, Writing 7.0, and Speaking 6.5; keep the private original out of the public graph.
+- [x] Add the supplied Gold Medal research certificate as reviewed public evidence with a neutral PDF filename, optimized page preview, and preview/download actions.
+- [x] Surface the Gold Medal recognition in the Research section without changing the project's scientific-scope disclaimer.
+- [x] Update requirements, publication records, implementation documentation, privacy expectations, and focused tests; run generation checks.
+
+## Significance Ordering and Disclaimer Removal - 2026-09-28
+
+- [x] Rank Evidence Library items from most to least significant, led by the research Gold Medal certificate, with a regression assertion for the complete order.
+- [x] Remove the Research `Scope and limitation` panel and its unused data/type contract.
+- [x] Remove all visitor-facing clinical-qualification and clinical-credential disclaimer copy from Introduction, Medical Journey, Academics, and Research.
+- [x] Update focused tests and implementation records, then run generation checks.
